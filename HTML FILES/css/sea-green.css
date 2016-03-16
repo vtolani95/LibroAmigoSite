@@ -26,9 +26,9 @@
 .event-post-image span,
 .search-button,
 .sidebar-title > h4:after,
-.pagination > li > a:hover, 
-.pagination > li > span:hover, 
-.pagination > li > a:focus, 
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
 .pagination > li > span:focus,
 .search-tabs li.active a,
 .search-tabs li.active a:hover,
@@ -84,12 +84,12 @@ header.header3 #menu-navigation li ul li:hover,
 .urgent-cause > a:before,
 .transparent-btn:before,
 .charity-event-img > a{
-	background-color:#4fc0aa;
+	background-color:#e94e15;
 }
 .message-box-title > span,
 .countSeconds,
 .welcome-box span{
-	background-color:#32a48e;
+	background-color:#ea430a;
 }
 .menu ul li ul,
 .message-form,
@@ -103,7 +103,7 @@ header.header3 #menu-navigation li ul li:hover,
 .theme-tabs .nav li.active a:focus,
 .menu ul li ul li ul,
 .box {
-	border-color:#4fc0aa;
+	border-color:#e94e15;
 }
 .sec-title h2 span,
 .meta span i,
@@ -186,7 +186,7 @@ h5.slide3 span,
 .charity-event-detail > h3 a:hover,
 .charity-cause-detail > h3 a:hover,
 .wide-project-detail > h2 a:hover{
-	color:#4fc0aa;
+	color:#e94e15;
 }
 
 .causes-pagi:hover,
