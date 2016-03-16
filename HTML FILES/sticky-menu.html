@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Life Line</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<!-- Google Fonts -->
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,900italic,700italic,900,700,500italic,500,400italic,300italic,300,100italic,100|Open+Sans:400,300,400italic,300italic,600,600italic,700italic,700,800|Source+Sans+Pro:400,200,200italic,300,300italic,400italic,600,600italic,700' rel='stylesheet' type='text/css'>
+
+
+<!-- Styles -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/responsive.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="layerslider/css/layerslider.css" type="text/css">
+<link rel="stylesheet" type="text/css" href="css/sea-green.css" title="sea-green" />
+<link href="css/contact.css" rel="stylesheet" type="text/css" /> <!-- AJAX Contact Form Stylesheet -->
+
+<!--[if lt IE 9]>
+<link rel="stylesheet" type="text/css" href="css/ie.css" />
+<script type="text/javascript" language="javascript" src="js/html5shiv.js"></script>
+<![endif]-->
+
+
+<!-- Scripts -->
+<script src="js/jquery.1.9.1.js" type="text/javascript"></script>
+<script src='js/testimonials.js'></script>
+<script src="js/jquery.carouFredSel-6.2.1-packed.js" type="text/javascript"></script>
+<script src='js/script.js'></script>
+<script src='js/bootstrap.js'></script>
+<script src="js/html5lightbox.js"></script>
+<script type="text/javascript" src="js/jquery.jigowatt.js"></script><!-- AJAX Form Submit -->
+<script defer src="js/jquery.flexslider.js"></script>
+<script defer src="js/jquery.mousewheel.js"></script>
+<script src="js/jquery.plugin.min.js"></script>
+<script src="js/jquery.countdown.min.js"></script>
+<script>
+$(function () {
+	var austDay = new Date();
+	austDay = new Date(2016 , 3 , 1);
+	$('.count-down').countdown({until: austDay});
+	});
+	
+$(function () {
+	var austDay2 = new Date();
+	austDay2 = new Date(2015 , 2 , 22);
+	$('.count-down2').countdown({until: austDay2});
+	});
+	
+</script>
+
+<!-- Scripts For Layer Slider  -->
+<script src="layerslider/js/greensock.js" type="text/javascript"></script>
+<!-- LayerSlider script files -->
+<script src="layerslider/js/layerslider.transitions.js" type="text/javascript"></script>
+<script src="layerslider/js/layerslider.kreaturamedia.jquery.js" type="text/javascript"></script>
+<script>
+$(document).ready(function(){
+jQuery("#layerslider").layerSlider({
+	responsive: true,
+	responsiveUnder: 1280,
+	layersContainer: 1170,
+	skin: 'fullwidth',
+	hoverPrevNext: true,
+	skinsPath: 'layerslider/skins/'
+});
+});
+</script>
+	
+<script>
+$(window).load(function(){
+  $('.causes-carousel').flexslider({
+	animation: "slide",
+	animationLoop: false,
+	controlNav: false,	
+	pausePlay: false,
+	mousewheel:true,
+	start: function(slider){
+	  $('body').removeClass('loading');
+	}
+	});
+	
+  $('.footer_carousel').flexslider({
+	animation: "slide",
+	animationLoop: false,
+	slideShow:false,
+	controlNav: true,	
+    maxItems: 1,
+	pausePlay: false,
+	mousewheel:true,
+	start: function(slider){
+	  $('body').removeClass('loading');
+	}
+	});
+	
+});		
+</script>		
+	
+
+</head><!-- Head -->
+
+<body>
+<div class="theme-layout">
+
+<div id="top-bar">
+	<div class="container">
+		<ul>
+			<li>
+				<i class="icon-home"></i>
+				425 Street Name, UK, London
+			</li>
+			<li>
+				<i class="icon-phone"></i>
+				(123) 456-7890
+			</li>
+			<li>
+				<i class="icon-envelope"></i>
+				contact@companymail.com
+			</li>
+		</ul> 
+		<div class="search-box">
+			<input type="submit" value="" class="submit-button">
+			<input type="text" value="Search" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" class="search-input">
+		</div>
+	</div>
+</div>
+<header class="sticky">
+	<div class="container">
+		<div class="logo">
+			<a href="#" title=""><img src="images/logo.png" alt="Logo" /><h1><i>L</i>ifeline</h1></a>
+		</div><!-- Logo -->
+
+		<nav class="menu">
+			<ul id="menu-navigation">
+				<li class="active"><a>Home</a>
+					<ul class="mega-menu2">
+						<li><a href="index.html" title="">Home Simple 1</a></li>
+						<li><a href="index2.html" title="">Home Modern Style</a></li>
+						<li><a href="index3.html" title="">Home Simple 2</a></li>
+						<li><a href="index4.html" title="">Home Simple 3</a></li>
+						<li><a href="index7.html" title="">Home Traditional Style</a></li>
+						<li><a href="index5.html" title="">Home With Video</a></li>
+						<li><a href="index6.html" title="">Home With Portfolio</a></li>
+						<li><a href="index8.html" title="">Home With Sidebar<span>NEW</span></a></li>
+						<li><a href="index9.html" title="">Home Organization 1<span>NEW</span></a></li>
+						<li><a href="index10.html" title="">Home Organization 2<span>NEW</span></a></li>			
+						<li><a href="index11.html" title="">Home Minimalist 1<span>NEW</span></a></li>			
+						<li><a href="index12.html" title="">Home Minimalist 2<span>NEW</span></a></li>
+						<li><a href="index13.html" title="">NonProfit Organization 2015<span>NEW</span></a></li>			
+			
+						<li><a><strong>Header Styles</strong></a>
+							<ul>
+								<li><a href="header1.html" title="">Transparent Header</a></li>
+								<li><a href="header2.html" title="">Header With Social Icons</a></li>
+								<li><a href="header3.html" title="">Header With Countdown</a></li>
+								<li><a href="sticky-menu.html" title="">Sticky Header</a></li>
+								<li><a href="menu-below-slider.html" title="">Menu Below Slider</a></li>
+								<li><a href="middle-logo.html" title="">With Logo In The Mid</a></li>
+								<li><a href="index5.html" title="">Toggle Header</a></li>
+							</ul>
+						</li>
+					</ul><!-- Drop Down -->
+				</li>
+				<li><a>Pages</a>
+					<ul class="mega-menu">
+						<li><a href="about.html" title="">About Wide</a></li>
+						<li><a href="contact.html" title="">Contact Wide</a></li>
+						<li><a href="profile-single-page.html" title="">Profile Single Page</a></li>
+						<li><a>Events</a>
+							<ul class="drop-right">
+								<li><a href="events.html" title="">Right Sidebar</a></li>
+								<li><a href="events-left-sidebar.html" title="">Left Sidebar</a></li>
+								<li><a href="single-event-page.html" title="">Event Single Page</a></li>
+							</ul>
+						</li>
+						<li><a href="successful-stories.html" title="">Successful Stories Wide</a></li>
+						<li><a href="services-single.html" title="">Single Service Page</a></li>
+						<li><a href="single-causes.html" title="">Single Cause Page</a></li>
+						<li><a href="causes.html" title="">Our Causes Wide</a></li>
+						<li><a href="causes2.html" title="">Our Causes Wide 2</a></li>
+						<li><a href="causes3.html" title="">Our Causes Wide 3</a></li>
+						<li><a href="missions.html" title="">Our Missions</a></li>
+						<li><a href="news.html" title="">News Page</a></li>
+
+						<li><a href="404.html" title="">404 Page Wide</a></li>
+						<li><a>Projects</a>
+							<ul class="drop-right">
+								<li><a href="projects.html" title="">On Going Projects Wide</a></li>
+								<li><a href="single-post-project.html" title="">Single Post Project</a></li>
+								<li><a href="single-post-project-left-sidebar.html" title="">Single Post Project Left Sidebar</a></li>
+							</ul>
+						</li>
+						<li><a>Search With Right Sidebar</a>
+							<ul>
+								<li><a href="search-found.html" title="">Search Results Found</a></li>
+								<li><a href="nothing-found.html" title="">Search Result Not Found</a></li>
+							</ul>
+						</li>
+						<li><a>Search With Left Sidebar</a>
+							<ul class="drop-right">
+								<li><a href="search-found-left-sidebar.html" title="">Search Results Found</a></li>
+								<li><a href="nothing-found-left-sidebar.html" title="">Search Result Not Found</a></li>
+							</ul>
+						</li>
+					</ul><!-- Drop Down -->				
+				</li>
+				<li><a>Cart</a>
+					<ul>
+						<li><a>My Cart</a>
+							<ul class="drop-right">
+								<li><a href="cart.html" title="">Right Sidebar</a></li>
+								<li><a href="cart-left-sidebar.html" title="">Left Sidebar</a></li>
+							</ul>
+						</li>
+						<li><a>Products</a>
+							<ul class="drop-right">
+								<li><a href="products.html" title="">Right Sidebar</a></li>
+								<li><a href="products-left-sidebar.html" title="">Left Sidebar</a></li>
+							</ul>
+						</li>
+						<li><a>Checkout</a>
+							<ul class="drop-right">
+								<li><a href="checkout.html" title="">Right Sidebar</a></li>
+								<li><a href="checkout-left-sidebar.html" title="">Left Sidebar</a></li>
+							</ul>
+						</li>
+						<li><a>Order Recieved</a>
+							<ul class="drop-right">
+								<li><a href="order-recieved.html" title="">Right Sidebar</a></li>
+								<li><a href="order-recieved-left-sidebar.html" title="">Left Sidebar</a></li>
+							</ul>
+						</li>
+						<li><a>Single Product Page</a>
+							<ul class="drop-right">
+								<li><a href="single-product.html" title="">Right Sidebar</a></li>
+								<li><a href="single-product-left-sidebar.html" title="">Left Sidebar</a></li>
+							</ul>
+						</li>	
+					</ul>
+				</li>
+				<li><a>Portfolio</a>
+					<ul>
+						<li><a href="portfolio-2-column.html" title="">2 Column Wide</a></li>
+						<li><a href="portfolio-3-column.html" title="">3 Column Wide</a></li>
+						<li><a href="portfolio-4-column.html" title="">4 Column Wide</a></li>
+					</ul>
+				</li>
+				<li><a>Gallery</a>
+					<ul>
+						<li><a href="gallery-one-column.html" title="">1 Column Wide</a></li>
+						<li><a href="gallery-two-column.html" title="">2 Column Wide</a></li>
+						<li><a href="gallery-three-column.html" title="">3 Column Wide</a></li>
+						<li><a href="gallery-four-column.html" title="">4 Column Wide</a></li>
+						<li><a>Video Gallery</a>
+							<ul class="drop-right">
+								<li><a href="gallery-three-column-video.html" title="">3 Column With Lightbox</a></li>
+								<li><a href="gallery-three-column-video2.html" title="">3 Column </a></li>
+								<li><a href="gallery-two-column-video.html" title="">2 Column With Lightbox</a></li>
+								<li><a href="gallery-two-column-video2.html" title="">2 Column</a></li>
+							</ul>
+						</li>
+						<li><a>Right Sidebar</a>
+							<ul class="drop-right">
+								<li><a href="gallery-one-column-with-sidebar.html" title="">1 Column</a></li>
+								<li><a href="gallery-two-column-with-sidebar.html" title="">2 Column</a></li>
+								<li><a href="gallery-three-column-with-sidebar.html" title="">3 Column</a></li>
+							</ul>
+						</li>
+						<li><a>Left Sidebar</a>
+							<ul class="drop-right">
+								<li><a href="gallery-one-column-with-left-sidebar.html" title="">1 Column</a></li>
+								<li><a href="gallery-two-column-with-left-sidebar.html" title="">2 Column</a></li>
+								<li><a href="gallery-three-column-with-left-sidebar.html" title="">3 Column</a></li>
+							</ul>
+						</li>
+					</ul><!-- Drop Down -->
+				</li>
+				<li><a>Blog</a>
+					<ul>
+						<li><a href="blog-without-sidebar.html" title="">Blog Wide</a></li>
+						<li><a href="blog-with-sidebar.html" title="">Blog With Left Sidebar</a></li>
+						<li><a href="blog-with-left-sidebar.html" title="">Blog With Right Sidebar</a></li>
+						<li><a>Single Posts Right Sidebar</a>
+							<ul class="drop-right">
+								<li><a href="single-post-image.html" title="">Single Post With Image</a></li>
+								<li><a href="single-post-video.html" title="">Single Post With Video</a></li>
+								<li><a href="single-post-slider.html" title="">Single Post With Slider</a></li>
+								<li><a href="single-post-project.html" title="">Project Single Post</a></li>
+							</ul>
+						</li>
+						<li><a>Single Posts Left Sidebar</a>
+							<ul class="drop-right">
+								<li><a href="single-post-image-left-sidebar.html" title="">Single Post With Image</a></li>
+								<li><a href="single-post-video-left-sidebar.html" title="">Single Post With Video</a></li>
+								<li><a href="single-post-slider-left-sidebar.html" title="">Single Post With Slider</a></li>
+								<li><a href="single-post-project-left-sidebar.html" title="">Project Single Post</a></li>
+							</ul>
+						</li>
+						
+					</ul><!-- Drop Down -->
+				</li>
+				<li><a href="elements.html">Features</a>
+					<ul class="drop-right">
+						<li><a href="title-style.html">Title Styles</a></li>
+						<li><a href="elements.html#tabs-style">4 Tabs Style</a></li>
+						<li><a href="elements.html#accordions-style">2 Accordions</a></li>
+						<li><a href="elements.html#blockquotes-style">2 Block Qoutes</a></li>
+						<li><a href="elements.html#highlightedtext">HighLighted Text</a></li>
+						<li><a href="elements.html#buttons-style">6 Buttons Sets</a></li>
+						<li><a href="elements.html#list-styles">List Styles</a></li>
+						<li><a href="elements.html#alertboxes">Alert Boxes</a></li>
+						<li><a href="elements.html#dropcap">Dropcap Variations</a></li>
+						<li><a href="elements.html#socialicons">Social Icons</a></li>
+						<li><a href="elements.html#alignedimages">Aligned Images</a></li>
+						<li><a href="elements.html#progressbars">2 Progress Bars</a></li>
+						<li><a href="elements.html#pricetable">Price Tables</a></li>
+						<li><a href="elements.html#columnsstyle">Columns Style</a></li>
+					</ul>
+				</li>
+			</ul>   
+		</nav><!-- Menu -->
+
+	</div>		
+</header><!--header-->
+
+<div class="responsive-header">
+	<div class="responsive-logo">
+		<a href="#" title=""><img style="width: 40px;" src="images/logo.png" alt="Logo" /><h1>Lifeline</h1></a>
+	</div>
+	<span><i class="icon-align-justify"></i></span>
+	<ul>
+		<li><a href="#" title="">Home</a>
+			<ul>
+				<li><a href="index.html" title="">Home Simple 1</a></li>
+				<li><a href="index2.html" title="">Home Modern Style</a></li>
+				<li><a href="index3.html" title="">Home Simple 2</a></li>
+				<li><a href="index4.html" title="">Home Simple 3</a></li>
+				<li><a href="index7.html" title="">Home Traditional Style</a></li>
+				<li><a href="index5.html" title="">Home With Video</a></li>
+				<li><a href="index6.html" title="">Home With Portfolio</a></li>
+				<li><a href="index8.html" title="">Home With Sidebar<span>NEW</span></a></li>
+				<li><a href="index9.html" title="">Home Organization 1<span>NEW</span></a></li>
+				<li><a href="index10.html" title="">Home Organization 2<span>NEW</span></a></li>			
+				<li><a href="index11.html" title="">Home Minimalist 1<span>NEW</span></a></li>			
+				<li><a href="index12.html" title="">Home Minimalist 2<span>NEW</span></a></li>
+				<li><a href="index13.html" title="">NonProfit Organization 2015<span>NEW</span></a></li>			
+				<li><a href="#" title=""><strong>Header Styles</strong></a>
+					<ul>
+						<li><a href="header1.html" title="">Transparent Header</a></li>
+						<li><a href="header2.html" title="">Header With Social Icons</a></li>
+						<li><a href="header3.html" title="">Header With Countdown</a></li>
+						<li><a href="sticky-menu.html" title="">Sticky Header</a></li>
+						<li><a href="menu-below-slider.html" title="">Menu Below Slider</a></li>
+						<li><a href="middle-logo.html" title="">With Logo In The Mid</a></li>
+						<li><a href="index5.html" title="">Toggle Header</a></li>
+					</ul>
+				</li>
+			</ul><!-- Drop Down -->
+		</li>
+		<li><a href="#" title="">Pages</a>
+			<ul>
+				<li><a href="about.html" title="">About Wide</a></li>
+				<li><a href="contact.html" title="">Contact Wide</a></li>
+				<li><a href="profile-single-page.html" title="">Profile Single Page</a></li>
+				<li><a href="#" title="">Events</a>
+					<ul>
+						<li><a href="events.html" title="">Right Sidebar</a></li>
+						<li><a href="events-left-sidebar.html" title="">Left Sidebar</a></li>
+						<li><a href="single-event-page.html" title="">Event Single Page</a></li>
+					</ul>
+				</li>
+				<li><a href="successful-stories.html" title="">Successful Stories Wide</a></li>
+				<li><a href="services-single.html" title="">Single Service Page</a></li>
+				<li><a href="single-causes.html" title="">Single Cause Page</a></li>
+				<li><a href="causes.html" title="">Our Causes Wide</a></li>
+				<li><a href="causes2.html" title="">Our Causes Wide 2</a></li>
+				<li><a href="causes3.html" title="">Our Causes Wide 3</a></li>
+				<li><a href="missions.html" title="">Our Missions</a></li>
+				<li><a href="news.html" title="">News Page</a></li>
+				<li><a href="404.html" title="">404 Page Wide</a></li>
+				<li><a href="#" title="">Projects</a>
+					<ul>
+						<li><a href="projects.html" title="">On Going Projects Wide</a></li>
+						<li><a href="single-post-project.html" title="">Single Post Project</a></li>
+						<li><a href="single-post-project-left-sidebar.html" title="">Single Post Project Left Sidebar</a></li>
+					</ul>
+				</li>
+				<li><a href="#" title="">Search With Right Sidebar</a>
+					<ul>
+						<li><a href="search-found.html" title="">Search Results Found</a></li>
+						<li><a href="nothing-found.html" title="">Search Result Not Found</a></li>
+					</ul>
+				</li>
+				<li><a href="#" title="">Search With Left Sidebar</a>
+					<ul>
+						<li><a href="search-found-left-sidebar.html" title="">Search Results Found</a></li>
+						<li><a href="nothing-found-left-sidebar.html" title="">Search Result Not Found</a></li>
+					</ul>
+				</li>
+			</ul><!-- Drop Down -->				
+		</li>
+		<li><a href="#" title="">Cart</a>
+			<ul>
+				<li><a href="#" title="">My Cart</a>
+					<ul>
+						<li><a href="cart.html" title="">Right Sidebar</a></li>
+						<li><a href="cart-left-sidebar.html" title="">Left Sidebar</a></li>
+					</ul>
+				</li>
+				<li><a href="#" title="">Products</a>
+					<ul>
+						<li><a href="products.html" title="">Right Sidebar</a></li>
+						<li><a href="products-left-sidebar.html" title="">Left Sidebar</a></li>
+					</ul>
+				</li>
+				<li><a href="#" title="">Checkout</a>
+					<ul>
+						<li><a href="checkout.html" title="">Right Sidebar</a></li>
+						<li><a href="checkout-left-sidebar.html" title="">Left Sidebar</a></li>
+					</ul>
+				</li>
+				<li><a href="#" title="">Order Recieved</a>
+					<ul>
+						<li><a href="order-recieved.html" title="">Right Sidebar</a></li>
+						<li><a href="order-recieved-left-sidebar.html" title="">Left Sidebar</a></li>
+					</ul>
+				</li>
+				<li><a href="#" title="">Single Product Page</a>
+					<ul>
+						<li><a href="single-product.html" title="">Right Sidebar</a></li>
+						<li><a href="single-product-left-sidebar.html" title="">Left Sidebar</a></li>
+					</ul>
+				</li>	
+			</ul>
+		</li>
+		<li><a href="#" title="">Portfolio</a>
+			<ul>
+				<li><a href="portfolio-2-column.html" title="">2 Column Wide</a></li>
+				<li><a href="portfolio-3-column.html" title="">3 Column Wide</a></li>
+				<li><a href="portfolio-4-column.html" title="">4 Column Wide</a></li>
+			</ul>
+		</li>
+		<li><a href="#" title="">Gallery</a>
+			<ul>
+				<li><a href="gallery-one-column.html" title="">1 Column Wide</a></li>
+				<li><a href="gallery-two-column.html" title="">2 Column Wide</a></li>
+				<li><a href="gallery-three-column.html" title="">3 Column Wide</a></li>
+				<li><a href="gallery-four-column.html" title="">4 Column Wide</a></li>
+				<li><a href="#" title="">Video Gallery</a>
+					<ul>
+						<li><a href="gallery-three-column-video.html" title="">3 Column With Lightbox</a></li>
+						<li><a href="gallery-three-column-video2.html" title="">3 Column </a></li>
+						<li><a href="gallery-two-column-video.html" title="">2 Column With Lightbox</a></li>
+						<li><a href="gallery-two-column-video2.html" title="">2 Column</a></li>
+					</ul>
+				</li>
+				<li><a href="#" title="">Right Sidebar</a>
+					<ul>
+						<li><a href="gallery-one-column-with-sidebar.html" title="">1 Column</a></li>
+						<li><a href="gallery-two-column-with-sidebar.html" title="">2 Column</a></li>
+						<li><a href="gallery-three-column-with-sidebar.html" title="">3 Column</a></li>
+					</ul>
+				</li>
+				<li><a href="#" title="">Left Sidebar</a>
+					<ul>
+						<li><a href="gallery-one-column-with-left-sidebar.html" title="">1 Column</a></li>
+						<li><a href="gallery-two-column-with-left-sidebar.html" title="">2 Column</a></li>
+						<li><a href="gallery-three-column-with-left-sidebar.html" title="">3 Column</a></li>
+					</ul>
+				</li>
+			</ul><!-- Drop Down -->
+		</li>
+		<li><a href="#" title="">Blog</a>
+			<ul>
+				<li><a href="blog-without-sidebar.html" title="">Blog Wide</a></li>
+				<li><a href="blog-with-sidebar.html" title="">Blog With Left Sidebar</a></li>
+				<li><a href="blog-with-left-sidebar.html" title="">Blog With Right Sidebar</a></li>
+				<li><a href="#" title="">Single Posts Right Sidebar</a>
+					<ul>
+						<li><a href="single-post-image.html" title="">Single Post With Image</a></li>
+						<li><a href="single-post-video.html" title="">Single Post With Video</a></li>
+						<li><a href="single-post-slider.html" title="">Single Post With Slider</a></li>
+						<li><a href="single-post-project.html" title="">Project Single Post</a></li>
+					</ul>
+				</li>
+				<li><a href="#" title="">Single Posts Left Sidebar</a>
+					<ul>
+						<li><a href="single-post-image-left-sidebar.html" title="">Single Post With Image</a></li>
+						<li><a href="single-post-video-left-sidebar.html" title="">Single Post With Video</a></li>
+						<li><a href="single-post-slider-left-sidebar.html" title="">Single Post With Slider</a></li>
+						<li><a href="single-post-project-left-sidebar.html" title="">Project Single Post</a></li>
+					</ul>
+				</li>
+				
+			</ul><!-- Drop Down -->
+		</li>
+		<li><a href="elements.html">Features</a>
+			<ul>
+				<li><a href="title-style.html">Title Styles</a></li>
+				<li><a href="elements.html#tabs-style">4 Tabs Style</a></li>
+				<li><a href="elements.html#accordions-style">2 Accordions</a></li>
+				<li><a href="elements.html#blockquotes-style">2 Block Qoutes</a></li>
+				<li><a href="elements.html#highlightedtext">HighLighted Text</a></li>
+				<li><a href="elements.html#buttons-style">6 Buttons Sets</a></li>
+				<li><a href="elements.html#list-styles">List Styles</a></li>
+				<li><a href="elements.html#alertboxes">Alert Boxes</a></li>
+				<li><a href="elements.html#dropcap">Dropcap Variations</a></li>
+				<li><a href="elements.html#socialicons">Social Icons</a></li>
+				<li><a href="elements.html#alignedimages">Aligned Images</a></li>
+				<li><a href="elements.html#progressbars">2 Progress Bars</a></li>
+				<li><a href="elements.html#pricetable">Price Tables</a></li>
+				<li><a href="elements.html#columnsstyle">Columns Style</a></li>
+			</ul>
+		</li>
+	</ul>   
+</div><!--Responsive header-->
+
+<div id="layerslider-container-fw">
+	<div id="layerslider" style="width: 100%; height: 530px; margin: 0px auto; ">
+	
+		<div class="ls-slide" data-ls="transition3d:53; timeshift:-1000;">			
+			<img src="images/slider1.jpg" class="ls-bg" alt="Slide background">
+				<h3 class="ls-l slide1" style="top: 203px; left:248px; background: url(images/slider1-img2.png) no-repeat scroll 0 0 / auto 100% transparent; font-family:roboto; font-size:34px; font-weight:bold; color:#4c4c4c; line-height:56px; padding:0 60px 0 60px; ; border-radius:3px;" data-ls="offsetxin:0;offsetyin:bottom;durationin:1000;easingin:easeOutQuad;fadein:false;rotatein:-10;offsetxout:0;durationout:1500;" ><i>SAVE</i> <span>ENVIRONMENT</span></h3>
+				<span class="ls-l slide1"	style="top: 270px; left:248px; font-family:roboto; font-size:24px; font-weight:600; color:#000; padding:10px 20px 10px 50px; background:rgba(255,255,255,0.9); border-radius:4px 0 0px 4px; border-left:2px solid #93b631; position:relative; line-height:22px; float:left;" data-ls="offsetxin:0;offsetyin:top;durationin:1000;easingin:easeOutQuad;fadein:false;rotatein:10;offsetxout:0;durationout:1500;">BE READY TO WORK <i>WITH US</i></span>
+				<p class="ls-l slide1"	style="top: 330px; left:248px; font-family:roboto; font-size:13px; color:#fefefe;" data-ls="delayin:1000; scalein:4; durationin : 1000;">Sed interdum, lacus et vulputate pellentesque, velit nulla commodo <br/> sem, at egestas nulla metus vel sapien! Lorem ipsum dolor</p>
+		</div><!-- Slide1 -->
+
+		<div class="ls-slide" data-ls="transition3d:12;timeshift:-1000;">			
+			<img src="http://placehold.it/870x374" class="ls-bg" alt="Slide background">
+				<h3 class="ls-l slide3" style="top:196px; left:100px; font-family: roboto; color: #FFFFFF; line-height:22px; font-size:32px; background:rgba(0,0,0,0.85); padding:18px 30px; border-radius:3px;" data-ls="offsetxin:0; scalexin:0; scaleyin:0; offsetxout:0; offsetyout:top; durationin:1500; durationout:800; showuntil:2000; fadeout:false;"> 
+						HELP <i>US</i> TO HELP OTHERS</h3>
+						
+				<h4 class="ls-l slide3" style="top:265px; left:100px; background:rgba(152,212,96,0.85); font-family: roboto; color: #FFFFFF; font-size:28px; line-height:26px; padding:10px 20px; border-radius:3px;" data-ls="offsetxin:0; scalexin:0; scaleyin:0; offsetxout:0; offsetyout:top; durationin:1500; durationout:800; delayin:500; showuntil:2500;fadeout:false;">
+						RESPONSIVE <span>TEMPLATE</span></h4>
+			
+				<h5 class="ls-l slide3" style="top:319px; left:100px; background:rgba(255,255,255,0.85); color:#595858; font-family:roboto; font-size:24px; line-height: 20px; padding:10px 20px; border-radius:3px;" data-ls="offsetxin:0; scalexin:0; scaleyin:0; offsetxout:0; offsetyout:top; durationin:1500; durationout:800; delayin:1000; showuntil:3000;fadeout:false;">
+						CREATIVE <span>IDEAS</span></h5>
+		</div><!-- Slide2 -->
+		
+		<div class="ls-slide" data-ls="transition3d:35;timeshift:-1000;">			
+			<img src="js/ll/slider3.jpg" class="ls-bg" alt="Slide background">
+				<h3 class="ls-l" style="top: 160px; left:160px; font-family:roboto; font-size:72px; font-weight:bold; color:#fff; line-height:60px; text-align:center;" data-ls="offsetxin:0;offsetyin:top;durationin:1500;delayin:1000;easingin:easeInOutQuart;fadein:false;scalexin:0;scaleyin:0;offsetxout:0;offsetyout:top;durationout:1000;fadeout:false;" >I WANNA SAY <span>SOMETHING</span></h3>
+				
+				<span class="ls-l slide3-subtitle" style="top: 248px; left:160px; padding:13px; border-radius:3px; color:#fff; font-family:open sans; font-weight:900; font-size:26px; text-transform:uppercase; line-height:20px;" data-ls="offsetxin:0;offsetyin:bottom;durationin:1500;delayin:1200;easingin:easeInOutQuart;fadein:false;scalexin:0;scaleyin:0;offsetxout:0;offsetyout:top;durationout:1000;fadeout:false;">Please Feel My <i style="font-style:normal; color:#373737;">Tension</i></span>
+
+				<span class="ls-l slide3-subtitle2" style="top: 248px; left:750px; background:rgba(0,0,0,0.8); padding:13px; border-radius:3px; color:#fff; font-family:open sans; font-weight:900; font-size:26px; text-transform:uppercase; line-height:20px;" data-ls="offsetxin:0;offsetyin:bottom;durationin:1500;delayin:1300;easingin:easeInOutQuart;fadein:false;scalexin:0;scaleyin:0;offsetxout:0;offsetyout:top;durationout:1000;fadeout:false;">We <i style="font-style:normal;">Need</i> Your Help</span>
+		</div><!-- Slide3 -->
+
+		
+		<div class="ls-slide" data-ls="transition3d:75;timeshift:-1000;">			
+			<img src="js/ll/slider4.jpg" class="ls-bg" alt="Slide background">
+			
+			<h3 class="ls-l slide4" style="top:180px; left:150px; background:rgba(0,0,0,0.9); font-family:roboto; font-size:36px; font-weight:bold; color:#fefefe; padding:20px 60px 20px; border-radius:4px;" data-ls="offsetxin:bottom;durationin:2000;delayin:1000;easingin:easeInOutQuart;fadein:false;scalexin:100;scaleyin:0;offsetxout:right;durationout:1400;fadeout:false;">
+				SAVE THE <i>WORLD</i></h3>
+
+			<span class="ls-l slide4-subtitle" style="top:280px; left:215px;border-radius: 4px 4px 0 0; color: #FFFFFF;font-family: open sans;font-size: 13px;font-weight: bold; padding: 5px 10px;" data-ls="offsetxin:bottom;durationin:2000;delayin:1500;easingin:easeInOutQuart;fadein:false;scalexin:100;scaleyin:0;offsetxout:right;durationout:1400;fadeout:false;">Want To Know Why And How We Do It?</span>
+				
+			<h4 class="ls-l" style="top:315px; left:120px; color:#030303; font-family:source sans pro; font-size:20px; font-weight:700;" data-ls="offsetxin:bottom;durationin:2000;delayin:2000;easingin:easeInOutQuart;fadein:false;scalexin:100;scaleyin:0;offsetxout:right;durationout:1400;fadeout:false;">OUR CHARITY HELPS THOSE PEOPLE WHO HAVE NO HOPE</h4>
+			
+			<p class="ls-l" style="top:350px; left:20px; font-family:roboto; font-size:14px; color:#030303;" data-ls="offsetxin:bottom;durationin:2000;delayin:2000;easingin:easeInOutQuart;fadein:false;scalexin:100;scaleyin:0;offsetxout:right;durationout:1400;fadeout:false;">Sed interdum, lacus et vulputate pellentesque, velit nulla commodo sem, at egestas nulla metus.</p>
+			
+		</div><!-- Slide4 -->
+
+		 <div class="ls-slide" data-ls="transition3d:63;timeshift:-1000;">			
+			<img src="images/slider5.jpg" class="ls-bg" alt="Slide background">
+			<h3 class="ls-l slide5" style="top:80px; left:670px; font-family:open sans; font-size:36px; font-weight:700; color:#FFF;"  data-ls="offsetxin:0;offsetyin:top;durationin:750;delayin:1000;easingin:easeOutQuart;fadein:false;offsetxout:right;durationout:1000;easingout:easeInQuart;fadeout:false;">Supporting <span>889</span> People</h3>
+			<i class="ls-l slide5" style="top:130px; left:760px; font-family:open sans; font-size:20px; color:#FFF;"  data-ls="offsetxin:0;offsetyin:top;durationin:750;delayin:500;easingin:easeOutQuart;fadein:false;offsetxout:right;durationout:1000;easingout:easeInQuart;fadeout:false;">fundraising & charity...</i>
+			<h4 class="ls-l slide5-title" style="top:160px; left:560px; font-family:open sans; font-size:70px; font-weight:700; color:#FFF; line-height:55px; padding:50px 80px 80px; background:url(images/slider5-bg.png) no-repeat scroll 0 0 / 100% 100% transparent;" data-ls="offsetxin:0;offsetyin:0;durationin:1000;delayin:1400;easingin:easeOutQuart;fadein:false;easingout:easeInQuart;rotatexin:-90deg;">OPEN <span>H</span>EART</h4>
+			<span class="ls-l" style="top:280px; left:710px; font-family:open sans; font-size:18px; font-weight:400; color:#FFF; letter-spacing:3px;" data-ls="offsetxin:0;offsetyin:0;durationin:1000;delayin:1700;easingin:easeOutQuart;fadein:false;easingout:easeInQuart;rotatexin:-90deg;">DONATE FOR NEEDY PEOPLE</span>
+			<a class="ls-l slide-donate" style="top:350px; left:770px; font-family:open sans; font-size:12px; font-weight:400; color:#FFF; padding:10px 20px; border-radius:3px;"  data-ls="offsetxin:0;offsetyin:700;durationin:1000;delayin:2000;easingin:easeOutQuart;fadein:false;easingout:easeInQuart;rotatexin:-90deg;" href="#" title=""><i class="icon-heart"></i> DONATE NOW</a>
+		</div><!-- Slide5 -->
+
+		<div class="ls-slide" data-ls="transition3d:63;timeshift:-1000;">			
+			<img src="images/slider6.jpg" class="ls-bg" alt="Slide background">
+			<div class="ls-l slide-icon" style="top:70px; left:50%;"  data-ls="scalexin:0;scaleyin:0;durationin:1000;delayin:400;easingin:easeOutQuart;fadein:false;easingout:easeInQuart;rotatein:-800deg;" ><img src="images/slide6-icon.png" alt="" /></div>
+			<h3 class="ls-l" style="top:190px; left:50%; color:#FFF; font-family:open sans; font-size:60px; font-weight:300;" data-ls="durationin:1500; delayin:1000; easingin:easeOutQuart; fadein:false; easingout:easeInQuart; rotatexin:-90deg;">LET'S BUILD <span style="font-weight:700;">THE WORLD.</span></h3>
+			<p class="ls-l" style="top:290px; left:50%; line-height:30px; color:#FFF; font-family:noto sans; font-size:14px; text-align:center;" data-ls="durationin:1500; delayin:1500; easingin:easeOutQuart; fadein:false; easingout:easeInQuart; rotatexin:-90deg;">With easy to use Drag and Drop Page Builder build professional looking page with best slider <br />Layer. Lorem ipsum dolor sit amet, consectetur</p>
+			<div class="ls-l slide-donate2" style="top:370px; left:50%; font-family:open sans; font-size:12px; font-weight:400; color:#FFF; padding:10px 20px; border-radius:3px;" data-ls="durationin:1500; delayin:2000; easingin:easeOutQuart; fadein:false; easingout:easeInQuart; rotatexin:-90deg;"><a href="#" title=""><i class="icon-heart"></i> DONATE NOW</a></div>
+		</div>
+
+		
+	</div>
+</div><!-- Layer Slider -->			
+
+<section class="block">
+	<div class="container">
+		<div class="donation-bar">
+			<div class="amount pull-left">
+				<p>Dontaions Needed</p>
+				<span><strong>$</strong> 7,089,758!</span>
+			</div>
+			<div class="donate-now">
+				<a class="donate-button" href="checkout.html" title="">DONATE NOW</a>
+			</div>
+			<div class="amount pull-right">
+				<p>Collected Dontaions</p>
+				<span><strong>$</strong> 7,089,758!</span>
+			</div>
+	
+		</div><!-- Donation Bar -->
+	</div>
+</section>
+
+<section class="block remove-top">
+	<div class="container">
+	<div class="our-cause-sec">
+		<div class="sec-title">
+			<h1>Our <span>Causes</span></h1>
+		</div><!-- Section Title -->
+		<div class="tab-content" id="myTabContent">
+			<div id="tab1" class="tab-pane fade in active">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="cause-image">
+							<img src="http://placehold.it/1170x312" alt="" />
+							<div class="meta">
+								<span>In <i>South Africa</i></span>
+							</div>
+							<div class="cause-title"><h2>Maecenas Eget Countries With The Most Billionair</h2> </div>
+						</div>
+						<div class="details">
+							<div class="needed-amount">
+								<h5><i>$</i>85920<span>Donation Needed</span></h5>
+							</div>
+							<p>Donec et libero quis erat commodo suscipit. Maecenas eget metus commodo, bibendum elit a, eleifend leo. Phasellus ut pharetra mi,ctor diam. Suspendisse rhoncus id arcet porta. Aenean blandit mi ipsum, ut pharetra nisi vestibulum ornare.Lorem ipsum dolor sit amet, consictetur adipiscing elit. Duis non scelerisque est, quis aliquam ligula.Aenean blandit mpsum, Ut pharetra nisi vestibulum ornare.Lorem isum dolor sit amet, consectetur adipiscing elit. Nullam eget ante et purus cursus tempus. </p>
+						</div>
+					</div>
+				</div>
+			</div><!-- Tab1 Content -->
+			<div id="tab2" class="tab-pane fade">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="cause-image">
+							<img src="http://placehold.it/1170x312" alt="" />
+							<div class="meta">
+								<span>In <i>South Africa</i></span>
+							</div>
+							<div class="cause-title"><h2>Maecenas Eget Countries With The Most Billionair</h2> </div>
+						</div>
+						<div class="details">
+							<div class="needed-amount">
+								<h5><i>$</i>85920<span>Donation Needed</span></h5>
+							</div>
+							<p>Donec et libero quis erat commodo suscipit. Maecenas eget metus commodo, bibendum elit a, eleifend leo. Phasellus ut pharetra mi,ctor diam. Suspendisse rhoncus id arcet porta. Aenean blandit mi ipsum, ut pharetra nisi vestibulum ornare.Lorem ipsum dolor sit amet, consictetur adipiscing elit. Duis non scelerisque est, quis aliquam ligula.Aenean blandit mpsum, Ut pharetra nisi vestibulum ornare.Lorem isum dolor sit amet, consectetur adipiscing elit. Nullam eget ante et purus cursus tempus. </p>
+						</div>
+					</div>
+				</div>
+			</div><!-- Tab2 Content -->
+			<div id="tab3" class="tab-pane fade">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="cause-image">
+							<img src="http://placehold.it/1170x312" alt="" />
+							<div class="meta">
+								<span>In <i>South Africa</i></span>
+							</div>
+							<div class="cause-title"><h2>Maecenas Eget Countries With The Most Billionair</h2> </div>
+						</div>
+						<div class="details">
+							<div class="needed-amount">
+								<h5><i>$</i>85920<span>Donation Needed</span></h5>
+							</div>
+							<p>Donec et libero quis erat commodo suscipit. Maecenas eget metus commodo, bibendum elit a, eleifend leo. Phasellus ut pharetra mi,ctor diam. Suspendisse rhoncus id arcet porta. Aenean blandit mi ipsum, ut pharetra nisi vestibulum ornare.Lorem ipsum dolor sit amet, consictetur adipiscing elit. Duis non scelerisque est, quis aliquam ligula.Aenean blandit mpsum, Ut pharetra nisi vestibulum ornare.Lorem isum dolor sit amet, consectetur adipiscing elit. Nullam eget ante et purus cursus tempus. </p>
+						</div>
+					</div>
+				</div>
+			</div><!-- Tab3 Content -->
+			<div id="tab4" class="tab-pane fade">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="cause-image">
+							<img src="http://placehold.it/1170x312" alt="" />
+							<div class="meta">
+								<span>In <i>South Africa</i></span>
+							</div>
+							<div class="cause-title"><h2>Maecenas Eget Countries With The Most Billionair</h2> </div>
+						</div>
+						<div class="details">
+							<div class="needed-amount">
+								<h5><i>$</i>85920<span>Donation Needed</span></h5>
+							</div>
+							<p>Donec et libero quis erat commodo suscipit. Maecenas eget metus commodo, bibendum elit a, eleifend leo. Phasellus ut pharetra mi,ctor diam. Suspendisse rhoncus id arcet porta. Aenean blandit mi ipsum, ut pharetra nisi vestibulum ornare.Lorem ipsum dolor sit amet, consictetur adipiscing elit. Duis non scelerisque est, quis aliquam ligula.Aenean blandit mpsum, Ut pharetra nisi vestibulum ornare.Lorem isum dolor sit amet, consectetur adipiscing elit. Nullam eget ante et purus cursus tempus. </p>
+						</div>
+					</div>
+				</div>
+			</div><!-- Tab4 Content -->
+			<div id="tab5" class="tab-pane fade">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="cause-image">
+							<img src="http://placehold.it/1170x312" alt="" />
+							<div class="meta">
+								<span>In <i>South Africa</i></span>
+							</div>
+							<div class="cause-title"><h2>Maecenas Eget Countries With The Most Billionair</h2> </div>
+						</div>
+						<div class="details">
+							<div class="needed-amount">
+								<h5><i>$</i>85920<span>Donation Needed</span></h5>
+							</div>
+							<p>Donec et libero quis erat commodo suscipit. Maecenas eget metus commodo, bibendum elit a, eleifend leo. Phasellus ut pharetra mi,ctor diam. Suspendisse rhoncus id arcet porta. Aenean blandit mi ipsum, ut pharetra nisi vestibulum ornare.Lorem ipsum dolor sit amet, consictetur adipiscing elit. Duis non scelerisque est, quis aliquam ligula.Aenean blandit mpsum, Ut pharetra nisi vestibulum ornare.Lorem isum dolor sit amet, consectetur adipiscing elit. Nullam eget ante et purus cursus tempus. </p>
+						</div>
+					</div>
+				</div>
+			</div><!-- Tab5 Content -->
+			<div id="tab6" class="tab-pane fade">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="cause-image">
+							<img src="http://placehold.it/1170x312" alt="" />
+							<div class="meta">
+								<span>In <i>South Africa</i></span>
+							</div>
+							<div class="cause-title"><h2>Maecenas Eget Countries With The Most Billionair</h2> </div>
+						</div>
+						<div class="details">
+							<div class="needed-amount">
+								<h5><i>$</i>85920<span>Donation Needed</span></h5>
+							</div>
+							<p>Donec et libero quis erat commodo suscipit. Maecenas eget metus commodo, bibendum elit a, eleifend leo. Phasellus ut pharetra mi,ctor diam. Suspendisse rhoncus id arcet porta. Aenean blandit mi ipsum, ut pharetra nisi vestibulum ornare.Lorem ipsum dolor sit amet, consictetur adipiscing elit. Duis non scelerisque est, quis aliquam ligula.Aenean blandit mpsum, Ut pharetra nisi vestibulum ornare.Lorem isum dolor sit amet, consectetur adipiscing elit. Nullam eget ante et purus cursus tempus. </p>
+						</div>
+					</div>
+				</div>
+			</div><!-- Tab2 Content -->
+		</div>
+		
+		
+		<div class="row">
+			<div class="causes-carousel">
+				<ul class="slides">
+					<li>
+						<ul class="nav nav-tabs cause-tabber">
+							<li class="active col-md-4">
+								<a data-toggle="tab" href="#tab1">
+									<img src="http://placehold.it/370x144" alt="" />
+									<span>Billionair Help for Food In Charity<i class="icon-signout"></i></span>
+								</a>
+							</li>
+							<li class="col-md-4">
+								<a data-toggle="tab" href="#tab2">
+									<img src="http://placehold.it/370x144" alt="" />
+									<span>City Marathon 2013 simplement<i class="icon-signout"></i></span>
+								</a>
+							</li>
+							<li class="col-md-4">
+								<a data-toggle="tab" href="#tab3">
+									<img src="http://placehold.it/370x144" alt="" />
+									<span>City Marathon 2013 simplement<i class="icon-signout"></i></span>
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<ul class="nav nav-tabs cause-tabber">
+							<li class="col-md-4">
+								<a data-toggle="tab" href="#tab4">
+									<img src="http://placehold.it/370x144" alt="" />
+									<span>City Marathon 2013 simplement<i class="icon-signout"></i></span>
+								</a>
+							</li>
+							<li class="col-md-4">
+								<a data-toggle="tab" href="#tab5">
+									<img src="http://placehold.it/370x144" alt="" />
+									<span>Donated To Charity Through Charity<i class="icon-signout"></i></span>
+								</a>
+							</li>
+							<li class="col-md-4">
+								<a data-toggle="tab" href="#tab6">
+									<img src="http://placehold.it/370x144" alt="" />
+									<span>Donated To Charity Through Charity<i class="icon-signout"></i></span>
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul><!-- Selectors -->
+			</div>
+		</div>
+	</div>
+	</div>
+</section>
+
+<section class="block remove-top">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="recent-events">
+					<div class="sec-title">
+						<h1>Upcoming <span>Events</span></h1>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="event">
+								<div class="event-thumb">
+									<img src="http://placehold.it/270x133" alt="" />
+									<div class="counter">
+										<div class="count-down"></div>
+									</div>
+								</div>
+								<div class="event-intro">
+									<h5><a href="single-post-image.html" title="">Countries with the most billionair</a></h5>
+									<a href="#" title=""><i class="icon-calendar-empty"></i><span>June</span> 14,2013</a>
+									<a href="#" title=""><i class="icon-map-marker"></i>In South Africa</a>
+								</div>
+							</div><!-- Event -->
+						</div>
+						<div class="col-md-6">
+							<div class="event">
+								<div class="event-thumb">
+									<img src="http://placehold.it/270x133" alt="" />
+									<div class="counter">
+										<div class="count-down2"></div>
+									</div>
+								</div>
+								<div class="event-intro">
+									<h5><a href="single-post-image.html" title="">Countries with the most billionair</a></h5>
+									<a href="#" title=""><i class="icon-calendar-empty"></i><span>June</span> 14,2013</a>
+									<a href="#" title=""><i class="icon-map-marker"></i>In South Africa</a>
+								</div>
+							</div><!-- Event -->
+						</div>
+					</div>
+				</div><!-- Recent Events -->
+			</div>
+			<div class="col-md-6 pull-right">
+				<div class="sec-title">
+					<h1>Charity <span>Video</span></h1>
+				</div>
+				<div class="charity-video">
+					<div class="row">
+						<div class="col-md-6 desc">
+							<h3><a title="" href="#">Countries with the most billionair</a></h3>
+							<p>Lorem ipsum dolor sit amet, consectetu pisei ing elit. Pellente sque mi tellus, fringilla intedi dumdi vitae, tempor id lorem. Nunc aliquett ndun conse iquat. Lorem ipsum dolor sit amet, consectet uos pisei ing elit. Pellentesque miteds llus, intedidum vitae, tempor idorem. Nunc aliquettndunt consni equat. Nunc aliquett ndun conse iquat. </p>
+						</div>
+						<div class="col-md-6">
+							<div class="image">
+								<img src="http://placehold.it/260x207" alt="" />
+								<a title="This Is a Demo Video" href="http://player.vimeo.com/video/31943945?color=ffffff" class="html5lightbox">
+								<span><i class="icon-play"></i></span>
+								</a>
+							</div>
+						</div>
+					</div>				
+				
+				</div>
+			</div><!-- Charity Video -->
+		</div>
+	</div>
+</section>
+
+</div>
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<div class="footer-widget-title">
+					<h4><strong><span>P</span>eople</strong> Reviews</h4>
+				</div>
+				<div class="footer_carousel">
+					<ul class="slides">
+						<li>
+							<div class="review">
+								<i>L</i><p><span>ifeline</span> is clean and modern responsive Template built with HTML5 & CSS3 coding and easy to use Shortcodes with load of features in it. We have implemented many features in this theme which makes your project easier and better than before and can be used for multipurpose. </p>
+							</div>						
+							<div class="from">
+								<h6>Thoms gomz britian</h6>
+								<span>CE0, Australia</span>
+							</div>
+						</li>
+						<li>
+							<div class="review">
+								<i>L</i><p><span>ifeline</span> is clean and modern responsive Template built with HTML5 & CSS3 coding and easy to use Shortcodes with load of features in it. We have implemented many features in this theme which makes your project easier and better than before and can be used for multipurpose. </p>
+							</div>						
+							<div class="from">
+								<h6>Thoms gomz britian</h6>
+								<span>CE0, Australia</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div><!-- Reviews Widget -->
+			<div class="col-md-3">
+				<div class="footer-widget-title">
+					<h4><strong><span>F</span>lickr</strong> Feed</h4>
+				</div>
+				<div class="flickr-images">
+					<a href="#" title=""><img src="http://placehold.it/77x75" alt="" /></a>
+					<a href="#" title=""><img src="http://placehold.it/77x75" alt="" /></a>
+					<a href="#" title=""><img src="http://placehold.it/77x75" alt="" /></a>
+					<a href="#" title=""><img src="http://placehold.it/77x75" alt="" /></a>
+					<a href="#" title=""><img src="http://placehold.it/77x75" alt="" /></a>
+					<a href="#" title=""><img src="http://placehold.it/77x75" alt="" /></a>
+					<a href="#" title=""><img src="http://placehold.it/77x75" alt="" /></a>
+					<a href="#" title=""><img src="http://placehold.it/77x75" alt="" /></a>
+					<a href="#" title=""><img src="http://placehold.it/77x75" alt="" /></a>
+				</div>
+			</div><!-- Flickr Widget -->
+			<div class="col-md-3">
+				<div class="footer-widget-title">
+					<h4><strong><span>C</span>ontact</strong> Us</h4>
+				</div>
+				<ul class="contact-details">
+					<li>
+						<span><i class="icon-home"></i>ADDRESS</span>
+						<p>#8901 Marmora Road Chi Minh City, Vietnam</p>
+					</li>
+					<li>
+						<span><i class="icon-phone-sign"></i>PHONE NO</span>
+						<p>+00 035 835 282 / +00 034 965 353</p>
+					</li>
+					<li>
+						<span><i class="icon-envelope-alt"></i>EMAIL ID</span>
+						<p>#8901 Marmora Road Chi Minh City, Vietnam</p>
+					</li>
+					<li>
+						<span><i class="icon-link"></i>WEB ADDRESS</span>
+						<p>http://www.yourwebsite.com</p>
+					</li>
+				</ul>
+			</div><!-- Contact Us Widget -->
+			<div class="col-md-3">
+				<div class="newsletter">
+					<h4><strong>SIGNUP</strong> NEWSLETTER</h4>
+					<p>Quisque volutpat mattis eros. Nullamma lesuada erat ut turpis. Suspendisse.</p>
+					<input class="form-control" type="email" placeholder="Email" />
+				</div>
+				<ul class="social-bar">
+					<li><a href="#" title=""><img src="images/rss.jpg" alt="" /></a></li>
+					<li><a href="#" title=""><img src="images/facebook.jpg" alt="" /></a></li>
+					<li><a href="#" title=""><img src="images/gplus.jpg" alt="" /></a></li>
+					<li><a href="#" title=""><img src="images/linked-in.jpg" alt="" /></a></li>
+					<li><a href="#" title=""><img src="images/pinterest.jpg" alt="" /></a></li>
+				</ul>
+				<div class="newsletter-btn">
+					<input type="button" value="Submit" />
+				</div>
+			</div>	<!-- News Letter SignUp -->		
+		</div>
+	</div>
+</footer><!-- Footer -->
+
+
+<div class="footer-bottom">
+	<div class="container">
+		<p>Copyright © 2013 Global News. <span>All rights reserved.</span> </p>
+		<ul>
+			<li><a href="index.html" title="">HOME</a></li>
+			<li><a href="about.html" title="">ABOUT</a></li>
+			<li><a href="elements.html" title="">ELEMENTS</a></li>
+			<li><a href="blog-with-sidebar.html" title="">BLOG</a></li>
+			<li><a href="events.html" title="">EVENTS</a></li>
+			<li><a href="contact.html" title="">CONTACT</a></li>
+		</ul>
+	
+	</div>
+</div><!-- Bottom Footer Strip -->
+
+
+</body>
+</html>
