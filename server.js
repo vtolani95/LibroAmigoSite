@@ -3,8 +3,13 @@ var express = require('express');
 var app = express();
 var mongoose = require('mongoose');
 var path = require('path');
+var favicon = require('serve-favicon');
+
+app.use(favicon(__dirname + '/public/app/images/favicon.ico'));
 
 app.use(express.static(path.join(__dirname, 'public')));
+
+
 
 // Here we find an appropriate database to connect to, defaulting to
 // localhost if we don't find one.
@@ -32,5 +37,5 @@ app.listen(process.env.PORT || 8080, function() {
 });
 
 app.get('*', function(req, res) {
-    res.sendFile('./public/index.html');
+    res.sendfile('./public/index.html');
 });
