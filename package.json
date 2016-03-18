@@ -1,0 +1,38 @@
+{
+  "name": "angularBook",
+  "version": "0.0.1",
+  "description": "Libro Amigo Main website",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "~1.8.1",
+    "express": "~4.x",
+    "mongoose": "~3.8.22, 4.x",
+    "http-server": "^0.6.1",
+    "bower": "^1.3.1",
+    "serve-favicon":"2.3.0"
+  },
+  "engines": {
+    "node": "4.2.6"
+  },
+  "scripts": {
+    "prestart": "npm install",
+    "postinstall": "bower install",
+
+    "start": "node server.js"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vtolani95/LibroAmigoSite"
+  },
+  "keywords": [
+    "book",
+    "test"
+  ],
+  "author": "VarunTolani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vtolani95/LibroAmigoSite/issues"
+  },
+  "homepage": "https://github.com/vtolani95/LibroAmigoSite#readme"
+}
