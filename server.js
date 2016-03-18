@@ -32,5 +32,5 @@ app.listen(process.env.PORT || 8080, function() {
 });
 
 app.get('*', function(req, res) {
-    res.sendfile('./public/index.html');
+    res.sendFile('./public/index.html');
 });

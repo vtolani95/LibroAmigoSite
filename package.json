@@ -1,7 +1,7 @@
 {
   "name": "angularBook",
   "version": "0.0.1",
-  "description": "Simple Angular BOOK app based in MEAN stack",
+  "description": "Libro Amigo Main website",
   "main": "server.js",
   "dependencies": {
     "body-parser": "~1.8.1",
