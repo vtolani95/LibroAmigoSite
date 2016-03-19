@@ -18,10 +18,6 @@ var uristring =
   process.env.MONGOHQ_URL ||
   'mongodb://localhost:27017/angular-book';
 
-// The http server will listen to an appropriate port, or default to
-// port 5000 (when use in localhost).
-var theport = process.env.PORT || 5000;
-
 // Makes connection asynchronously.  Mongoose will queue up database
 // operations and release them when the connection is complete.
 mongoose.connect(uristring, function (err, res) {
@@ -36,6 +32,10 @@ app.listen(process.env.PORT || 8080, function() {
     console.log('App listening on port 8080');
 });
 
+app.get('/', function(req, res) {
+    res.sendfile('./public/views/index.html');
+});
+
 app.get('*', function(req, res) {
-    res.sendfile('./public/index.html');
+    res.sendfile('./public/views/404.html');
 });
