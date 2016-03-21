@@ -49,17 +49,22 @@ angular.module('IndexCtrl', []).controller('indexController', function($scope) {
   });
 });
 
+angular.module('ErrorCtrl', []).controller('errorController', function($scope) {
+  // poner logico aca
+});
 
-angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', function($routeProvider) {
 
-    $routeProvider
-
-        // home page
-        .when('/', {
-            templateUrl: 'views/home.html',
-            controller: 'indexController'
-        })
-
+angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+  $locationProvider.html5Mode(true);
+  $routeProvider
+      .when('/', {
+          templateUrl: 'partials/home.html',
+          controller: 'indexController'
+      })
+      .when('/home', {
+          templateUrl: 'partials/404.html',
+          controller: 'errorController'
+      });
 }]);
 
-angular.module('app', ['ngRoute', 'appRoutes', 'IndexCtrl']);
+angular.module('app', ['ngRoute', 'appRoutes', 'IndexCtrl', 'ErrorCtrl']);
