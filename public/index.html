@@ -37,44 +37,45 @@
 <script defer src="app/js/jquery.flexslider.js"></script>
 <script defer src="app/js/jquery.mousewheel.js"></script>
 
+<script>
+$(window).load(function(){
+  $('.our-causes').flexslider({
+  animation: "slide",
+  animationLoop: false,
+  controlNav: true,
+    maxItems: 1,
+  pausePlay: false,
+  mousewheel:true,
+  start: function(slider){
+    $('body').removeClass('loading');
+  }
+  });
 
-<script type="text/javascript">
-$(document).ready(function(){
-  $(function() {
-    $('#carousel').carouFredSel({
-      responsive: true,
-      circular: false,
-      auto: false,
-      items: {
-        visible: 1,
-        width: 20,
-      },
-      scroll: {
-        fx: 'directscroll'
-      }
-    });
-    $('#thumbs').carouFredSel({
-      responsive: true,
-      circular: false,
-      infinite: false,
-      auto: false,
-      prev: '#prev',
-      next: '#next',
-      items: {
-        visible: {
-          min: 1,
-          max: 6
-        },
-        width: 200,
-        height: '80%'
-      }
-    });
-    $('#thumbs a').click(function() {
-      $('#carousel').trigger('slideTo', '#' + this.href.split('#').pop() );
-      $('#thumbs a').removeClass('selected');
-      $(this).addClass('selected');
-      return false;
-    });
+
+  $('.slideshow').flexslider({
+  animation: "fade",
+  animationLoop: false,
+  slideShow:false,
+  controlNav: true,
+    maxItems: 1,
+  pausePlay: false,
+  mousewheel:true,
+  start: function(slider){
+    $('body').removeClass('loading');
+  }
+  });
+
+  $('.footer_carousel').flexslider({
+  animation: "slide",
+  animationLoop: false,
+  slideShow:false,
+  controlNav: true,
+    maxItems: 1,
+  pausePlay: false,
+  mousewheel:true,
+  start: function(slider){
+    $('body').removeClass('loading');
+  }
   });
 });
 </script>
@@ -84,18 +85,7 @@ $(document).ready(function(){
 <!-- LayerSlider script files -->
 <script src="sources/layerslider/js/layerslider.transitions.js" type="text/javascript"></script>
 <script src="sources/layerslider/js/layerslider.kreaturamedia.jquery.js" type="text/javascript"></script>
-<script>
-$(document).ready(function(){
-jQuery("#layerslider").layerSlider({
-  responsive: true,
-  responsiveUnder: 1280,
-  layersContainer: 1170,
-  skin: 'fullwidth',
-  hoverPrevNext: true,
-  skinsPath: 'sources/layerslider/skins/'
-});
-});
-</script>
+
 </head>
 <body>
 <div class="theme-layout">
@@ -183,7 +173,9 @@ jQuery("#layerslider").layerSlider({
   </ul>
 </div><!--Responsive header-->
 
+  <div data-ng-controller="indexController" data-ng-init="init()">
     <div ng-view></div>
+  </div>
 
 </div> <!-- theme-layout -->
 
