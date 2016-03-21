@@ -32,6 +32,6 @@ app.listen(process.env.PORT || 8080, function() {
 });
 
 app.get('*', function(req, res) {
-    res.render('index.html');
+    res.sendfile('./public/index.html');
 });
 
