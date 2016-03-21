@@ -8,7 +8,6 @@ var favicon = require('serve-favicon');
 app.use(favicon(__dirname + '/public/app/images/favicon.ico'));
 
 app.use(express.static(path.join(__dirname, 'public')));
-app.set('view engine', 'html');
 
 // Here we find an appropriate database to connect to, defaulting to
 // localhost if we don't find one.
