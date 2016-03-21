@@ -46,5 +46,18 @@ angular.module('IndexCtrl', []).controller('indexController', function($scope) {
         return false;
       });
     });
+
+    $('.slideshow').flexslider({
+      animation: "fade",
+      animationLoop: false,
+      slideShow:false,
+      controlNav: true,
+        maxItems: 1,
+      pausePlay: false,
+      mousewheel:true,
+      start: function(slider){
+        $('body').removeClass('loading');
+      }
+    });
   });
 });

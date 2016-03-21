@@ -38,49 +38,6 @@
 <script defer src="app/js/jquery.flexslider.js"></script>
 <script defer src="app/js/jquery.mousewheel.js"></script>
 
-<script>
-$(window).load(function(){
-  $('.our-causes').flexslider({
-  animation: "slide",
-  animationLoop: false,
-  controlNav: true,
-    maxItems: 1,
-  pausePlay: false,
-  mousewheel:true,
-  start: function(slider){
-    $('body').removeClass('loading');
-  }
-  });
-
-
-  $('.slideshow').flexslider({
-  animation: "fade",
-  animationLoop: false,
-  slideShow:false,
-  controlNav: true,
-    maxItems: 1,
-  pausePlay: false,
-  mousewheel:true,
-  start: function(slider){
-    $('body').removeClass('loading');
-  }
-  });
-
-  $('.footer_carousel').flexslider({
-  animation: "slide",
-  animationLoop: false,
-  slideShow:false,
-  controlNav: true,
-    maxItems: 1,
-  pausePlay: false,
-  mousewheel:true,
-  start: function(slider){
-    $('body').removeClass('loading');
-  }
-  });
-});
-</script>
-
 <!-- Scripts For Layer Slider  -->
 <script src="sources/layerslider/js/greensock.js" type="text/javascript"></script>
 <!-- LayerSlider script files -->
