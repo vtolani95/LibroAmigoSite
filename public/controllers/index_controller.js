@@ -59,5 +59,13 @@ angular.module('IndexCtrl', []).controller('indexController', function($scope) {
         $('body').removeClass('loading');
       }
     });
+
+    $(".message-box-title").click(function(){
+      $(".message-box-title").toggleClass("opened");
+      $(".message-box-title > i").toggleClass("icon-angle-down");
+      $(".message-form").slideToggle();
+    });
+
+
   });
 });
