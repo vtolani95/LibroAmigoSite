@@ -8,4 +8,4 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
       .otherwise({ templateUrl: 'app/partials/404.html' });
 }]);
 
-angular.module('app', ['ngRoute', 'appRoutes', 'IndexCtrl']);
+angular.module('app', ['ngRoute', 'appRoutes', 'IndexCtrl', 'EmailCtrl']);
