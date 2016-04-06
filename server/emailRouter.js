@@ -7,11 +7,8 @@ var stmpConfig = {
     host: process.env.EMAIL_SMPT_HOST,
     port: 465,
     auth: {
-        user: process.env.EMAIL_USER,
+        user: process.env.EMAIL_SMPT_USER,
         pass: process.env.EMAIL_PASS
-    },
-    tls: {
-        rejectUnauthorized:false
     }
 };
 var transporter = nodemailer.createTransport(stmpConfig);
@@ -19,10 +16,10 @@ var transporter = nodemailer.createTransport(stmpConfig);
 emailRouter.post('/send', function(req, res) {
   var data = req.body;
   var emailInfo = {
-    from: process.env.EMAIL_USER,
+    from: process.env.EMAIL_SMPT_USER,
     to: process.env.EMAIL_RECIPIENT,
     subject: 'Mensaje de ' + data.name,
-    text: data.message + "\n Email: " + data.email + '\n Teléfono: ' + data.telefono
+    text: data.message + '\n Email: ' + data.email + '\n Teléfono: ' + data.telefono
   }
   transporter.sendMail(emailInfo, function(error, info){
     if(error) {

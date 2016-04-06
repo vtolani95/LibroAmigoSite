@@ -9,10 +9,16 @@ angular.module('EmailCtrl', []).controller('emailController', function($http) {
 
     $http.post('/contact/send', data).
       success(function(data, status, headers, config) {
-        alert('email sent');
+        $(".message-box-title").toggleClass("opened");
+        $(".message-box-title > i").toggleClass("icon-angle-down");
+        $(".message-form").slideToggle();
+        $(".message-box-title > p").html("Mensaje Enviado!");
       }).
       error(function(data, status, headers, config) {
-        alert('define rest route');
+        alert('Lo siento- no podemos enviar tu mensaje');
+        $(".message-box-title").toggleClass("opened");
+        $(".message-box-title > i").toggleClass("icon-angle-down");
+        $(".message-form").slideToggle();
       })
   }
 
