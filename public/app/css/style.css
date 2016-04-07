@@ -3929,10 +3929,20 @@ h3.sub-head {
     font-size:20px;
     font-weight:400;
     line-height:17px;
+    padding-bottom: 40px;
 }
-h3.sub-head span{
-    font-weight:300;
-	color:#83be4b;
+h4.contact-description {
+    color:#2D2D2D;
+    font-family:roboto;
+    font-size:15px;
+    font-weight:400;
+    line-height:17px;
+}
+div.checkbox-contact {
+  padding-bottom: 12px;
+}
+div.checkbox-contact > label{
+  display: block;
 }
 .comments {
     float:left;
