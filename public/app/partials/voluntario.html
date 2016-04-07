@@ -17,25 +17,25 @@
     Si quisieras unirte al equipo, por favor llena este rápido formulario y nos comunicaremos contigo para coordinar una entrevista.</h4>
           <form name="contactform" id="contactform">
             <p>Nombre Completo <span>*</span></p>
-            <input name="name" class="form-control input-field" type="text" size="30" value="" data-ng-model="email.contactName"/>
+            <input name="name" class="form-control input-field" type="text" size="30" required data-ng-model="email.contactName"/>
 
             <p>Correo electrónico <span>*</span></p>
-            <input name="email" class="form-control input-field" type="text" size="30" value="" data-ng-model="email.mail"/>
+            <input name="email" class="form-control input-field" type="text" size="30" required data-ng-model="email.mail"/>
 
             <p>Edad <span>*</span></p>
-            <input name="edad" class="form-control input-field" type="text" size="30" value="" data-ng-model="email.age"/>
+            <input name="edad" class="form-control input-field" type="text" size="30" required data-ng-model="email.age"/>
 
             <p>Teléfono <span>*</span></p>
-            <input name="telefono" class="form-control input-field" type="text" size="30" value="" data-ng-model="email.telephone"/>
+            <input name="telefono" class="form-control input-field" type="text" size="30" required data-ng-model="email.telephone"/>
 
             <p>Ocupación <span>*</span></p>
-            <input name="ocupacion" class="form-control input-field" type="text" size="30" value="" data-ng-model="email.occupation"/>
+            <input name="ocupacion" class="form-control input-field" type="text" size="30" required data-ng-model="email.occupation"/>
 
             <p>¿Por qué te interesa participar? <span>*</span></p>
-            <textarea name="interes" rows="7" class="form-control input-field" ng-model="email.interest"></textarea>
+            <textarea name="interes" rows="7" class="form-control input-field" required ng-model="email.interest"></textarea>
 
             <p>¿Qué esperas del voluntariado en Libro Amigo? <span>*</span></p>
-            <textarea name="esperanza" rows="5" class="form-control input-field" ng-model="email.hope"></textarea>
+            <textarea name="esperanza" rows="5" class="form-control input-field" required ng-model="email.hope"></textarea>
 
             <p>En caso de "Otro" en sig. pregunta, especificar</p>
             <textarea name="otro" rows="3" class="form-control input-field" ng-model="email.other"></textarea>
@@ -63,8 +63,8 @@
 
             <div class="checkbox-contact">
               <p>Interesados en cuentacuentos: ¿Tienes experiencia?<span>*</span></p>
-              <label><input type="radio" ng-model="email.readingModel" value="si"> Si</label>
-              <label><input type="radio" ng-model="email.readingModel" value="no"> No</label>
+              <label><input type="radio" ng-model="email.readingModel" value="True"> Si</label>
+              <label><input type="radio" ng-model="email.readingModel" value="False"> No</label>
             </div><!--checkbox-contact-->
 
             <input type="submit" class="form-button submit" ng-click="email.sendMail()" value="SEND MESSAGE" />

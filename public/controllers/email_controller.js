@@ -23,7 +23,37 @@ angular.module('EmailCtrl', []).controller('emailController', function($http, $s
     {id: 4, text: '6 meses'}
   ]
 
-  this.sendMail = function() {
+  this.checkForm = function() {
+    return this.participationModel && this.scheduleModel && this.durationModel && this.readingModel;
+  }
 
+  this.sendMail = function() {
+    if (!this.checkForm()) {
+      alert('Por favor llena responde a todas las preguntas.');
+      return;
+    }
+
+    var data = ({
+      name: this.contactName,
+      email: this.mail,
+      edad: this.age,
+      telefono: this.telephone,
+      ocupacion: this.occupation,
+      '¿Por qué te interesa participar?': this.interest,
+      '¿Qué esperas del voluntariado en Libro Amigo?': this.hope,
+      'En caso de "Otro" en sig. pregunta, especificar': this.other,
+      '¿Cómo te gustaría participar?': this.participationModel.map(function(s) {return s.text}),
+      '¿Días y horarios en que podrías participar?': this.scheduleModel.map(function(s) {return s.text}),
+      'Duración de voluntariado (con opción de extender)': this.durationModel.map(function(s) {return s.text}),
+      'Interesados en cuentacuentos: ¿Tienes experiencia?': this.readingModel
+    });
+
+    $http.post('/contact/send', data).
+      success(function(data, status, headers, config) {
+        $("input.form-button").val("Mensaje Enviado!");
+      }).
+      error(function(data, status, headers, config) {
+        alert('problem');
+      });
   }
 });

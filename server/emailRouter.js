@@ -13,7 +13,7 @@ var stmpConfig = {
 };
 var transporter = nodemailer.createTransport(stmpConfig);
 /* Send email de contacto */
-emailRouter.post('/send', function(req, res) {
+emailRouter.post('/sendbasic', function(req, res) {
   var data = req.body;
   var emailInfo = {
     from: process.env.EMAIL_SMPT_USER,
@@ -28,6 +28,11 @@ emailRouter.post('/send', function(req, res) {
       res.json(req.body);
     }
   });
+});
+
+emailRouter.post('/send', function(req, res) {
+  var data = req.body;
+  res.json(data);
 });
 
 module.exports = emailRouter;
