@@ -33,7 +33,7 @@ emailRouter.post('/send/basic', function(req, res) {
     from: process.env.EMAIL_SMPT_USER,
     to: process.env.EMAIL_RECIPIENT,
     subject: 'Mensaje de ' + data.Name,
-    text: data.Message + '\n Email: ' + data.Email + '\n Teléfono: ' + data.Telefono
+    text: data.Message + '\n\n Email: ' + data.Email + '\n Teléfono: ' + data.Telefono
   }
   transporter.sendMail(emailInfo, function(error, info){
     if(error) {
