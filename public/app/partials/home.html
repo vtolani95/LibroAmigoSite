@@ -70,17 +70,18 @@
   <div class="message-box">
     <div class="message-box-title">
       <span><i class="icon-envelope-alt"></i></span>
-      <p>Leave A Message</p>
+      <p>Dejar un Mensaje</p>
       <i class="icon-angle-up"></i>
     </div>
-    <div class="message-form">
+    <div class="message-form" data-ng-controller="basicEmailController as email">
       <p>Lorem ipsum dolor sit amet, cons ectetur adipisei ing elit. Pellentesque mi tellus, fringilla nonintedi.</p>
       <div id="message"></div>
-      <form method="post" action="contact.php" name="contactform" id="contactform">
-        <input name="name" class="form-control" type="text" id="name" size="30" value=""  placeholder="Name" />
-        <input name="email" class="form-control" type="text" id="email" size="30" value=""  placeholder="Email" />
-        <textarea name="comments" rows="3" id="comments" rows="7" class="form-control"  placeholder="Your Message"></textarea>
-        <input type="submit" class="submit-btn submit" id="submit" value="SEND MESSAGE" />
+      <form name="contactform" id="contactform" data-ng-submit="email.sendMail()">
+        <input name="name" class="form-control" type="text" id="name" size="30" value=""  placeholder="Nombre" data-ng-model="email.contactName" required/>
+        <input name="email" class="form-control" type="text" id="email" size="30" value=""  placeholder="Email" data-ng-model="email.contactEmail" required/>
+        <input name="telephone" class="form-control" type="text" id="email" size="30" value=""  placeholder="Teléfono" data-ng-model="email.contactPhone" required/>
+        <textarea name="comments" rows="3" id="comments" rows="7" class="form-control"  placeholder="Tu Mensaje" ng-model="email.contactMsg" required></textarea>
+        <input type="submit" class="submit-btn submit" id="submit" value="Enviar Mensaje" />
       </form>
     </div>
   </div><!-- Message Box -->
