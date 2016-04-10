@@ -3,13 +3,13 @@ angular.module('BasicEmailCtrl', []).controller('basicEmailController', function
   this.sendMail = function() {
     // check form filled
     var data = ({
-      name: this.contactName,
-      email: this.contactEmail,
-      telefono: this.contactPhone,
-      message: this.contactMsg
+      Name: this.contactName,
+      Email: this.contactEmail,
+      Telefono: this.contactPhone,
+      Message: this.contactMsg
     });
 
-    $http.post('/contact/sendbasic', data).
+    $http.post('/contact/send/basic', data).
       success(function(data, status, headers, config) {
         $(".message-box-title").toggleClass("opened");
         $(".message-box-title > i").toggleClass("icon-angle-down");

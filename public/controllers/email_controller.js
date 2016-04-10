@@ -24,7 +24,7 @@ angular.module('EmailCtrl', []).controller('emailController', function($http, $s
   ]
 
   this.checkForm = function() {
-    return this.participationModel && this.scheduleModel && this.durationModel && this.readingModel;
+    return this.participationModel && this.scheduleModel && this.durationModel;
   }
 
   this.sendMail = function() {
@@ -33,24 +33,33 @@ angular.module('EmailCtrl', []).controller('emailController', function($http, $s
       return;
     }
 
+    $('#submit')
+      .after('<img src="sources/assets/ajax-loader.gif" class="loader" />')
+      .attr('disabled','disabled');
+
     var data = ({
-      name: this.contactName,
-      email: this.mail,
-      edad: this.age,
-      telefono: this.telephone,
-      ocupacion: this.occupation,
+      Name: this.contactName,
+      Email: this.email,
+      Edad: this.age,
+      Teléfono: this.telephone,
+      Ocupación: this.occupation,
       '¿Por qué te interesa participar?': this.interest,
       '¿Qué esperas del voluntariado en Libro Amigo?': this.hope,
       'En caso de "Otro" en sig. pregunta, especificar': this.other,
       '¿Cómo te gustaría participar?': this.participationModel.map(function(s) {return s.text}),
       '¿Días y horarios en que podrías participar?': this.scheduleModel.map(function(s) {return s.text}),
-      'Duración de voluntariado (con opción de extender)': this.durationModel.map(function(s) {return s.text}),
-      'Interesados en cuentacuentos: ¿Tienes experiencia?': this.readingModel
+      'Duración de voluntariado (con opción de extender)': this.durationModel
     });
+
+    if (this.readingModel) {
+      var reading = ({'Interesados en cuentacuentos: ¿Tienes experiencia?': this.readingModel});
+      $.extend(data, reading);
+    }
 
     $http.post('/contact/send', data).
       success(function(data, status, headers, config) {
         $("input.form-button").val("Mensaje Enviado!");
+        $(".loader").remove();
       }).
       error(function(data, status, headers, config) {
         alert('problem');

@@ -20,7 +20,7 @@
             <input name="name" class="form-control input-field" type="text" size="30" required data-ng-model="email.contactName"/>
 
             <p>Correo electrónico <span>*</span></p>
-            <input name="email" class="form-control input-field" type="text" size="30" required data-ng-model="email.mail"/>
+            <input name="email" class="form-control input-field" type="text" size="30" required data-ng-model="email.email"/>
 
             <p>Edad <span>*</span></p>
             <input name="edad" class="form-control input-field" type="text" size="30" required data-ng-model="email.age"/>
@@ -57,17 +57,17 @@
             <div class="checkbox-contact">
               <p>Duración de voluntariado (con opción de extender)<span>*</span></p>
               <label ng-repeat="option in durationModel">
-                <input type="checkbox" data-checklist-model="email.durationModel" data-checklist-value="option"> {{option.text}}
+                <input type="radio" ng-model="email.durationModel" value={{option.text}}> {{option.text}}
               </label>
             </div><!--checkbox-contact-->
 
             <div class="checkbox-contact">
-              <p>Interesados en cuentacuentos: ¿Tienes experiencia?<span>*</span></p>
-              <label><input type="radio" ng-model="email.readingModel" value="True"> Si</label>
-              <label><input type="radio" ng-model="email.readingModel" value="False"> No</label>
+              <p>Interesados en cuentacuentos: ¿Tienes experiencia?</p>
+              <label><input type="radio" ng-model="email.readingModel" value="Si"> Si</label>
+              <label><input type="radio" ng-model="email.readingModel" value="No"> No</label>
             </div><!--checkbox-contact-->
 
-            <input type="submit" class="form-button submit" ng-click="email.sendMail()" value="SEND MESSAGE" />
+            <input type="submit" id="submit" class="form-button submit" ng-click="email.sendMail()" value="SEND MESSAGE" />
           </form>
         </div>
       </div> <!-- col-md-10-->
