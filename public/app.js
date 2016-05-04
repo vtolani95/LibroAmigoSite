@@ -1,3 +1,18 @@
+// Requiere autorizacion para ciertas paginas
+var checkLoggedin = function($q, $timeout, $http, $location, $rootScope){
+  var deferred = $q.defer();
+  $http.get('/checklogin')
+    .success(function(user){
+      deferred.resolve();
+    })
+    .error(function(err){
+      $rootScope.message = 'You need to log in.';
+      deferred.reject();
+      $location.url('/login');
+    })
+  return deferred.promise;
+}
+
 angular.module('appRoutes', ["checklist-model"]).config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
   $locationProvider.html5Mode(true);
   $routeProvider
@@ -15,7 +30,17 @@ angular.module('appRoutes', ["checklist-model"]).config(['$routeProvider', '$loc
       })
       .when('/admin/voluntarios', {
         templateUrl: 'app/partials/admin/voluntarios.html',
-        controller: 'adminController'
+        controller: 'adminController',
+        resolve: {
+          loggedin: checkLoggedin
+        }
+      })
+      .when('/admin/voluntario/nuevo', {
+        templateUrl: 'app/partials/admin/voluntario_nuevo.html',
+        controller: 'adminController',
+        resolve: {
+          loggedin: checkLoggedin
+        }
       })
       .otherwise({ templateUrl: 'app/partials/404.html' });
 }]);

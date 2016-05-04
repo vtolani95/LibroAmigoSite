@@ -6,9 +6,11 @@ var userSchema = mongoose.Schema({
 
     email: String,
     password: String,
-    role: {type: String, default: "Volunteer"},
-    firstname: String,
-    lastname: String
+    role: {type: String, default: "Voluntario"},
+    name: {
+      first: String,
+      last: {type: String, trim: true}
+    }
 
 });
 

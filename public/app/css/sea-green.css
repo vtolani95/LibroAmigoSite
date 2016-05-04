@@ -187,7 +187,8 @@ h5.slide3 span,
 .charity-cause-detail > h3 a:hover,
 .wide-project-detail > h2 a:hover,
 .logged-in-user > a,
-.volunteer-list > a
+.volunteer-list > a,
+.page-title-2 i
 {
 	color:#e94e15;
 }

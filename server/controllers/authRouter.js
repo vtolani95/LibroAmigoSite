@@ -4,10 +4,6 @@ module.exports = function(app, passport) {
     res.send(req.user);
   });
 
-  app.post('/signup', passport.authenticate('local-signup'), function(req, res, next) {
-
-  });
-
   app.get('/checklogin', function(req, res, next) {
     res.send(req.isAuthenticated() ? req.user : 401);
   });

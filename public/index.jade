@@ -62,7 +62,7 @@ html(ng-app='app')
           if (_user)
             li(class="logged-in-user")
               i.icon-user
-              a         #{_user.firstname} #{_user.lastname}
+              a         #{_user.name.first} #{_user.name.last}
             if (_user.role == "Admin")
               li(class="volunteer-list")
                 i.icon-list

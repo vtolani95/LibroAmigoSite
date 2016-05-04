@@ -2862,7 +2862,37 @@ footer .container {
 .page-title h1 span{
 	font-weight:300;
 }
+.page-title-2 {
+    padding-left: 70%;
+    width:100%;
+}
 
+.page-title-2 a {
+    padding:20px 60px;
+    color:#2D2D2D;
+    float:right;
+    font-family:roboto;
+    font-size:30px;
+    font-weight:500;
+    line-height:23px;
+    background:none repeat scroll 0 0 #FFFFFF;
+    z-index: 1000;
+    position:absolute;
+    top:-122px;
+    text-decoration: underline;
+
+    -webkit-border-radius:10px 10px 0 0;
+    -moz-border-radius:10px 10px 0 0;
+    -ms-border-radius:10px 10px 0 0;
+    -o-border-radius:10px 10px 0 0;
+
+    border-radius:10px 10px 0 0;
+}
+.page-title-2 i {
+  font-size: 20px;
+  text-decoration: none;
+  padding-left: 8px;
+}
 .search-tabs {
     border:0 none;
     margin-bottom:30px;

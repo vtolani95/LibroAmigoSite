@@ -42,13 +42,15 @@ module.exports = function(passport) {
               // set the user's local credentials
               newUser._doc['email'] = email;
               newUser._doc['password'] = newUser.generateHash(password);
-              newUser._doc['name'] = req.body.name;
+              newUser._doc['name'].first = req.body.firstname;
+              newUser._doc['name'].last = req.body.lastname;
+              newUser._doc['rol'] = req.body.role || null;
 
               // save the user
               newUser.save(function(err) {
                   if (err)
                       throw err;
-                  return done(null, newUser);
+                  return done(null, req.user);
               });
           }
 
