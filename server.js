@@ -58,7 +58,6 @@ var auth = require('./server/controllers/authRouter.js')(app, passport);
 var email = require('./server/controllers/emailRouter');
 var volunteers = require('./server/controllers/volunteerRouter')(app, userAuth, passport);
 app.use('/contact', email);
-// app.use('/api', volunteers);
 
 // Single page webpage con Angular
 app.get('*', function(req, res) {

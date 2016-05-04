@@ -13,6 +13,7 @@ var checkLoggedin = function($q, $timeout, $http, $location, $rootScope){
   return deferred.promise;
 }
 
+// Rutas de Angular
 angular.module('appRoutes', ["checklist-model"]).config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
   $locationProvider.html5Mode(true);
   $routeProvider
@@ -45,4 +46,4 @@ angular.module('appRoutes', ["checklist-model"]).config(['$routeProvider', '$loc
       .otherwise({ templateUrl: 'app/partials/404.html' });
 }]);
 
-angular.module('app', ['ngRoute', 'appRoutes', 'IndexCtrl', 'BasicEmailCtrl', 'EmailCtrl', 'LoginCtrl', 'AdminCtrl']);
+angular.module('app', ['ngRoute', 'appRoutes', 'IndexCtrl', 'BasicEmailCtrl', 'EmailCtrl', 'LoginCtrl', 'AdminCtrl', 'NewVolunteerCtrl']);
