@@ -126,6 +126,9 @@ section .container,
     font-size:13px;
     margin-right:5px;
 }
+.logged-in-user{
+    margin-left: 65px;
+}
 .search-box{
 	float:right;
     margin:8px 0;

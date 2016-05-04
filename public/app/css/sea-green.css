@@ -185,7 +185,10 @@ h5.slide3 span,
 .charity-event-detail > i strong,
 .charity-event-detail > h3 a:hover,
 .charity-cause-detail > h3 a:hover,
-.wide-project-detail > h2 a:hover{
+.wide-project-detail > h2 a:hover,
+.logged-in-user > a,
+.volunteer-list > a
+{
 	color:#e94e15;
 }
 

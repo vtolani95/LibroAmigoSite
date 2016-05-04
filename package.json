@@ -11,7 +11,13 @@
     "http-server": "^0.6.1",
     "mongoose": "~3.8.22, 4.x",
     "nodemailer": "2.3.0",
-    "serve-favicon": "2.3.0"
+    "serve-favicon": "2.3.0",
+    "passport": "~0.3.2",
+    "passport-local": "1.0.0",
+    "bcrypt-nodejs" : "latest",
+    "cookie-parser": "~1.4.1",
+    "connect-flash" : "~0.1.1",
+    "express-session": "~1.13.0"
   },
   "engines": {
     "node": "4.2.6"

@@ -1,0 +1,191 @@
+doctype html
+html(ng-app='app')
+  head
+    meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+    title Biblioteca Libro Amigo
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    // Google Fonts
+    link(href='https://fonts.googleapis.com/css?family=Roboto:400,900italic,700italic,900,700,500italic,500,400italic,300italic,300,100italic,100|Open+Sans:400,300,400italic,300italic,600,600italic,700italic,700,800|Source+Sans+Pro:400,200,200italic,300,300italic,400italic,600,600italic,700', rel='stylesheet', type='text/css')
+    // Styles
+    link(rel='stylesheet', href='app/css/bootstrap.css')
+    link(href='sources/font-awesome/css/font-awesome.css', rel='stylesheet', type='text/css')
+    link(href='app/css/style.css', rel='stylesheet', type='text/css')
+    link(href='app/css/responsive.css', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', href='sources/layerslider/css/layerslider.css', type='text/css')
+    link(rel='stylesheet', type='text/css', href='app/css/sea-green.css', title='sea-green')
+    link(href='app/css/contact.css', rel='stylesheet', type='text/css')
+    // AJAX Contact Form Stylesheet
+    //if lt IE 9
+      link(rel='stylesheet', type='text/css', href='css/ie.css')
+      script(type='text/javascript', language='javascript', src='js/html5shiv.js')
+    // Scripts
+    // Angular
+    script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js')
+    script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-route.min.js')
+    script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-resource.min.js')
+    script(src='app/js/checklist-model.js')
+    script(src='controllers/index_controller.js')
+    script(src='controllers/email_controller.js')
+    script(src='controllers/basic_email_controller.js')
+    script(src='controllers/login_controller.js')
+    script(src='app.js')
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
+    script(src='app/js/bootstrap.js')
+    script(src='app/js/html5lightbox.js')
+    script(src='app/js/jquery.carouFredSel-6.2.1-packed.js', type='text/javascript')
+    script(type='text/javascript', src='app/js/jquery.jigowatt.js')
+    // AJAX Form Submit
+    script(src='app/js/script.js')
+    script(defer='', src='app/js/jquery.flexslider.js')
+    script(defer='', src='app/js/jquery.mousewheel.js')
+    // Scripts For Layer Slider
+    script(src='sources/layerslider/js/greensock.js', type='text/javascript')
+    // LayerSlider script files
+    script(src='sources/layerslider/js/layerslider.transitions.js', type='text/javascript')
+    script(src='sources/layerslider/js/layerslider.kreaturamedia.jquery.js', type='text/javascript')
+  body
+    .theme-layout
+      #top-bar.modern
+        .container
+          ul
+            li
+              i.icon-home
+              |         Libro Amigo, Santiago, Chile
+            li
+              i.icon-phone
+              |         (123) 456-7890
+            li
+              i.icon-envelope
+              |         info@libroamigo.cl
+          if (_user)
+            li(class="logged-in-user")
+              i.icon-user
+              a         #{_user.firstname} #{_user.lastname}
+            if (_user.role == "Admin")
+              li(class="volunteer-list")
+                i.icon-list
+                a(href="/admin/voluntarios") Voluntarios
+          .header-social
+            li
+              a(href='#', title='')
+                i.icon-facebook
+            li
+              a(href='#', title='')
+                i.icon-twitter
+      // top bar
+      header.header2.sticky
+        .container
+          .logo
+            a(href='#', title='')
+              img(src='app/images/logo_libro_amigo.png', alt='Logo')
+              h1
+                i L
+                | ibro
+                i A
+                | migo
+          // Logo
+          div(data-ng-controller='indexController')
+            if (_user)
+              a.header-btn(ng-click="logout()", title='Logout') Logout
+            else
+              a.header-btn(href='/login', title='Login') Login
+          nav.menu
+            ul#menu-navigation
+              li.active
+                a(href='/')
+                  i.icon-circle
+                  | Home
+              li
+                a
+                  i.icon-circle
+                  | Nosotros
+                ul.drop-right
+                  li
+                    a(href='proyecto.html', title='') Proyecto
+                  li
+                    a(href='equipo.html', title='') Equipo
+                // Drop Down
+              li
+                a(href='hospitales.html')
+                  i.icon-circle
+                  | Hospitales
+              li
+                a(href='actividades.html')
+                  i.icon-circle
+                  | Actividades
+              li
+                a(href='blog.html')
+                  i.icon-circle
+                  | Blog
+              li
+                a(href='fotos.html')
+                  i.icon-circle
+                  | Fotos
+              li
+                a
+                  i.icon-circle
+                  | Ayuda
+                ul.drop-right
+                  li
+                    a(href='donar.html', title='') Donar Libros
+                  li
+                    a(href='voluntario', title='') Voluntario
+                // Drop Down
+          // Menu
+      // header
+      .responsive-header
+        .responsive-logo
+          a(href='#', title='')
+            img(style='width: 40px;', src='app/images/logo_libro_amigo.png', alt='Logo')
+            h1 Libro Amigo
+        span
+          i.icon-align-justify
+        ul
+          li
+            a(href='index.html', title='') Home
+          li
+            a(href='#', title='') Nosotros
+            ul
+              li
+                a(href='proyecto.html', title='') Proyecto
+              li
+                a(href='equipo.html', title='') Equipo
+          li
+            a(href='hospitales.html', title='') Hospitales
+          li
+            a(href='actividades.html', title='') Actividades
+          li
+            a(href='blogs.html', title='') Blog
+          li
+            a(href='fotos.html', title='') Fotos
+          li
+            a(title='') Ayuda
+            ul
+              li
+                a(href='donar.html', title='') Donar libros
+              li
+                a(href='voluntario.html', title='') Voluntario
+      // Responsive header
+      div(ng-view='')
+    // theme-layout
+    .footer-bottom
+      .container
+        p
+          | Copyright © 2016 Libro Amigo
+          span  Derechos
+        ul
+          li
+            a(href='index.html', title='') HOME
+          li
+            a(href='about.html', title='') NOSOTROS
+          li
+            a(href='elements.html', title='') HOSPITALES
+          li
+            a(href='blog-with-sidebar.html', title='') ACTIVIDADES
+          li
+            a(href='events.html', title='') BLOG
+          li
+            a(href='events.html', title='') FOTOS
+          li
+            a(href='contact.html', title='') AYUDA
+    // Bottom Footer Strip

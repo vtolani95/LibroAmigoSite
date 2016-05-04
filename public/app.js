@@ -9,7 +9,11 @@ angular.module('appRoutes', ["checklist-model"]).config(['$routeProvider', '$loc
         templateUrl: 'app/partials/voluntario.html',
         controller: 'emailController'
       })
+      .when('/login', {
+        templateUrl: 'app/partials/login.html',
+        controller: 'loginController'
+      })
       .otherwise({ templateUrl: 'app/partials/404.html' });
 }]);
 
-angular.module('app', ['ngRoute', 'appRoutes', 'IndexCtrl', 'BasicEmailCtrl', 'EmailCtrl']);
+angular.module('app', ['ngRoute', 'appRoutes', 'IndexCtrl', 'BasicEmailCtrl', 'EmailCtrl', 'LoginCtrl']);

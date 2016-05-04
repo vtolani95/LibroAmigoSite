@@ -1,4 +1,14 @@
-angular.module('IndexCtrl', []).controller('indexController', function($scope) {
+angular.module('IndexCtrl', []).controller('indexController', function($scope, $http) {
+
+  $scope.logout = function() {
+    $http.get('/logout')
+      .success(function(data) {
+        window.location.href="/";
+      })
+      .error(function(data) {
+        alert('unsuccesfull logout');
+      });
+  };
 
   $scope.$on('$viewContentLoaded', function(){
     jQuery("#layerslider").layerSlider({

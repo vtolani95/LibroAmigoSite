@@ -1,0 +1,30 @@
+<div class="top-image">
+  <img src="http://placehold.it/1366x286" alt="" />
+</div><!-- Page Top Image -->
+<section class="inner-page">
+  <div class="container">
+    <div class="page-title">
+      <h1>Login</h1>
+    </div><!-- Page Title -->
+    <div class="row">
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-4">
+        <div id="login"></div>
+        <div class="form" data-ng-controller="loginController as user">
+          <form name="loginform" id="loginform">
+            <p>Correo Electronico <span>*</span></p>
+            <input name="name" class="form-control input-field" type="email" size="30" required data-ng-model="user.email"/>
+
+            <p>Clave <span>*</span></p>
+            <input type="password" name="password" class="form-control input-field" size="30" required data-ng-model="user.password"/>
+
+            <input type="submit" id="submit" class="form-button submit" ng-click="user.login()" value="Login" />
+          </form>
+        </div>
+      </div> <!-- col-md-4-->
+      <div class="col-md-4">
+      </div>
+    </div>  <!-- Message Form -->
+  </div> <!-- container -->
+</section>
