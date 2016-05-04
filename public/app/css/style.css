@@ -2193,7 +2193,36 @@ header {
 .message-box-title.opened {
     width:100%;
 }
+.change-pass-form {
+  display: none;
+}
+.change-pass, .change-pass-form:focus {
+  height: 30px;
+}
+.change-photo-form {
+  display: none;
+}
+.change-photo {
+  padding-bottom: 10px;
+}
 
+form input.pass-form {
+    background:none repeat scroll 0 0 #F6F6F6;
+    border:0 none;
+    color:#A5A5A5;
+    font-family:open sans;
+    font-size:11px;
+    font-weight:bold;
+    margin-bottom:12px;
+    padding-left: 15px;
+    padding-bottom: 5px;
+
+    -webkit-box-shadow:1px 1px 2px #B3B3B3 inset;
+    -moz-box-shadow:1px 1px 2px #B3B3B3 inset;
+    -ms-box-shadow:1px 1px 2px #B3B3B3 inset;
+    -o-box-shadow:1px 1px 2px #B3B3B3 inset;
+    box-shadow:1px 1px 2px #B3B3B3 inset;
+}
 /*** Recent Events ***/
 .event {
     float:left;
@@ -7705,7 +7734,7 @@ h5.slide3 span{
 .designation {
     float: left;
     font-family: open sans;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 500;
     line-height: 10px;
     margin-bottom: 20px;

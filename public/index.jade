@@ -13,7 +13,7 @@ html(ng-app='app')
     link(href='app/css/style.css', rel='stylesheet', type='text/css')
     link(href='app/css/responsive.css', rel='stylesheet', type='text/css')
     link(rel='stylesheet', href='sources/layerslider/css/layerslider.css', type='text/css')
-    link(rel='stylesheet', type='text/css', href='app/css/sea-green.css', title='sea-green')
+    link(rel='stylesheet', type='text/css', href='app/css/orange.css', title='sea-green')
     link(href='app/css/contact.css', rel='stylesheet', type='text/css')
     // AJAX Contact Form Stylesheet
     //if lt IE 9
@@ -31,6 +31,7 @@ html(ng-app='app')
     script(src='controllers/login_controller.js')
     script(src='controllers/admin_controller.js')
     script(src='controllers/new_volunteer_controller.js')
+    script(src='controllers/account_controller.js')
     script(src='app.js')
     script(src='//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
     script(src='app/js/bootstrap.js')
@@ -63,7 +64,7 @@ html(ng-app='app')
           if (_user)
             li(class="logged-in-user")
               i.icon-user
-              a         #{_user.name.first} #{_user.name.last}
+              a(href="/cuenta") #{_user.name.first} #{_user.name.last}
             if (_user.role == "Admin")
               li(class="volunteer-list")
                 i.icon-list

@@ -43,7 +43,14 @@ angular.module('appRoutes', ["checklist-model"]).config(['$routeProvider', '$loc
           loggedin: checkLoggedin
         }
       })
+      .when('/cuenta', {
+        templateUrl: 'app/partials/account.html',
+        controller: 'accountController',
+        resolve: {
+          loggedin: checkLoggedin
+        }
+      })
       .otherwise({ templateUrl: 'app/partials/404.html' });
 }]);
 
-angular.module('app', ['ngRoute', 'appRoutes', 'IndexCtrl', 'BasicEmailCtrl', 'EmailCtrl', 'LoginCtrl', 'AdminCtrl', 'NewVolunteerCtrl']);
+angular.module('app', ['ngRoute', 'appRoutes', 'IndexCtrl', 'BasicEmailCtrl', 'EmailCtrl', 'LoginCtrl', 'AdminCtrl', 'NewVolunteerCtrl', 'AccountCtrl']);
