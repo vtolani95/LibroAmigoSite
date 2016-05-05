@@ -1,9 +1,19 @@
 angular.module('AdminCtrl', []).controller('adminController', function($scope, $http) {
 
   var formatVolunteer = function(user) {
-    var html = '<div class="col-md-4"><div class="single-mission"><div class="mission-img"><a href="#" title=""><img src="http://placehold.it/273x145" alt="" /></a></div><h3><a href="#" title="">';
-    html += user.name.first + ' ' + user.name.last + '</a></h3></div></div>';
+    var html = '<div class="col-md-4"><div class="single-mission"><div class="mission-img"><a title=""><img src='
+    if(user.photo_url) {
+      html += '"' + user.photo_url + '"' + 'width="273"';
+    } else {
+      html += '"http://placehold.it/273x145"';
+    }
+    html += '" alt="" /></a></div><h3>' + user.name.first + ' ' + user.name.last + '</h3><button ng-click=deleteUser("' + user._id + '")>Borrar</button></div></div>';
     return html;
+  }
+
+  $scope.deleteUser = function(id) {
+    alert('test');
+    debugger;
   }
 
   $scope.$on('$viewContentLoaded', function(){
@@ -14,6 +24,7 @@ angular.module('AdminCtrl', []).controller('adminController', function($scope, $
           user_format += formatVolunteer(data[i]);
         }
         $('#content').append(user_format);
+
       })
       .error(function(data) {
         alert('error de servidor');

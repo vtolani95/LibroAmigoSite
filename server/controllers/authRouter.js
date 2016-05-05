@@ -25,5 +25,5 @@ module.exports = function(app, passport, userAuth) {
 
   app.get('/curruser', userAuth, function(req, res, next) {
     res.send(req.user);
-  })
+  });
 };

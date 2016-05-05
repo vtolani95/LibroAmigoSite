@@ -2205,6 +2205,12 @@ header {
 .change-photo {
   padding-bottom: 10px;
 }
+.spacer {
+  height: 50px;
+}
+.progress-bar {
+  height: 4px;
+}
 
 form input.pass-form {
     background:none repeat scroll 0 0 #F6F6F6;
@@ -9136,9 +9142,6 @@ h3.count {
     -ms-transition:all 0.4s linear;
     -o-transition:all 0.4s linear;
     transition:all 0.4s linear;
-}
-.mission-img a:hover:before{
-    opacity: 0.7;
 }
 .mission-img a img{
     width: 100%;

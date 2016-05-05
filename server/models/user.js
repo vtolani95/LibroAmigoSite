@@ -10,8 +10,8 @@ var userSchema = mongoose.Schema({
     name: {
       first: String,
       last: {type: String, trim: true}
-    }
-
+    },
+    photo_url: String
 });
 
 // methods ======================

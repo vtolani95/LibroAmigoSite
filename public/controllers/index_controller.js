@@ -1,5 +1,5 @@
 angular.module('IndexCtrl', []).controller('indexController', function($scope, $http) {
-
+  $.cloudinary.config({"api_key": "822171432481527","cloud_name": "doe1qq4xy"});
   $scope.logout = function() {
     $http.get('/logout')
       .success(function(data) {

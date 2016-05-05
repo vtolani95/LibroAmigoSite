@@ -88,7 +88,8 @@ header.header3 #menu-navigation li ul li:hover,
 }
 .message-box-title > span,
 .countSeconds,
-.welcome-box span{
+.welcome-box span,
+.progress-bar {
 	background-color:#ea430a;
 }
 .menu ul li ul,

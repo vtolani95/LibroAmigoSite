@@ -50,6 +50,12 @@ angular.module('appRoutes', ["checklist-model"]).config(['$routeProvider', '$loc
           loggedin: checkLoggedin
         }
       })
+      .when('/cloudinary_cors', {
+        templateUrl: 'app/partials/cloudinary_cors.html',
+        resolve: {
+          loggedin: checkLoggedin
+        }
+      })
       .otherwise({ templateUrl: 'app/partials/404.html' });
 }]);
 

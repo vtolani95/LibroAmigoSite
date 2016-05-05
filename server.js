@@ -14,10 +14,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(favicon(__dirname + '/public/app/images/favicon.ico'));
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-  extended: false
-}));
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
+
 app.use(cookieParser());
 app.set('views', path.join(__dirname, 'public/'));
 app.set('view engine', 'jade');
@@ -54,9 +53,10 @@ require('./config/passport')(passport);
 
 var userAuth = function(req, res, next){ if (!req.isAuthenticated()) res.send(401); else next(); };
 // REST API ROUTES
-var auth = require('./server/controllers/authRouter.js')(app, passport, userAuth);
+var users = require('./server/controllers/authRouter.js')(app, passport, userAuth);
 var email = require('./server/controllers/emailRouter');
 var volunteers = require('./server/controllers/volunteerRouter')(app, userAuth, passport);
+var photo = require('./server/controllers/photoRouter')(app, userAuth);
 app.use('/contact', email);
 
 // Single page webpage con Angular
