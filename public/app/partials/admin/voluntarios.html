@@ -15,6 +15,18 @@
 </section>
 </div>
 
+<script>
+var deleteUser = function(id) {
+  $.ajax({
+    url: '/api/volunteer/' + id,
+    type: 'DELETE',
+    success: function(result) {
+      alert('deleted');
+    }
+  });
+};
+</script>
+
 
 </body>
 </html>

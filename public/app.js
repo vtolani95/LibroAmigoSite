@@ -59,4 +59,8 @@ angular.module('appRoutes', ["checklist-model"]).config(['$routeProvider', '$loc
       .otherwise({ templateUrl: 'app/partials/404.html' });
 }]);
 
-angular.module('app', ['ngRoute', 'appRoutes', 'IndexCtrl', 'BasicEmailCtrl', 'EmailCtrl', 'LoginCtrl', 'AdminCtrl', 'NewVolunteerCtrl', 'AccountCtrl']);
+var app = angular.module('app', ['ngRoute', 'appRoutes', 'IndexCtrl', 'BasicEmailCtrl', 'EmailCtrl', 'LoginCtrl', 'AdminCtrl', 'NewVolunteerCtrl', 'AccountCtrl']);
+
+app.factory('deleteUserService', function(){
+  alert('factory test');
+});

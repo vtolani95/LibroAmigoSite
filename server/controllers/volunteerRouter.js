@@ -23,6 +23,13 @@ module.exports = function(app, userAuth, passport) {
   });
 
   app.delete('/api/voluntario/:id', userAuth, function(req, res, next) {
-    debugger;
+    User.findById(req.params.id, function(err, user) {
+      if(err) {
+        res.send(err);
+        return;
+      };
+      user.remove();
+      res.send(200);
+    })
   })
 };
