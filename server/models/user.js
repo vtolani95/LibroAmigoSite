@@ -11,7 +11,10 @@ var userSchema = mongoose.Schema({
       first: String,
       last: {type: String, trim: true}
     },
-    photo_url: String
+    photo: {
+      url: String,
+      public_id: String
+    }
 });
 
 // methods ======================

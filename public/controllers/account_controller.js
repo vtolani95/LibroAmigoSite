@@ -18,12 +18,13 @@ angular.module('AccountCtrl', []).controller('accountController', function($scop
         });
 
         $('.cloudinary-fileupload').bind('cloudinarydone', function(e, data) {
-          var new_url = ({
-            url: data.result.secure_url
+          var new_photo = ({
+            url: data.result.secure_url,
+            public_id: data.result.public_id
           });
-          $http.put('/api/voluntario/foto/cambiar', new_url).
+          $http.put('/api/voluntario/foto/cambiar', new_photo).
             success(function(data, status, headers, config) {
-              $('#user_img').attr('src', new_url.url);
+              $('#user_img').attr('src', new_photo.url);
               $('.progress-bar')[0].style.width = "0%";
               $(".change-photo > i").toggleClass("icon-angle-down icon-angle-up");
               $(".change-photo-form").slideToggle(1000);
@@ -42,9 +43,9 @@ angular.module('AccountCtrl', []).controller('accountController', function($scop
         var name = data.name.first + ' ' + data.name.last;
         $('#user').append(name);
         $('#user_email').append(data.email);
-        if (data.photo_url) {
-           $('#user_img').attr('src', data.photo_url);
-        }
+        if (data.photo) {
+           $('#user_img').attr('src', data.photo.url);
+        };
       }).
       error(function(data, status, headers, config) {
 
