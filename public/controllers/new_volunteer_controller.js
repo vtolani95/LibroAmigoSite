@@ -11,7 +11,7 @@ app.controller('newVolunteerController', function($http, $location) {
       password: this.password,
       firstname: this.name.first,
       lastname: this.name.last,
-      role: this.role || "Voluntario",
+      role: this.role || "Volunteer",
       position: this.position
     });
     $http.post('/api/voluntario/crear', data).
