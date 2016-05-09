@@ -1,4 +1,4 @@
-angular.module('LoginCtrl', []).controller('loginController', function($http, $scope) {
+app.controller('loginController', function($http, $scope) {
   this.login = function() {
     var data = ({
       email: this.email,

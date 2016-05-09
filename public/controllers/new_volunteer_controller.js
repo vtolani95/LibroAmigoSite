@@ -1,4 +1,4 @@
-angular.module('NewVolunteerCtrl', []).controller('newVolunteerController', function($http, $location) {
+app.controller('newVolunteerController', function($http, $location) {
 
   // Crear un voluntario Nuevo
   this.signup = function() {
@@ -11,11 +11,12 @@ angular.module('NewVolunteerCtrl', []).controller('newVolunteerController', func
       password: this.password,
       firstname: this.name.first,
       lastname: this.name.last,
-      role: this.role || "Voluntario"
+      role: this.role || "Voluntario",
+      position: this.position
     });
     $http.post('/api/voluntario/crear', data).
       success(function(data, status, headers, config) {
-        $location.url('/admin/voluntarios');
+        $location.url('/privado/voluntarios');
       }).
       error(function(data, status, headers, config) {
         alert('No pudimos crear la cuenta');

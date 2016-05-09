@@ -1,4 +1,4 @@
-angular.module('EmailCtrl', []).controller('emailController', function($http, $scope) {
+app.controller('emailController', function($http, $scope) {
   $scope.participationModel = [
     {id: 1, text: 'Gestión del módulo'},
     {id: 2, text: 'Carrito Lector'},

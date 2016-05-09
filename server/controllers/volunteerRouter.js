@@ -6,7 +6,7 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET
 });
 
-module.exports = function(app, userAuth, passport) {
+module.exports = function(app, userAuth, adminAuth, passport) {
 
   app.get('/api/voluntarios', userAuth, function(req, res, next) {
     User.find({_id: {$ne : req.user._id}}, 'name email role photo',
@@ -18,7 +18,7 @@ module.exports = function(app, userAuth, passport) {
       });
   });
 
-  app.post('/api/voluntario/crear', userAuth, passport.authenticate('local-signup'), function(req, res, next) {
+  app.post('/api/voluntario/crear', userAuth, adminAuth, passport.authenticate('local-signup'), function(req, res, next) {
     res.json(req.user);
   });
 
@@ -36,14 +36,54 @@ module.exports = function(app, userAuth, passport) {
     res.send(req.body.url);
   });
 
-  app.delete('/api/voluntario/:id', userAuth, function(req, res, next) {
+  app.get('/api/voluntario/:id', userAuth, function(req, res, next) {
+    var query_str = 'name email phone photo position role';
+    if (req.user.role == "Admin") {
+      query_str += ' dob';
+    }
+    User.findById(req.params.id, query_str, function(err, user) {
+      if(err) {
+        res.send(err);
+        return;
+      }
+      res.json(user);
+    })
+  })
+
+  app.delete('/api/voluntario/:id', userAuth, adminAuth, function(req, res, next) {
     User.findById(req.params.id, function(err, user) {
       if(err) {
         res.send(err);
         return;
-      };
+      }
       user.remove();
       res.send(200);
     })
-  })
+  });
+
+  // Para administradores- pueden cambiar el imagen de los demas
+  // Administradores no pueden borrar los imagenes de otros administradores
+  app.put('/api/voluntario/foto/cambiar/:id', adminAuth, function(req, res, next) {
+    User.findById(req.params.id, function(err, user) {
+      if(err) {
+        res.send(err);
+        return;
+      }
+      if (user.role == "Admin") {
+        res.send(403);
+      }
+      var curr_photo_id = user.photo.public_id;
+      if (curr_photo_id) {
+        cloudinary.v2.uploader.destroy(curr_photo_id, function(error, result) {
+          console.log(result);
+        });
+      };
+
+      user.photo.url = req.body.url;
+      user.photo.public_id = req.body.public_id;
+      user.save();
+      res.send(req.body.url);
+
+    });
+  });
 };

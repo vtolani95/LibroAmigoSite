@@ -1,63 +1,36 @@
-angular.module('AccountCtrl', []).controller('accountController', function($scope, $http, $location) {
+app.controller('accountController', function($scope, $http, account_services) {
+
   $scope.$on('$viewContentLoaded', function(){
-
-    $http.get('/photo/signature').
+    var cloudinary_pic_change_callback = function(new_photo) {
+      $http.put('/api/voluntario/foto/cambiar', new_photo).
+        success(function(data, status, headers, config) {
+          $('#user_img').attr('src', new_photo.url);
+          $('.progress-bar')[0].style.width = "0%";
+          $(".change-photo > i").toggleClass("icon-angle-down icon-angle-up");
+          $(".change-photo-form").slideToggle(1000);
+        }).
+        error(function(data, status, headers, config) {
+          alert('no pudimos cambiar la foto');
+        });
+      };
+    account_services.setupCloudinary(cloudinary_pic_change_callback);
+    account_services.bindButtons();
+    $http.get('/checklogin').
       success(function(data, status, headers, config) {
-        cloudinary_data = ({
-          timestamp: data.timestamp,
-          signature: data.signature,
-          api_key: data.api_key,
-          callback: data.callback
-        });
-        var choose_photo = '<input name="file" class="cloudinary-fileupload" data-cloudinary-field="image_id" data-form-data=' + JSON.stringify(cloudinary_data) + ' type="file"/>';
-        $('.spacer').append(choose_photo);
-        $("input.cloudinary-fileupload[type=file]").cloudinary_fileupload();
+        account_services.populateUser(data);
+        if(data.dob) {
+          $('#dob p').text(account_services.formatDate(data.dob));
+        } else {
+          $('#dob p').text('Agréguela');
+          $('#dob p').css('color', '#e94e15');
+        }
 
-        $('.cloudinary-fileupload').bind('fileuploadprogress', function(e, data) {
-          $('.progress-bar').css('width', Math.round((data.loaded * 100.0) / data.total) + '%');
-        });
-
-        $('.cloudinary-fileupload').bind('cloudinarydone', function(e, data) {
-          var new_photo = ({
-            url: data.result.secure_url,
-            public_id: data.result.public_id
-          });
-          $http.put('/api/voluntario/foto/cambiar', new_photo).
-            success(function(data, status, headers, config) {
-              $('#user_img').attr('src', new_photo.url);
-              $('.progress-bar')[0].style.width = "0%";
-              $(".change-photo > i").toggleClass("icon-angle-down icon-angle-up");
-              $(".change-photo-form").slideToggle(1000);
-            }).
-            error(function(data, status, headers, config) {
-              alert('no pudimos cambiar la foto');
-            });
-        });
-      }).
-      error(function(data, status, headers, config) {
-        alert('no pudimos subir la foto nueva');
-      });
-
-    $http.get('/curruser').
-      success(function(data, status, headers, config) {
-        var name = data.name.first + ' ' + data.name.last;
-        $('#user').append(name);
-        $('#user_email').append(data.email);
-        if (data.photo) {
-           $('#user_img').attr('src', data.photo.url);
-        };
-      }).
-      error(function(data, status, headers, config) {
-
-      });
-    $(".change-pass").click(function(){
-        $(".change-pass > i").toggleClass("icon-angle-down icon-angle-up");
-        $(".change-pass-form").toggle(50);
-      });
-
-    $(".change-photo").click(function(){
-        $(".change-photo > i").toggleClass("icon-angle-down icon-angle-up");
-        $(".change-photo-form").slideToggle(50);
+        if(data.phone) {
+          $('#phone p').text(data.phone);
+        } else {
+          $('#phone p').text('Agréguelo');
+          $('#phone p').css('color', '#e94e15');
+        }
       });
   });
 
@@ -66,18 +39,61 @@ angular.module('AccountCtrl', []).controller('accountController', function($scop
       alert('Las claves no coenciden');
       return;
     }
+    if(!confirm('¿Usted está seguro que quiere cambiar su clave?')) {
+      return;
+    }
     var data = ({
       curr_pass: this.prev_pass,
       new_pass: this.pass
     });
-    $http.post('/changepass', data).
+    $http.post('/change/pass', data).
       success(function(data, status, headers, config) {
         $(".change-pass > i").toggleClass("icon-angle-down icon-angle-up");
         $(".change-pass-form").toggle(50);
         alert('clave cambiado exitosamente');
       }).
       error(function(data, status, headers, config) {
-        alert('Tu clave antigua esta incorecta');
+        alert('Su clave antigua esta incorecta');
       });
   };
+
+  var formatDate = function(date) {
+    return date.substring(0, date.indexOf("T"));
+  }
+
+
+  this.changeDob = function() {
+    var data = ({
+      dob: this.dob
+    });
+    $http.post('/change/dob', data).
+      success(function(data, status, headers, config) {
+        $(".change-dob > i").toggleClass("icon-angle-down icon-angle-up");
+        $(".change-dob-form").toggle(50);
+        $('#dob p').text(formatDate(data.dob));
+        $('#dob p').css('color', '#9a9a9a');
+        alert('fecha de nacimiento cambiado exitosamente');
+      }).
+      error(function(data, status, headers, config) {
+        alert('No pudimos cambiar su fecha de nacimiento');
+      });
+  };
+
+  this.changePhone = function() {
+    var data = ({
+      phone: this.phone
+    });
+    $http.post('/change/phone', data).
+      success(function(data, status, headers, config) {
+        $(".change-phone > i").toggleClass("icon-angle-down icon-angle-up");
+        $(".change-phone-form").toggle(50);
+        $('#phone p').text(data.phone);
+        $('#phone p').css('color', '#9a9a9a')
+        alert('Teléfono cambiado exitosamente');
+      }).
+      error(function(data, status, headers, config) {
+        alert('No pudimos cambiar su teléfono');
+      });
+  };
+
 });

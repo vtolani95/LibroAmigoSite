@@ -25,14 +25,18 @@ html(ng-app='app')
     script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-route.min.js')
     script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-resource.min.js')
     script(src='app/js/checklist-model.js')
+    script(src='app.js')
+    script(src='services/account_services.js')
     script(src='controllers/index_controller.js')
     script(src='controllers/email_controller.js')
     script(src='controllers/basic_email_controller.js')
     script(src='controllers/login_controller.js')
-    script(src='controllers/admin_controller.js')
+    script(src='controllers/volunteer_controller.js')
     script(src='controllers/new_volunteer_controller.js')
     script(src='controllers/account_controller.js')
-    script(src='app.js')
+    script(src='controllers/other_account_controller.js')
+    script(src='app_config.js')
+
     script(src='//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
     script(src='app/js/bootstrap.js')
     script(src='app/js/html5lightbox.js')
@@ -69,10 +73,9 @@ html(ng-app='app')
             li(class="logged-in-user")
               i.icon-user
               a(href="/cuenta") #{_user.name.first} #{_user.name.last}
-            if (_user.role == "Admin")
-              li(class="volunteer-list")
-                i.icon-list
-                a(href="/admin/voluntarios") Voluntarios
+            li(class="volunteer-list")
+              i.icon-list
+              a(href="/privado/voluntarios") Voluntarios
           .header-social
             li
               a(href='#', title='')

@@ -44,7 +44,8 @@ module.exports = function(passport) {
               newUser._doc['password'] = newUser.generateHash(password);
               newUser._doc['name'].first = req.body.firstname;
               newUser._doc['name'].last = req.body.lastname;
-              newUser._doc['rol'] = req.body.role || null;
+              newUser._doc['role'] = req.body.role || null;
+              newUser._doc['position'] = req.body.position;
 
               // save the user
               newUser.save(function(err) {

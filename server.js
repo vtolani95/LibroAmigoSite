@@ -52,10 +52,11 @@ app.use(flash());
 require('./config/passport')(passport);
 
 var userAuth = function(req, res, next){ if (!req.isAuthenticated()) res.send(401); else next(); };
+var adminAuth = function(req, res, next){if (req.user.role == "Admin") next(); else res.send(403); }
 // REST API ROUTES
-var users = require('./server/controllers/authRouter.js')(app, passport, userAuth);
+var users = require('./server/controllers/userRouter.js')(app, passport, userAuth);
 var email = require('./server/controllers/emailRouter');
-var volunteers = require('./server/controllers/volunteerRouter')(app, userAuth, passport);
+var volunteers = require('./server/controllers/volunteerRouter')(app, userAuth, adminAuth, passport);
 var photo = require('./server/controllers/photoRouter')(app, userAuth);
 app.use('/contact', email);
 

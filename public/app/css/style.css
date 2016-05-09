@@ -2211,6 +2211,12 @@ header {
 .progress-bar {
   height: 4px;
 }
+.change-dob-form {
+  display: none;
+}
+.change-phone-form {
+  display: none;
+}
 
 form input.pass-form {
     background:none repeat scroll 0 0 #F6F6F6;

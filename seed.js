@@ -64,6 +64,7 @@ User.find({'name.first' : 'Catalina', 'name.last' : 'Sánchez'}, function(err, u
   newUser._doc['name'].first = 'Catalina';
   newUser._doc['name'].last = 'Sánchez';
   newUser._doc['role'] = 'Admin';
+  newUser._doc['position'] = "coordinadora";
 
   // save the user
   newUser.save(function(err) {
@@ -87,6 +88,7 @@ User.find({'name.first' : 'Varun', 'name.last' : 'Tolani'}, function(err, user) 
   newUser._doc['name'].first = 'Varun';
   newUser._doc['name'].last = 'Tolani';
   newUser._doc['role'] = 'Admin';
+  newUser._doc['position'] = 'Creador de Pagina de Web';
 
   // save the user
   newUser.save(function(err) {
@@ -109,7 +111,8 @@ User.find({'name.first' : 'Test', 'name.last' : 'Admin'}, function(err, user) {
   newUser._doc['password'] = newUser.generateHash(process.env.DEFAULT_ADMIN_PASSWORD);
   newUser._doc['name'].first = 'Test';
   newUser._doc['name'].last = 'Admin';
-  newUser._doc['role'] = 'Admin';
+  newUser._doc['role'] = 'Volunteer';
+  newUser._doc['position'] = 'Test';
 
   // save the user
   newUser.save(function(err) {
