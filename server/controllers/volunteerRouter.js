@@ -8,8 +8,9 @@ cloudinary.config({
 
 module.exports = function(app, userAuth, adminAuth, passport) {
 
+  // API Privado- solo para los que tienen una cuenta con Libro Amigo
   app.get('/api/voluntarios', userAuth, function(req, res, next) {
-    User.find({_id: {$ne : req.user._id}}, 'name email role photo',
+    User.find({_id: {$ne : req.user._id}}, 'name email role photo position',
       function(err, users){
         if(err) {
           res.send(err);
@@ -85,5 +86,16 @@ module.exports = function(app, userAuth, adminAuth, passport) {
       res.send(req.body.url);
 
     });
+  });
+
+  //API Publico- para paginas publicas
+  app.get('/api/public/voluntarios', function(req, res, next) {
+    User.find({}, 'name photo position', {sort: 'role'},
+      function(err, users){
+        if(err) {
+          res.send(err);
+        }
+        res.json(users);
+      });
   });
 };

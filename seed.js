@@ -99,26 +99,25 @@ User.find({'name.first' : 'Varun', 'name.last' : 'Tolani'}, function(err, user) 
   });
 });
 
-// Crear rol de Test Admin
-User.find({'name.first' : 'Test', 'name.last' : 'Admin'}, function(err, user) {
-  if(user.length != 0) {
-    console.log ('admin Varun already exists');
-    return;
-  }
-  var newUser = new User();
-  // set the user's local credentials
-  newUser._doc['email'] = 'test@test.com';
-  newUser._doc['password'] = newUser.generateHash(process.env.DEFAULT_ADMIN_PASSWORD);
-  newUser._doc['name'].first = 'Test';
-  newUser._doc['name'].last = 'Admin';
-  newUser._doc['role'] = 'Volunteer';
-  newUser._doc['position'] = 'Test';
 
-  // save the user
-  newUser.save(function(err) {
-      if (err)
-        throw err;
-      console.log ('created admin Test Admin');
-      return;
-  });
-});
+// Crear Test Voluntarios
+var i = 0;
+for (i = 0; i < 10; i++) {
+    var newUser = new User();
+    // set the user's local credentials
+    newUser._doc['email'] = 'test' + i.toString() + '@test.com';
+    newUser._doc['password'] = newUser.generateHash(process.env.DEFAULT_ADMIN_PASSWORD);
+    newUser._doc['name'].first = 'Test' + i.toString();
+    newUser._doc['name'].last = 'Volunteer';
+    newUser._doc['role'] = 'Volunteer';
+    newUser._doc['position'] = 'Test' + i.toString();
+
+    // save the user
+    newUser.save(function(err) {
+        if (err)
+          throw err;
+        console.log ('created Test Volunteer ' + i.toString());
+        return;
+    });
+}
+

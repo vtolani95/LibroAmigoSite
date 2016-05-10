@@ -1,0 +1,46 @@
+<div class="top-image">
+  <img src="http://placehold.it/1366x286" alt="" />
+</div><!-- Page Top Image -->
+<section class="inner-page">
+  <div class="container">
+    <div class="page-title">
+      <h1>Crear un <span>Voluntario Nuevo</span></h1>
+    </div><!-- Page Title -->
+    <div class="row">
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-4">
+        <div id="login"></div>
+        <div class="form" data-ng-controller="newVolunteerController as user">
+          <form name="signupform">
+            <p>Nombre <span>*</span></p>
+            <input name="name" class="form-control input-field" type="text" size="30" required data-ng-model="user.name.first"/>
+            <p>Apellido <span>*</span></p>
+            <input name="lastname" class="form-control input-field" type="text" size="30" required data-ng-model="user.name.last"/>
+            <p>Correo Electronico <span>*</span></p>
+            <input name="name" class="form-control input-field" type="email" size="30" required data-ng-model="user.email"/>
+
+            <p>Clave <span>*</span></p>
+            <input type="password" name="password" class="form-control input-field" size="30" required data-ng-model="user.password"/>
+
+            <p>Confirmar Clave <span>*</span></p>
+            <input type="password" name="password" class="form-control input-field" size="30" required data-ng-model="user.password_repeat"/>
+
+            <p>Posición <span>*</span></p>
+            <input name="position" class="form-control input-field" type="text" size="30" required data-ng-model="user.position"/>
+
+            <div class="checkbox-contact">
+              <p>Rol <span>*</span></p>
+              <label><input type="radio" ng-model="user.role" value="Volunteer" ng-checked="true"> Voluntario</label>
+              <label><input type="radio" ng-model="user.role" value="Admin"> Administrador</label>
+            </div><!--checkbox-contact-->
+
+            <input type="submit" id="submit" class="form-button submit" ng-click="user.signup()" value="Crear" />
+          </form>
+        </div>
+      </div> <!-- col-md-4-->
+      <div class="col-md-4">
+      </div>
+    </div>  <!-- Message Form -->
+  </div> <!-- container -->
+</section>
