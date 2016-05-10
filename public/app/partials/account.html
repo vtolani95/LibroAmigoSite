@@ -1,0 +1,73 @@
+<section class="inner-page">
+  <div class="container">
+    <div class="row">
+      <div class="profile-page">
+        <div class="col-md-6">
+          <div class="tab-content profile-tabs-content" id="myTabContent">
+            <div id="profile-pic1" class="tab-pane fade in active">
+              <img id="user_img" src="http://placehold.it/570x531" alt="" />
+            </div>
+          </div>
+
+        </div>
+        <div class="col-md-6">
+          <h1 id="user"><i class="icon-user"></i></h1>
+          <h1 id="position" style="font-size:14px; font-weight:300; margin-top:-15px; margin-bottom:40px;"></h1>
+          <span class="designation">Datos</span>
+          <ul class="profile-info">
+            <li>
+              <span><i class="icon-envelope"></i>Correo Electronico:</span>
+              <p id="user_email"></p>
+            </li>
+            <li id="dob">
+              <span><i class="icon-calendar"></i>Fecha De Nacimiento:</span>
+              <p></p>
+            </li>
+            <li id="phone">
+              <span><i class="icon-phone"></i>Teléfono:</span>
+              <p id="user_email"></p>
+            </li>
+          </ul>
+
+          <span class="designation">Cambiar Datos</span>
+          <ul class="profile-info">
+            <li>
+              <span class="change-pass"><i class="icon-angle-down"></i>Clave</span>
+              <form class="change-pass-form" data-ng-controller="accountController as user">
+                <input class="pass-form" type="password" size="30" required placeholder="Clave Previa" data-ng-model="user.prev_pass"/>
+                <input class="pass-form" type="password" size="30" required placeholder="Clave Nueva" data-ng-model="user.pass"/>
+                <input class="pass-form" type="password" size="30" placeholder="Clave Nueva" data-ng-model="user.pass_repeat"/>
+                <input type="submit" class="submit-btn submit" ng-click="user.changePass()" value="Cambiar Clave" style="float:none;display:table;"/>
+              </form>
+            </li>
+            <li>
+              <span class="change-photo"><i class="icon-angle-down"></i>Photo</span>
+              <form class="change-photo-form" ng-controller="accountController">
+                <div class="spacer"></div>
+                <div class="progress-bar"></div>
+              </form>
+            </li>
+            <li>
+              <span class="change-dob"><i class="icon-angle-down"></i>Fecha de Nacimiento</span>
+              <form class="change-dob-form" ng-controller="accountController as user">
+                <input class="pass-form" type="date" size="30" required data-ng-model="user.dob">
+                <input type="submit" class="submit-btn submit" ng-click="user.changeDob()" value="Cambiar" style="float:none;display:table;"/>
+              </form>
+            </li>
+            <li>
+              <span class="change-phone"><i class="icon-angle-down"></i>Teléfono</span>
+              <form class="change-phone-form" ng-controller="accountController as user">
+                <input class="pass-form" type="tel" size="30" required data-ng-model="user.phone">
+                <input type="submit" class="submit-btn submit" ng-click="user.changePhone()" value="Cambiar" style="float:none;display:table;"/>
+              </form>
+            </li>
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+</section>

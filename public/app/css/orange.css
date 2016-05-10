@@ -26,9 +26,9 @@
 .event-post-image span,
 .search-button,
 .sidebar-title > h4:after,
-.pagination > li > a:hover, 
-.pagination > li > span:hover, 
-.pagination > li > a:focus, 
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
 .pagination > li > span:focus,
 .search-tabs li.active a,
 .search-tabs li.active a:hover,
@@ -84,12 +84,13 @@ header.header3 #menu-navigation li ul li:hover,
 .urgent-cause > a:before,
 .transparent-btn:before,
 .charity-event-img > a{
-	background-color:#ed6a18;
+	background-color:#e94e15;
 }
 .message-box-title > span,
 .countSeconds,
-.welcome-box span{
-	background-color:#ce4f00;
+.welcome-box span,
+.progress-bar {
+	background-color:#ea430a;
 }
 .menu ul li ul,
 .message-form,
@@ -103,7 +104,7 @@ header.header3 #menu-navigation li ul li:hover,
 .theme-tabs .nav li.active a:focus,
 .menu ul li ul li ul,
 .box {
-	border-color:#ed6a18;
+	border-color:#e94e15;
 }
 .sec-title h2 span,
 .meta span i,
@@ -185,8 +186,12 @@ h5.slide3 span,
 .charity-event-detail > i strong,
 .charity-event-detail > h3 a:hover,
 .charity-cause-detail > h3 a:hover,
-.wide-project-detail > h2 a:hover{
-	color:#ed6a18;
+.wide-project-detail > h2 a:hover,
+.logged-in-user > a,
+.volunteer-list > a,
+.page-title-2 i
+{
+	color:#e94e15;
 }
 
 .causes-pagi:hover,
@@ -200,17 +205,18 @@ h5.slide3 span,
 .post-image:before,
 .causes-single ul.nav li a:before,
 .nav.profile-tabs li a:before{
-    background-color:rgba(237, 106, 24, 0.9);
+    background-color:rgba(79, 192, 170, 0.9);
 }
 .event-post-image:after{
-    border-bottom-color:rgba(237, 106, 24, 0.9);
+    border-bottom-color:rgba(79, 192, 170, 0.9);
 }
 
+
 .about-charity-desc.col-md-7 ul li:hover{
-    background:url("../images/hexagon-orange.png") no-repeat scroll 0 0 transparent;
+    background:url("../images/hexagon-sea-green.png") no-repeat scroll 0 0 transparent;
 }
 .sidebar-list li a:hover {
-    background:url("../images/list-arrow-orange.png") no-repeat scroll 34px center #FCFCFB;
+    background:url("../images/list-arrow-sea-green.png") no-repeat scroll 34px center #FCFCFB;
 }
 .error-page-search a,
 .order-reveived a {

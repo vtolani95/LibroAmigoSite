@@ -1,4 +1,4 @@
-angular.module('BasicEmailCtrl', []).controller('basicEmailController', function($http) {
+app.controller('basicEmailController', function($http) {
 
   this.sendMail = function() {
     var data = ({
