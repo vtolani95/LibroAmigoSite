@@ -9,6 +9,7 @@ var favicon = require('serve-favicon');
 var bodyParser  = require('body-parser');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
+var cloudinary = require('cloudinary');
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -43,6 +44,12 @@ app.listen(process.env.PORT || 8080, function() {
     console.log('App listening on port 8080');
 });
 
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET
+});
+
 // requisito para passport auth
 app.use(session({ secret: 'libroAmigo123' })); // session secret
 app.use(passport.initialize());
@@ -56,8 +63,8 @@ var adminAuth = function(req, res, next){if (req.user.role == "Admin") next(); e
 // REST API ROUTES
 var users = require('./server/controllers/userRouter.js')(app, passport, userAuth);
 var email = require('./server/controllers/emailRouter');
-var volunteers = require('./server/controllers/volunteerRouter')(app, userAuth, adminAuth, passport);
-var photo = require('./server/controllers/photoRouter')(app, userAuth);
+var volunteers = require('./server/controllers/volunteerRouter')(app, userAuth, adminAuth, passport, cloudinary);
+var photo = require('./server/controllers/photoRouter')(app, userAuth, adminAuth, cloudinary);
 app.use('/contact', email);
 
 // Single page webpage con Angular

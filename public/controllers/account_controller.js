@@ -1,4 +1,4 @@
-app.controller('accountController', function($scope, $http, account_services) {
+app.controller('accountController', function($scope, $http, account_services, photo_upload_service) {
 
   $scope.$on('$viewContentLoaded', function(){
     var cloudinary_pic_change_callback = function(new_photo) {
@@ -13,7 +13,7 @@ app.controller('accountController', function($scope, $http, account_services) {
           alert('no pudimos cambiar la foto');
         });
       };
-    account_services.setupCloudinary(cloudinary_pic_change_callback);
+    photo_upload_service.setupCloudinary(cloudinary_pic_change_callback);
     account_services.bindButtons();
     $http.get('/checklogin').
       success(function(data, status, headers, config) {

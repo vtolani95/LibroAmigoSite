@@ -1,12 +1,7 @@
 var User = require('../models/user');
-var cloudinary = require('../../node_modules/cloudinary/cloudinary');
-cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-  api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET
-});
 
-module.exports = function(app, userAuth, adminAuth, passport) {
+
+module.exports = function(app, userAuth, adminAuth, passport, cloudinary) {
 
   // API Privado- solo para los que tienen una cuenta con Libro Amigo
   app.get('/api/voluntarios', userAuth, function(req, res, next) {
@@ -59,7 +54,7 @@ module.exports = function(app, userAuth, adminAuth, passport) {
       }
       user.remove();
       res.send(200);
-    })
+    });
   });
 
   // Para administradores- pueden cambiar el imagen de los demas
