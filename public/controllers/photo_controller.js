@@ -20,7 +20,7 @@ app.controller('photoController', function($http, $scope, photo_upload_service) 
 
   $scope.$on('$viewContentLoaded', function(){
     var new_pic_upload_callback = function(new_photo) {
-      $http.post('/api/public/photo', new_photo)
+      $http.post('/api/photo', new_photo)
         .success(function(data, status, headers, config) {
           window.location.reload();
         })
@@ -49,7 +49,7 @@ app.controller('photoController', function($http, $scope, photo_upload_service) 
       .success(function(data, status, headers, config) {
         var html = format_photos(data, admin);
         $('#photos').append(html);
-        var js = '<script>var deleteImage=function(id){if(confirm("¿Usted está seguro que quiere borrar este imagen?")){$.ajax({url:"/api/public/photo/"+id,type:"DELETE",success:function(e){window.location.reload();}})}};</script>';
+        var js = '<script>var deleteImage=function(id){if(confirm("¿Usted está seguro que quiere borrar este imagen?")){$.ajax({url:"/api/photo/"+id,type:"DELETE",success:function(e){window.location.reload();}})}};</script>';
         $('head').append(js);
       })
       .error(function(data, status, headers, config) {

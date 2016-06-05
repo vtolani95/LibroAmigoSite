@@ -71,5 +71,9 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
         templateUrl: 'app/partials/photos.html',
         controller: 'photoController'
       })
+      .when('/blog', {
+        templateUrl: 'app/partials/blog.html',
+        controller: 'blogController'
+      })
       .otherwise({ templateUrl: 'app/partials/404.html' });
 }]);

@@ -2202,10 +2202,10 @@ header {
 .change-photo-form {
   display: none;
 }
-.change-photo {
+.change-photo, .change-blog {
   padding-bottom: 10px;
 }
-.spacer {
+.spacer, .spacer2 {
   height: 50px;
 }
 .progress-bar {
@@ -2216,6 +2216,14 @@ header {
 }
 .change-phone-form {
   display: none;
+}
+.change-blog-form {
+  display: none;
+  width: 100%;
+}
+
+.change-blog-form > p {
+  font-size: 20px;
 }
 
 form input.pass-form {
