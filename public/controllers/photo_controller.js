@@ -36,7 +36,7 @@ app.controller('photoController', function($http, $scope, photo_upload_service) 
             admin = false;
             $('#new_photo').remove();
           } else {
-              photo_upload_service.setupCloudinary(new_pic_upload_callback);
+              photo_upload_service.setupCloudinary(new_pic_upload_callback, '.spacer');
               $(".change-photo").click(function(){
                 $(".change-photo > i").toggleClass("icon-angle-down icon-angle-up");
                 $(".change-photo-form").slideToggle(50);

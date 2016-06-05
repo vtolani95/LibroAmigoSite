@@ -37,7 +37,7 @@ app.controller('otherAccountController', function($scope, $http, $routeParams, a
         alert('no pudimos cambiar la foto');
       });
     };
-  account_services.setupCloudinary(cloudinary_pic_change_callback);
+  account_services.setupCloudinary(cloudinary_pic_change_callback, '.spacer');
 
   $scope.$on('$viewContentLoaded', function() {
     account_services.bindButtons();

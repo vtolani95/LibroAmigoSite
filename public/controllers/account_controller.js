@@ -13,7 +13,7 @@ app.controller('accountController', function($scope, $http, account_services, ph
           alert('no pudimos cambiar la foto');
         });
       };
-    photo_upload_service.setupCloudinary(cloudinary_pic_change_callback);
+    photo_upload_service.setupCloudinary(cloudinary_pic_change_callback, '.spacer');
     account_services.bindButtons();
     $http.get('/checklogin').
       success(function(data, status, headers, config) {
