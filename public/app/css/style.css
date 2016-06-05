@@ -2202,10 +2202,10 @@ header {
 .change-photo-form {
   display: none;
 }
-.change-photo {
+.change-photo, .change-blog {
   padding-bottom: 10px;
 }
-.spacer {
+.spacer, .spacer2 {
   height: 50px;
 }
 .progress-bar {
@@ -2216,6 +2216,23 @@ header {
 }
 .change-phone-form {
   display: none;
+}
+.change-blog-form {
+  display: none;
+  width: 100%;
+  margin-bottom: 60px;
+
+}
+
+.change-blog-form > p {
+  font-size: 20px;
+}
+
+#blog-spacer {
+  display: table;
+  padding-top: 8px;
+  width: 100%;
+  border-bottom:1px solid #909090;
 }
 
 form input.pass-form {
@@ -3778,14 +3795,10 @@ footer .container {
     margin-top:20px;
 }
 .post-meta {
-    float:left;
-    width:20%;
-}
-.post-meta {
     border-right:1px solid #D1CFCF;
     float:left;
     padding:10px 0;
-    width:20%;
+    width:10%;
 	position:relative;
 }
 .post-meta:before {
@@ -3794,7 +3807,7 @@ footer .container {
     margin-top:-10px;
     padding:10px 0;
     content:"";
-    background:url("../images/diamond-narrow.jpg") no-repeat scroll 0 2px #FFFFFF;
+    /*background:url("../images/diamond-narrow.jpg") no-repeat scroll 0 2px #FFFFFF;*/
 
     position:absolute;
     right:-7.5px;
@@ -3823,6 +3836,18 @@ footer .container {
     width:80%;
     padding-left:30px;
 	position:relative;
+}
+.blog-post-options {
+  float: right;
+}
+
+.blog-post-options > button {
+  margin-left: 20px;
+}
+
+.edit-blog {
+  width: 100%;
+  height: 100%;
 }
 
 

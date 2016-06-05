@@ -30,7 +30,7 @@ module.exports = function(app, userAuth, adminAuth, cloudinary) {
   });
 
   // Crear nueva foto
-  app.post('/api/public/photo', adminAuth, function(req, res, next) {
+  app.post('/api/photo', adminAuth, function(req, res, next) {
     var newPhoto = new Photo();
     newPhoto.url = req.body.url;
     newPhoto.public_id = req.body.public_id;
@@ -39,7 +39,7 @@ module.exports = function(app, userAuth, adminAuth, cloudinary) {
   });
 
   // Borrar una foto
-  app.delete('/api/public/photo/:id', adminAuth, function(req, res, next) {
+  app.delete('/api/photo/:id', adminAuth, function(req, res, next) {
     Photo.findById(req.params.id, function(err, photo) {
       if(err) {
         res.send(err);

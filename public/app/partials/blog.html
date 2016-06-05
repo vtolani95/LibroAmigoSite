@@ -1,0 +1,26 @@
+<div class="top-image">
+  <img src="http://placehold.it/1366x286" alt="" />
+</div><!-- Page Top Image -->
+<section class="inner-page">
+  <div class="container">
+    <div class="page-title">
+      <h1>Blog</h1>
+    </div><!-- Page Title -->
+     <div id="change-blog" class="page-title-2">
+        <a class="change-blog">Agregar Entrada<i class="icon-angle-down"></i></a>
+      </div>
+      <form class="change-blog-form" data-ng-controller="blogController as blog">
+        <p>Texto</p>
+        <textarea name="blog_text" required rows="9" class="form-control input-field" ng-model="blog.text" data-photo-url="" data-photo-id="" ></textarea>
+        <div id="new-blog-photo">
+          <div class="spacer"></div>
+          <div class="progress-bar"></div>
+          <div class="spacer2"></div>
+        </div>
+        <input type="submit" id="submit" class="form-button submit" ng-click="blog.createPost()" value="Crear Nueva Entrada" />
+        <div id="blog-spacer"></div>
+      </form>
+
+    <div id="blogs"></div>
+  </div> <!-- container -->
+</section>

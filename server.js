@@ -65,6 +65,7 @@ var users = require('./server/controllers/userRouter.js')(app, passport, userAut
 var email = require('./server/controllers/emailRouter');
 var volunteers = require('./server/controllers/volunteerRouter')(app, userAuth, adminAuth, passport, cloudinary);
 var photo = require('./server/controllers/photoRouter')(app, userAuth, adminAuth, cloudinary);
+var blog = require('./server/controllers/blogRouter')(app, userAuth, adminAuth, cloudinary);
 app.use('/contact', email);
 
 // Single page webpage con Angular
