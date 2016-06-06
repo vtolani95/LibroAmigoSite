@@ -10,6 +10,10 @@ app.controller('indexController', function($scope, $http) {
       });
   };
 
+  var formatDate = function(date) {
+    return date.substring(0, date.indexOf("T"));
+  }
+
   var formatHospitals = function(hospitals) {
     var html = '';
     for (var row = 0; row < Math.ceil(hospitals.length / 3); row++) {
@@ -29,6 +33,11 @@ app.controller('indexController', function($scope, $http) {
       }
       html += "</li></div>";
     }
+    return html;
+  }
+
+  var formatBlog = function(blog) {
+    var html = '<i class="icon-calendar"> ' +  formatDate(blog.date) +'</i><p>' + blog.text + '</p>';
     return html;
   }
 
@@ -102,6 +111,16 @@ app.controller('indexController', function($scope, $http) {
       .success(function(data, status, headers, config) {
         var html = formatHospitals(data);
         $('#hospital-slides').append(html);
+      })
+      .error(function(data, status, headers, config) {
+        alert('No pudimos cargar las hospitales');
+      });
+
+    $http.get('/api/public/blogs?mostRecent=true')
+      .success(function(data, status, headers, config) {
+        var html = formatBlog(data);
+        $('#blog-slide').append(html);
+        // $('.donate-us-box').css('background-image', "url('" + data.photo.url + "')");
       })
       .error(function(data, status, headers, config) {
         alert('No pudimos cargar las hospitales');

@@ -11,12 +11,18 @@ module.exports = function(app, userAuth, adminAuth, cloudinary) {
   };
 
   app.get('/api/public/blogs', function(req, res, next) {
+    debugger;
     Blog.find({}, 'text author photo date', {sort: '-date'},
       function(err, blogs){
         if(err) {
           res.send(err);
         }
-        res.json(blogs);
+        if (req.query.mostRecent) {
+          res.json(blogs[0]);
+        } else {
+          res.json(blogs);
+        }
+
       })
   });
 
