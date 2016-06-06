@@ -24,14 +24,19 @@ app.controller('hospitalController', function($http, $scope, photo_upload_servic
   var format_hospital = function(hospitals, admin) {
     var html = '';
     for (var row = 0; row < hospitals.length; row++) {
-      html += '<form class="blog-post"><h2>' + hospitals[row].name + '</h2>';
+      html += '<form class="blog-post">';
+      if (admin) {
+        html += '<textarea class="form-control input-field" rows="1" id="hospital-name">' + hospitals[row].name + '</textarea>';
+      } else {
+        html += '<h2>' + hospitals[row].name + '</h2>';
+      }
       if (hospitals[row].photo) {
         html += '<div class="col-md-4"><div class="gallery-image"><img src="' + hospitals[row].photo.url + '"></div></div><div class="col-md-8">';
       } else {
         html += '<div class="col-md-12">';
       }
       if (admin) {
-        html += '<textarea data-id="' + hospitals[row]._id + '" class="edit-blog" rows="8">' + hospitals[row].description + '</textarea></div>';
+        html += '<textarea data-id="' + hospitals[row]._id + '" class="edit-blog form-control input-field" rows="8">' + hospitals[row].description + '</textarea></div>';
         html += '<div id="change-blog-photo"><p>Cambiar Foto</p><div class="spacer"></div><div class="progress-bar"></div><div class="spacer2"></div></div>';
         html += '<div class="blog-post-options">' + '<button class="delete-img-button" onclick=deleteHospital("' + hospitals[row]._id + '")>Borrar</button>';
         html += '<button class="delete-img-button" onclick=editHospital("' + hospitals[row]._id + '")>Guardar Cambios</button>' +'</div>';
@@ -90,7 +95,7 @@ app.controller('hospitalController', function($http, $scope, photo_upload_servic
         var html = format_hospital(data, admin);
         $('#hospitals').append(html);
         var delete_hospital = '<script>var deleteHospital=function(id){if(confirm("¿Usted está seguro que quiere borrar esta Hospital del sistema?")){$.ajax({url:"/api/hospital/"+id,type:"DELETE",success:function(e){window.location.reload();}})}};</script>';
-        var change_hospital = '<script>var editHospital=function(t){if(confirm("¿Usted está seguro que quiere cambiar la información de esta Hospital?")){var a=$("textarea[data-id=\'"+t+"\']").val(),o=$(".change-blog-form > textarea").data(),e={description:a, id:t};o.photoUrl&&(e.photo={url:o.photoUrl,public_id:o.photoId}),$.ajax({url:"/api/hospital/",type:"PUT",data: e,success:function(t){location.reload()}})}};</script>';
+        var change_hospital = '<script>var editHospital=function(t){if(confirm("¿Usted está seguro que quiere cambiar la información de esta Hospital?")){var a=$("textarea[data-id=\'"+t+"\']").val(),b=$("textarea[data-id=\'"+t+"\']").closest(".blog-post").find("#hospital-name").val(),o=$(".change-blog-form > textarea").data(),e={description:a, id:t, name:b};o.photoUrl&&(e.photo={url:o.photoUrl,public_id:o.photoId}),$.ajax({url:"/api/hospital/",type:"PUT",data: e,success:function(t){location.reload()}})}};</script>';
         $('head').append(delete_hospital);
         $('head').append(change_hospital);
         if (admin) {

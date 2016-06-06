@@ -616,6 +616,7 @@ header {
     width:96%;
 	padding:50px 25px;
 	background:none repeat scroll 0 0 rgba(224, 224, 223, 0.95);
+  overflow: scroll;
 
     position:absolute;
     left:2%;
@@ -3730,6 +3731,10 @@ footer .container {
     margin-left: 20px;
     border-bottom: 1px solid #E8E8E7;
     width: 30%;
+}
+
+.blog-post > textarea {
+  width: 30%;
 }
 .blog-post h2 a{
     color:#707070;

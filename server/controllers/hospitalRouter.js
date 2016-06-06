@@ -32,6 +32,7 @@ module.exports = function(app, adminAuth, cloudinary) {
         return;
       }
       hospital.description = req.body.description;
+      hospital.name = req.body.name;
       if (req.body.photo) {
         if(hospital.photo) {
           cloudinary.v2.uploader.destroy(hospital.photo.public_id, function(error, result) {

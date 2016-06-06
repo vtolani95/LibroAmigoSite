@@ -10,6 +10,28 @@ app.controller('indexController', function($scope, $http) {
       });
   };
 
+  var formatHospitals = function(hospitals) {
+    var html = '';
+    for (var row = 0; row < Math.ceil(hospitals.length / 3); row++) {
+      html += '<li><div col="row">';
+      for(var col = 0; col <= 2; col++) {
+        if (row*3 + col >= hospitals.length) {
+          break;
+        }
+        html += '<div class="col-md-4"><div class="causes-image"><img src="';
+        if (hospitals[row*3 + col].photo) {
+          html += hospitals[row*3 + col].photo.url + '"/>';
+        } else {
+          html += 'http://placehold.it/270x358"/>';
+        }
+        html += '<div class="cause-heading"><h3>' + hospitals[row*3 + col].name + '</h3></div>';
+        html += '<div class="our-causes-hover"><p>' + hospitals[row*3 + col].description + '</p></div></div></div>';
+      }
+      html += "</li></div>";
+    }
+    return html;
+  }
+
   $scope.$on('$viewContentLoaded', function(){
     jQuery("#layerslider").layerSlider({
       responsive: true,
@@ -76,6 +98,14 @@ app.controller('indexController', function($scope, $http) {
       $(".message-form").slideToggle();
     });
 
+    $http.get('/api/public/hospitals')
+      .success(function(data, status, headers, config) {
+        var html = formatHospitals(data);
+        $('#hospital-slides').append(html);
+      })
+      .error(function(data, status, headers, config) {
+        alert('No pudimos cargar las hospitales');
+      });
 
   });
 });
