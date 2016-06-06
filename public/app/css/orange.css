@@ -190,7 +190,8 @@ h5.slide3 span,
 .wide-project-detail > h2 a:hover,
 .logged-in-user > a,
 .volunteer-list > a,
-.page-title-2 i
+.page-title-2 i,
+#change-blog-photo > p
 {
 	color:#e94e15;
 }

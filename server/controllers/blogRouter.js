@@ -55,7 +55,7 @@ module.exports = function(app, userAuth, adminAuth, cloudinary) {
         return;
       }
       res.send(401);
-    })
+    });
   });
 
   // Borrar una foto

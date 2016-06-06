@@ -2234,6 +2234,10 @@ header {
   width: 100%;
   border-bottom:1px solid #909090;
 }
+#change-blog-photo {
+  margin-top: 4px;
+  float: left;
+}
 
 form input.pass-form {
     background:none repeat scroll 0 0 #F6F6F6;
@@ -3723,6 +3727,9 @@ footer .container {
     font-weight:400;
     letter-spacing:0.3px;
     margin-bottom:15px;
+    margin-left: 20px;
+    border-bottom: 1px solid #E8E8E7;
+    width: 30%;
 }
 .blog-post h2 a{
     color:#707070;

@@ -44,6 +44,7 @@ app.listen(process.env.PORT || 8080, function() {
     console.log('App listening on port 8080');
 });
 
+// Para subir imagenes al Cloud
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
@@ -66,6 +67,7 @@ var email = require('./server/controllers/emailRouter');
 var volunteers = require('./server/controllers/volunteerRouter')(app, userAuth, adminAuth, passport, cloudinary);
 var photo = require('./server/controllers/photoRouter')(app, userAuth, adminAuth, cloudinary);
 var blog = require('./server/controllers/blogRouter')(app, userAuth, adminAuth, cloudinary);
+var hospital = require('./server/controllers/hospitalRouter')(app, adminAuth, cloudinary);
 app.use('/contact', email);
 
 // Single page webpage con Angular
