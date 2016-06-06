@@ -616,6 +616,7 @@ header {
     width:96%;
 	padding:50px 25px;
 	background:none repeat scroll 0 0 rgba(224, 224, 223, 0.95);
+  overflow: scroll;
 
     position:absolute;
     left:2%;
@@ -765,6 +766,18 @@ header {
     text-align:center;
     text-transform:uppercase;
 }
+.donate-us-box > p {
+  padding-top: 10px;
+  max-height: 500px;
+  overflow: scroll;
+}
+
+.donate-us-box > i {
+  border-bottom: 1px solid #e94e15;
+  padding-bottom: 2px;
+}
+
+
 .cell i {
     margin-right:10px;
 }
@@ -2233,6 +2246,10 @@ header {
   padding-top: 8px;
   width: 100%;
   border-bottom:1px solid #909090;
+}
+#change-blog-photo {
+  margin-top: 4px;
+  float: left;
 }
 
 form input.pass-form {
@@ -3723,6 +3740,13 @@ footer .container {
     font-weight:400;
     letter-spacing:0.3px;
     margin-bottom:15px;
+    margin-left: 20px;
+    border-bottom: 1px solid #E8E8E7;
+    width: 30%;
+}
+
+.blog-post > textarea {
+  width: 30%;
 }
 .blog-post h2 a{
     color:#707070;

@@ -44,7 +44,7 @@ app.controller('blogController', function($http, $scope, photo_upload_service) {
         html += '<div class="col-md-12">';
       }
       if (canEdit(user, admin, blogs[row])) {
-        html += '<textarea data-id="' + blogs[row]._id + '" class="edit-blog" rows="11">' + blogs[row].text + '</textarea>';
+        html += '<textarea data-id="' + blogs[row]._id + '" class="edit-blog form-control input-field" rows="11">' + blogs[row].text + '</textarea>';
       } else {
         html += blogs[row].text;
       }
