@@ -843,12 +843,11 @@ header {
     width: 100%;
 }
 .slideshow p {
-    float:left;
     margin-bottom:0;
     margin-top:38px;
     color:#FFFFFF;
     font-family:Source Sans Pro;
-    font-size:15px;
+    font-size:17px;
     line-height:27px;
     text-align:center;
 }
@@ -914,7 +913,7 @@ header {
 	margin-left:10px;
     color:#414040;
     font-family:roboto;
-    font-size:15px;
+    font-size:20px;
 
     position:relative;
     top:75px;
@@ -926,6 +925,7 @@ header {
     display:block;
     font-family:roboto;
 	font-weight:500;
+  font-size:20px;
 
     position:relative;
     top:75px;
