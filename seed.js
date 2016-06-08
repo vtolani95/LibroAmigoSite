@@ -18,36 +18,6 @@ mongoose.connect(uristring, function (err, res) {
   }
 });
 
-var Role = require('./server/models/role');
-
-// Crear rol de admin si todavia no existe
-Role.find({ 'name' :  'Admin' }, function(err, role) {
-  if (role.length != 0) {
-    console.log ('admin role already exists');
-    return;
-  }
-  Role.create({ name: 'Admin' }, function (err, small) {
-    if (err) {
-      console.log ('could not create role admin');
-    }
-    console.log('created admin role');
-  });
-});
-
-// Crear rol de voluntario si todavia no existe
-Role.find({ 'name' :  'Volunteer' }, function(err, role) {
-  if (role.length != 0) {
-    console.log ('volunteer role already exists');
-    return;
-  }
-  Role.create({ name: 'Volunteer' }, function (err, small) {
-    if (err) {
-      console.log ('could not create role volunteer');
-    }
-    console.log ('created volunteer role');
-  });
-});
-
 
 // Crear rol de Admin Catalina
 var User = require('./server/models/user');
@@ -103,6 +73,11 @@ User.find({'name.first' : 'Varun', 'name.last' : 'Tolani'}, function(err, user) 
 // Crear Test Voluntarios
 var i = 0;
 for (i = 0; i < 10; i++) {
+  User.find({'email': 'test' + i.toString() + '@test.com'}, function(err, user) {
+    if(user.length != 0) {
+      console.log ('test user test' + i.toString() + ' already exists');
+      return;
+    }
     var newUser = new User();
     // set the user's local credentials
     newUser._doc['email'] = 'test' + i.toString() + '@test.com';
@@ -119,5 +94,50 @@ for (i = 0; i < 10; i++) {
         console.log ('created Test Volunteer ' + i.toString());
         return;
     });
+  });
 }
+
+
+var Hospital = require('./server/models/hospital');
+
+// Crear hospital Félix Bulnes
+Hospital.find({'name' : 'Hospital Félix Bulnes'}, function(err, hospital) {
+  if(hospital.length != 0) {
+    console.log ('hospital Félix Bulnes already exists');
+    return;
+  }
+  var newHospital = new Hospital();
+  // set the hospital's local credentials
+  newHospital._doc['name'] = 'Hospital Félix Bulnes';
+  newHospital._doc['description'] = 'Ubicado en calle Holanda #060, Providencia, nuestro módulo está ubicado por la entrada principal, al lado de la sala de espera. La atención es de lunes a viernes, entre las 17:30 y 19:30 hrs, durante los fines de semana la atención es entre 17:00 y 19:00 hrs.';
+
+  // save the user
+  newHospital.save(function(err) {
+      if (err)
+        throw err;
+      console.log ('created hospital Félix Bulnes');
+      return;
+  });
+});
+
+// Crear hospital Félix Bulnes
+Hospital.find({'name' : 'Hospital del Salvador'}, function(err, hospital) {
+  if(hospital.length != 0) {
+    console.log ('Hospital del Salvador already exists');
+    return;
+  }
+  var newHospital = new Hospital();
+  // set the hospital's local credentials
+  newHospital._doc['name'] = 'Hospital del Salvador';
+  newHospital._doc['description'] = 'Ubicado en Avenida Salvador #364, Providencia. Nuestro módulo se encuentra en el hall del acceso principal, junto a la oficina de informaciones. La atención ';
+
+  // save the user
+  newHospital.save(function(err) {
+      if (err)
+        throw err;
+      console.log ('created Hospital del Salvador');
+      return;
+  });
+});
+
 
