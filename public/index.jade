@@ -20,6 +20,38 @@ html(ng-app='app')
       link(rel='stylesheet', type='text/css', href='css/ie.css')
       script(type='text/javascript', language='javascript', src='js/html5shiv.js')
     // Scripts
+    //- script(src='//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5')
+    script.
+      window.fbAsyncInit = function() {
+      FB.init({
+      xfbml      : true,
+      version    : 'v2.6'
+      });
+      };
+      (function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+
+    script.
+      window.twttr = (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0],
+      t = window.twttr || {};
+      if (d.getElementById(id)) return t;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js, fjs);
+      t._e = [];
+      t.ready = function(f) {
+      t._e.push(f);
+      };
+      return t;
+      }(document, "script", "twitter-wjs"));
+
     // Angular
     script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js')
     script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-route.min.js')
@@ -191,17 +223,17 @@ html(ng-app='app')
           span  Derechos
         ul
           li
-            a(href='index.html', title='') HOME
+            a(href='/') HOME
           li
-            a(href='about.html', title='') NOSOTROS
+            a(href='/proyecto', title='') NOSOTROS
           li
-            a(href='elements.html', title='') HOSPITALES
+            a(href='/hospitales', title='') HOSPITALES
           li
-            a(href='blog-with-sidebar.html', title='') ACTIVIDADES
+            a(href='/actividades', title='') ACTIVIDADES
           li
-            a(href='events.html', title='') BLOG
+            a(href='/blog', title='') BLOG
           li
-            a(href='events.html', title='') FOTOS
+            a(href='/fotos', title='') FOTOS
           li
-            a(href='contact.html', title='') AYUDA
+            a(href='/voluntario', title='') AYUDA
     // Bottom Footer Strip

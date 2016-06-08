@@ -983,7 +983,7 @@ header {
 	border-color:#98d460;
 }
 #thumbs a img {
-    height:80px;
+    height:auto;
     width:100%;
 }
 #wrapper img#shadow {

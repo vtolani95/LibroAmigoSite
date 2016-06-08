@@ -41,6 +41,20 @@ app.controller('indexController', function($scope, $http) {
     return html;
   }
 
+  var formatFB = function(posts) {
+    var html = '';
+    for(var post = 0; post < posts.length; post+=1) {
+      html += '<div class="row"><div class="col-md-1"></div><div class="col-md-10"><div class="fb-post" data-href="' + posts[post].permalink_url + '"></div></div><div class="col-md-1"></div></div>';
+    }
+    return html;
+  }
+
+  var formatTwitter = function(posts) {
+    for(var post = 0; post < posts.length; post+=1) {
+      twttr.widgets.createTweet(posts[post].id_str, document.getElementById('tweet-' + post.toString()));
+    }
+  }
+
   $scope.$on('$viewContentLoaded', function(){
     jQuery("#layerslider").layerSlider({
       responsive: true,
@@ -124,6 +138,23 @@ app.controller('indexController', function($scope, $http) {
       })
       .error(function(data, status, headers, config) {
         alert('No pudimos cargar las hospitales');
+      });
+
+    $http.get('/api/twitter')
+      .success(function(data, status, headers, config) {
+        formatTwitter(data);
+      })
+      .error(function(data, status, headers, config) {
+
+      });
+
+    $http.get('/api/fb')
+      .success(function(data, status, headers, config) {
+        var html = formatFB(data);
+        $('#news2').append(html);
+      })
+      .error(function(data, status, headers, config) {
+
       });
 
   });
