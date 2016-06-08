@@ -51,6 +51,8 @@ app.controller('indexController', function($scope, $http) {
 
   var formatTwitter = function(posts) {
     for(var post = 0; post < posts.length; post+=1) {
+      var html = '<div class="row"><div class="col-md-1"></div><div id="tweet-' + post.toString() + '" class="col-md-10"></div><div class="col-md-1"></div></div>';
+      $('#news3').append(html);
       twttr.widgets.createTweet(posts[post].id_str, document.getElementById('tweet-' + post.toString()));
     }
   }
@@ -152,6 +154,7 @@ app.controller('indexController', function($scope, $http) {
       .success(function(data, status, headers, config) {
         var html = formatFB(data);
         $('#news2').append(html);
+        $('head').append("<script src='//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6'><script>");
       })
       .error(function(data, status, headers, config) {
 
