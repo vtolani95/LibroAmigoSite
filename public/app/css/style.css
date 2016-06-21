@@ -2930,6 +2930,7 @@ footer .container {
     z-index: 1000;
     position:absolute;
     top:-98px;
+    left:20px;
     /*background: linear-gradient(#ffb499, white);*/
 
     -webkit-border-radius:10px 10px 0 0;

@@ -5,7 +5,7 @@ app.controller('publicVolunteerController', function($scope, $http) {
     if(user.photo) {
       html += '"' + user.photo.url + '"' + 'width="273"';
     } else {
-      html += '"http://placehold.it/273x145"';
+      html += '"/app/images/libro_logo.png"';
     }
     html += '" alt="" /></a></div><h3>' + user.name.first + ' ' + user.name.last + '</h3>';
     html += '<h2>' + user.position + '</h2>';
