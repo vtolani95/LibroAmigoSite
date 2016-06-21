@@ -2929,8 +2929,8 @@ footer .container {
     background:none repeat scroll 0 0 #FFFFFF;
     z-index: 1000;
     position:absolute;
-    top:-140px;
-    background: linear-gradient(#ffb499, white);
+    top:-98px;
+    /*background: linear-gradient(#ffb499, white);*/
 
     -webkit-border-radius:10px 10px 0 0;
     -moz-border-radius:10px 10px 0 0;
@@ -2958,7 +2958,7 @@ footer .container {
     background:none repeat scroll 0 0 #FFFFFF;
     z-index: 1000;
     position:absolute;
-    top:-122px;
+    top:-101px;
     text-decoration: underline;
 
     -webkit-border-radius:10px 10px 0 0;
