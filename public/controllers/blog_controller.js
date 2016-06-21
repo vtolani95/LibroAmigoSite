@@ -115,7 +115,7 @@ app.controller('blogController', function($http, $scope, photo_upload_service) {
         $('head').append(delete_blog);
         $('head').append(change_blog);
         if(user) {
-          photo_upload_service.setupCloudinary(change_pic_upload_callback, '#change-blog-photo > .spacer', true);
+          photo_upload_service.setupCloudinary(change_pic_upload_callback, '#change-blog-photo > .spacer', false, true);
         }
 
       })

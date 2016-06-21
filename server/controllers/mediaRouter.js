@@ -22,13 +22,13 @@ var T = new Twit({
 module.exports = function(app) {
 
   app.get('/api/fb', function(req, res, next) {
-    graph.get('libroamigochile/posts?limit=1&fields=permalink_url', function(err, response){
+    graph.get('libroamigochile/posts?limit=3&fields=permalink_url', function(err, response){
       res.json(response.data);
     });
   });
 
   app.get('/api/twitter', function(req, res, next) {
-    T.get('/statuses/user_timeline.json?screen_name=libroamigo&count=1', function(err, response) {
+    T.get('/statuses/user_timeline.json?screen_name=libroamigo&count=3', function(err, response) {
       res.json(response);
     })
   });

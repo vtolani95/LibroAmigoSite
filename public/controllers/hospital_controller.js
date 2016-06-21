@@ -99,7 +99,7 @@ app.controller('hospitalController', function($http, $scope, photo_upload_servic
         $('head').append(delete_hospital);
         $('head').append(change_hospital);
         if (admin) {
-          photo_upload_service.setupCloudinary(change_pic_upload_callback, '#change-blog-photo > .spacer', true);
+          photo_upload_service.setupCloudinary(change_pic_upload_callback, '#change-blog-photo > .spacer', false, true);
         }
 
       })

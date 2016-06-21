@@ -63,7 +63,7 @@ module.exports = function(app, userAuth, adminAuth, cloudinary) {
     });
   });
 
-  // Borrar una foto
+  // Borrar una entrada de Blog
   app.delete('/api/blog/:id', adminAuth, function(req, res, next) {
     Blog.findById(req.params.id, function(err, blog) {
       if(err) {
