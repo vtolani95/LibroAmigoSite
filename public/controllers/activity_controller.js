@@ -48,11 +48,13 @@ app.controller('activityController', function($http, $scope, photo_upload_servic
         html += "</div>";
       }
 
+      html += '<div class="col-md-12">';
       if (canEdit(user, admin, activities[row])) {
         html += '<textarea data-id="' + activities[row]._id + '" class="edit-blog form-control input-field" data-photos="[]" rows="11" style="width:100%;">' + activities[row].text + '</textarea>';
       } else {
         html += activities[row].text;
       }
+      html += '</div>';
       html += '<div class="blog-post-details"><ul class="post-meta">';
       html += '<li><a><i class="icon-calendar"></i>' + formatDate(activities[row].date) + '</a></li>';
       html += '<li><a><i class="icon-user"></i>' + activities[row].author.name + '</a></li>';

@@ -3816,6 +3816,10 @@ footer .container {
 .blog-post-img img{
 	width:100%;
 }
+.blog-post > .col-md-8, .blog-post > .col-md-12  {
+  text-align: justify;
+  text-justify: inter-word;
+}
 .blog-post-details {
     float:left;
     width:100%;
