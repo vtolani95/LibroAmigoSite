@@ -86,7 +86,6 @@ app.controller('activityController', function($http, $scope, photo_upload_servic
     var old_photos = $('textarea[data-id=' + blog_id + ']').data("photos");
     old_photos.push(new_photo);
     $('textarea[data-id=' + blog_id + ']').data("photos", old_photos);
-    debugger;
     $('.progress-bar').css('display', 'none');
   };
 
