@@ -60,7 +60,7 @@ app.use(flash());
 require('./config/passport')(passport);
 
 var userAuth = function(req, res, next){ if (!req.isAuthenticated()) res.send(401); else next(); };
-var adminAuth = function(req, res, next){if (req.user.role == "Admin") next(); else res.send(403); }
+var adminAuth = function(req, res, next){if (req.user.role == "Admin") next(); else res.send(403); };
 // REST API ROUTES
 var users = require('./server/controllers/userRouter.js')(app, passport, userAuth);
 var email = require('./server/controllers/emailRouter');
@@ -69,6 +69,7 @@ var photo = require('./server/controllers/photoRouter')(app, userAuth, adminAuth
 var blog = require('./server/controllers/blogRouter')(app, userAuth, adminAuth, cloudinary);
 var hospital = require('./server/controllers/hospitalRouter')(app, adminAuth, cloudinary);
 var socialMedia = require('./server/controllers/mediaRouter')(app);
+var activity = require('./server/controllers/activityRouter')(app, userAuth, adminAuth, cloudinary);
 app.use('/contact', email);
 
 // Single page webpage con Angular

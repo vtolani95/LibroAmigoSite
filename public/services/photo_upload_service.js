@@ -1,6 +1,7 @@
 app.service('photo_upload_service', function($http) {
   // si pass_this es verdad el objecto 'this' estará pasado al funcion callback
-  this.setupCloudinary = function(callback, element, pass_this) {
+  // si multiple_images es verdad el usuario tiene la opcion de agregar imagenes multiples
+  this.setupCloudinary = function(callback, element, multiple_images, pass_this) {
     $http.get('/photo/signature').
       success(function(data, status, headers, config) {
         cloudinary_data = ({
@@ -9,7 +10,12 @@ app.service('photo_upload_service', function($http) {
           api_key: data.api_key,
           callback: data.callback
         });
-        var choose_photo = '<input name="file" accept="image/*" class="cloudinary-fileupload" data-cloudinary-field="image_id" data-form-data=' + JSON.stringify(cloudinary_data) + ' type="file"/>';
+        var choose_photo = '<input name="file" accept="image/*" class="cloudinary-fileupload" data-cloudinary-field="image_id" data-form-data=' + JSON.stringify(cloudinary_data);
+        if (multiple_images) {
+          choose_photo += ' type="file" multiple/>';
+        } else {
+          choose_photo += ' type="file"/>'
+        }
         $(element).append(choose_photo);
         $(element + " > input.cloudinary-fileupload[type=file]").cloudinary_fileupload();
 
