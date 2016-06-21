@@ -36,8 +36,18 @@ app.controller('indexController', function($scope, $http) {
     return html;
   }
 
+  var trimBlogText = function(text) {
+    return text.substring(0, 150).trim() + '...';
+  }
+
   var formatBlog = function(blog) {
-    var html = '<i class="icon-calendar"> ' +  formatDate(blog.date) +'</i><p>' + blog.text + '</p>';
+    var html = '<a class="blog-preview" href="/blog">';
+    html += '<i class="icon-calendar"> ' +  formatDate(blog.date) +'</i>'
+    if (blog.photo) {
+      html += '<img style="width:100%;padding-top:10px;" src="' + blog.photo.url +'">';
+    } else {
+    }
+    html += '<p>' + trimBlogText(blog.text) + '</p></a>';
     return html;
   }
 
@@ -136,7 +146,6 @@ app.controller('indexController', function($scope, $http) {
       .success(function(data, status, headers, config) {
         var html = formatBlog(data);
         $('#blog-slide').append(html);
-        // $('.donate-us-box').css('background-image', "url('" + data.photo.url + "')");
       })
       .error(function(data, status, headers, config) {
         alert('No pudimos cargar las hospitales');
