@@ -9061,14 +9061,22 @@ button.favorite-btn i {
 .mission > h4 {
     color: #3b3b3b;
     font-family: open sans;
-    font-size: 25px;
+    font-size: 100px;
     font-weight: 700;
+    margin-bottom: 10px;
+    padding-top: 10px;
+}
+.mission > h2 {
+    color: #3b3b3b;
+    font-family: open sans;
+    font-size: 25px;
+    font-weight: 300;
     margin-bottom: 10px;
 }
 .mission p {
     color: #674244;
     font-family: open sans;
-    font-size: 16px;
+    font-size: 20px;
     letter-spacing: 0.3px;
     line-height: 30px;
     margin: 0;
