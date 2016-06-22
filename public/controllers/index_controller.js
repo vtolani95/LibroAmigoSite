@@ -36,8 +36,12 @@ app.controller('indexController', function($scope, $http) {
     return html;
   }
 
-  var trimBlogText = function(text) {
+  var trimText = function(text) {
     return text.substring(0, 150).trim() + '...';
+  }
+
+  var trimTextLong = function(text) {
+    return text.substring(0, 300).trim() + '...';
   }
 
   var formatBlog = function(blog) {
@@ -47,8 +51,20 @@ app.controller('indexController', function($scope, $http) {
       html += '<img style="width:100%;padding-top:10px;" src="' + blog.photo.url +'">';
     } else {
     }
-    html += '<p>' + trimBlogText(blog.text) + '</p></a>';
+    html += '<p>' + trimText(blog.text) + '</p></a>';
     return html;
+  }
+
+  var populateActivity = function(activity) {
+    $('#activity-text').text(trimTextLong(activity.text));
+    var img = '<img alt="" src="'
+    if (activity.photos.length > 0) {
+      img += activity.photos[0].url;
+    } else {
+      img += '/app/images/libro_logo.png';
+    }
+    img += '"/>';
+    $('#activity-image').append(img);
   }
 
   var formatFB = function(posts) {
@@ -146,6 +162,14 @@ app.controller('indexController', function($scope, $http) {
       .success(function(data, status, headers, config) {
         var html = formatBlog(data);
         $('#blog-slide').append(html);
+      })
+      .error(function(data, status, headers, config) {
+        alert('No pudimos cargar las hospitales');
+      });
+
+    $http.get('/api/public/actividades?mostRecent=true')
+      .success(function(data, status, headers, config) {
+        populateActivity(data);
       })
       .error(function(data, status, headers, config) {
         alert('No pudimos cargar las hospitales');
