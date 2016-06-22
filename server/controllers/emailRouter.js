@@ -1,4 +1,3 @@
-
 var express = require('express');
 var emailRouter = express.Router();
 var nodemailer = require('nodemailer');

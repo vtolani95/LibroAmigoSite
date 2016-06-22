@@ -86,6 +86,8 @@ app.controller('hospitalController', function($http, $scope, photo_upload_servic
         });
         if(data.role != "Admin") {
           admin = false;
+          $('#change-blog').remove();
+          $('form.change-blog-form').remove();
         }
         })
       .error(function(data) { $('#change-blog').remove(); admin = false; $('form.change-blog-form').remove();});

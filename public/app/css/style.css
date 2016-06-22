@@ -705,7 +705,7 @@ header {
 .donate-us-box{
     float:left;
     width:100%;
-	padding:40px 35px;
+	padding:15px 20px;
 	background-image:url('../images/map-bg.png');
 	background-color:#777676;
 	background-repeat:no-repeat;
@@ -768,13 +768,14 @@ header {
 }
 .donate-us-box > p {
   padding-top: 10px;
-  max-height: 500px;
-  overflow: scroll;
 }
 
 .donate-us-box > i {
   border-bottom: 1px solid #e94e15;
   padding-bottom: 2px;
+}
+.blog-preview {
+  color: inherit;
 }
 
 
@@ -2077,7 +2078,7 @@ header {
     width: 100%;
 }
 .message-box {
-    bottom:2px;
+    bottom:18px;
     position:absolute;
     right:50px;
     width:360px;
@@ -2928,8 +2929,9 @@ footer .container {
     background:none repeat scroll 0 0 #FFFFFF;
     z-index: 1000;
     position:absolute;
-    top:-140px;
-    background: linear-gradient(#ffb499, white);
+    top:-98px;
+    left:20px;
+    /*background: linear-gradient(#ffb499, white);*/
 
     -webkit-border-radius:10px 10px 0 0;
     -moz-border-radius:10px 10px 0 0;
@@ -2957,7 +2959,7 @@ footer .container {
     background:none repeat scroll 0 0 #FFFFFF;
     z-index: 1000;
     position:absolute;
-    top:-122px;
+    top:-101px;
     text-decoration: underline;
 
     -webkit-border-radius:10px 10px 0 0;
@@ -3814,6 +3816,10 @@ footer .container {
 .blog-post-img img{
 	width:100%;
 }
+.blog-post > .col-md-8, .blog-post > .col-md-12  {
+  text-align: justify;
+  text-justify: inter-word;
+}
 .blog-post-details {
     float:left;
     width:100%;
@@ -3832,7 +3838,6 @@ footer .container {
     margin-top:-10px;
     padding:10px 0;
     content:"";
-    /*background:url("../images/diamond-narrow.jpg") no-repeat scroll 0 2px #FFFFFF;*/
 
     position:absolute;
     right:-7.5px;
@@ -6757,6 +6762,10 @@ h5.slide3 span{
     -o-box-shadow:0 0 14px #6d6d6d inset;
     box-shadow:0 0 14px #6d6d6d inset;
 }
+.main-bg {
+  width: 100%;
+  height: auto;
+}
 
 /*** Side Panel ***/
 .side-panel {
@@ -9060,14 +9069,22 @@ button.favorite-btn i {
 .mission > h4 {
     color: #3b3b3b;
     font-family: open sans;
-    font-size: 25px;
+    font-size: 100px;
     font-weight: 700;
+    margin-bottom: 10px;
+    padding-top: 10px;
+}
+.mission > h2 {
+    color: #3b3b3b;
+    font-family: open sans;
+    font-size: 25px;
+    font-weight: 300;
     margin-bottom: 10px;
 }
 .mission p {
     color: #674244;
     font-family: open sans;
-    font-size: 16px;
+    font-size: 20px;
     letter-spacing: 0.3px;
     line-height: 30px;
     margin: 0;
