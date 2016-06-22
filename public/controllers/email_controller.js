@@ -1,20 +1,20 @@
 app.controller('emailController', function($http, $scope) {
+  $scope.hospitalModel = []
+  $http.get('/api/public/hospitals').
+    success(function(data, status, headers, config) {
+      for(var i = 0; i < data.length; i+=1) {
+        $scope.hospitalModel.push({id:i+1, text: data[i].name});
+      }
+    }).
+    error(function(data, status, headers, config) {
+      alert('no pudimos cargar la información de los hospitales');
+    });
+
   $scope.participationModel = [
     {id: 1, text: 'Gestión del módulo'},
     {id: 2, text: 'Carrito Lector'},
-    {id: 3, text: 'Cuenta Cuentantos / narración oral'},
-    {id: 4, text: 'Otro (bibliotecología, gestión de campañas, etc.)'}
+    {id: 3, text: 'Otro (bibliotecología, gestión de campañas, etc.)'}
   ];
-
-  $scope.scheduleModel = [
-    {id: 1, text: 'Lunes 15:30 - 19:30'},
-    {id: 2, text: 'Martes 15:30 - 19:30'},
-    {id: 3, text: 'Miercoles 15:30 - 19:30'},
-    {id: 4, text: 'Jueves 15:30 - 19:30'},
-    {id: 5, text: 'Viernes 15:30 - 19:30'},
-    {id: 6, text: 'Sabado 17:00 - 19:00'},
-    {id: 7, text: 'Domingo 17:00 - 19:00'}
-  ]
 
   $scope.durationModel = [
     {id: 1, text: '3 meses'},
@@ -24,7 +24,7 @@ app.controller('emailController', function($http, $scope) {
   ]
 
   this.checkForm = function() {
-    return this.participationModel && this.scheduleModel && this.durationModel;
+    return this.participationModel && this.durationModel;
   }
 
   this.sendMail = function() {
@@ -47,14 +47,10 @@ app.controller('emailController', function($http, $scope) {
       '¿Qué esperas del voluntariado en Libro Amigo?': this.hope,
       'En caso de "Otro" en sig. pregunta, especificar': this.other,
       '¿Cómo te gustaría participar?': this.participationModel.map(function(s) {return s.text}),
-      '¿Días y horarios en que podrías participar?': this.scheduleModel.map(function(s) {return s.text}),
-      'Duración de voluntariado (con opción de extender)': this.durationModel
+      '¿Días y horarios en que podrías participar?': this.schedule,
+      'Duración de voluntariado (con opción de extender)': this.durationModel,
+      'Hospital(es)': this.hospitalModel.map(function(s) {return s.text})
     });
-
-    if (this.readingModel) {
-      var reading = ({'Interesados en cuentacuentos: ¿Tienes experiencia?': this.readingModel});
-      $.extend(data, reading);
-    }
 
     $http.post('/contact/send', data).
       success(function(data, status, headers, config) {

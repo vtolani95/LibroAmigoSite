@@ -46,12 +46,8 @@
               </label>
             </div><!--checkbox-contact-->
 
-            <div class="checkbox-contact">
               <p>¿Días y horarios en que podrías participar?<span>*</span></p>
-              <label ng-repeat="option in scheduleModel">
-                <input type="checkbox" data-checklist-model="email.scheduleModel" data-checklist-value="option"> {{option.text}}
-              </label>
-            </div><!--checkbox-contact-->
+              <textarea name="horario" rows="3" class="form-control input-field" ng-model="email.schedule"></textarea>
 
             <div class="checkbox-contact">
               <p>Duración de voluntariado (con opción de extender)<span>*</span></p>
@@ -61,12 +57,13 @@
             </div><!--checkbox-contact-->
 
             <div class="checkbox-contact">
-              <p>Interesados en cuentacuentos: ¿Tienes experiencia?</p>
-              <label><input type="radio" ng-model="email.readingModel" value="Si"> Si</label>
-              <label><input type="radio" ng-model="email.readingModel" value="No"> No</label>
+              <p>¿En cual de nuestros hospitales te gustaría participar?<span>*</span></p>
+              <label ng-repeat="option in hospitalModel">
+                <input type="checkbox" data-checklist-model="email.hospitalModel" data-checklist-value="option"> {{option.text}}
+              </label>
             </div><!--checkbox-contact-->
 
-            <input type="submit" id="submit" class="form-button submit" ng-click="email.sendMail()" value="SEND MESSAGE" />
+            <input type="submit" id="submit" class="form-button submit" ng-click="email.sendMail()" value="Enviar Postulación" />
           </form>
         </div>
       </div> <!-- col-md-10-->

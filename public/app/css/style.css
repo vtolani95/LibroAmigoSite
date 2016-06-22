@@ -2078,7 +2078,7 @@ header {
     width: 100%;
 }
 .message-box {
-    bottom:2px;
+    bottom:18px;
     position:absolute;
     right:50px;
     width:360px;
@@ -6761,6 +6761,10 @@ h5.slide3 span{
     -ms-box-shadow:0 0 14px #6d6d6d inset;
     -o-box-shadow:0 0 14px #6d6d6d inset;
     box-shadow:0 0 14px #6d6d6d inset;
+}
+.main-bg {
+  width: 100%;
+  height: auto;
 }
 
 /*** Side Panel ***/
