@@ -187,7 +187,7 @@ app.controller('indexController', function($scope, $http) {
       .success(function(data, status, headers, config) {
         var html = formatFB(data);
         $('#news2').append(html);
-        $('head').append("<script src='//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6'><script>");
+        FB.XFBML.parse();
       })
       .error(function(data, status, headers, config) {
 
