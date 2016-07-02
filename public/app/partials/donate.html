@@ -1,0 +1,43 @@
+<div class="top-image">
+  <img src="app/images/pagina-secundaria.jpg" alt="" />
+</div><!-- Page Top Image -->
+<section class="inner-page">
+  <div class="container">
+    <div class="page-title">
+      <h1>Donar <span>Libros</span></h1>
+    </div><!-- Page Title -->
+    <div class="row">
+      <div class="col-md-1">
+      </div>
+      <div class="col-md-10">
+        <div id="message"></div>
+        <div class="form" data-ng-controller="donateController as email">
+          <h4 class="contact-description">Todos los libros de Libro Amigo son donaciones realizadas por personas y editoriales, a través de nuestras campañas de donación y, principalmente, donaciones particulares</h4>
+          <h4 class="contact-description" style="padding-top:30px;">
+Si quieres realizar una donación de libros puedes acercarte a dejarlos en nuestros módulos biblioteca ubicados en el Hospital Félix Bulnes de Providencia y en el Hospital del Salvador, si lo deseas, adjunta una nota con tu nombre y correo electrónico para agradecerte.</h4>
+<h4 class="contact-description" style="padding-top:30px;">
+El horario de atención está detallado en la sección <a href="/hospitales">Hospitales</a>, si vas en otro horario puedes dejar los libros en nuestros buzones señalando que es una donación.</h4>
+<h4 class="contact-description" style="padding-top:30px;">También puedes estar atento a las campañas de donación que realizamos, las cuales son publicadas en nuestras redes sociales.</h4>
+<h4 class="contact-description" style="padding-top:30px;">Recibimos todo tipo de libros originales, en buen estado, exceptuando libros técnicos y de otras bibliotecas.</h4>
+<h4 class="contact-description" style="padding-top:30px;">Si tienes dudas, escríbenos un <a href="/voluntario">mensaje</a></h4>
+          <form name="contactform" id="contactform">
+            <p>Nombre Completo <span>*</span></p>
+            <input name="name" class="form-control input-field" type="text" size="30" required data-ng-model="email.contactName"/>
+
+            <p>Correo electrónico <span>*</span></p>
+            <input name="email" class="form-control input-field" type="text" size="30" required data-ng-model="email.email"/>
+
+            <p>Nota <span>*</span></p>
+            <textarea name="interes" rows="7" class="form-control input-field" required ng-model="email.note"></textarea>
+
+
+
+            <input type="submit" id="submit" class="form-button submit" ng-click="email.sendMail()" value="Enviar Postulación" />
+          </form>
+        </div>
+      </div> <!-- col-md-10-->
+      <div class="col-md-1">
+      </div>
+    </div>  <!-- Message Form -->
+  </div> <!-- container -->
+</section>

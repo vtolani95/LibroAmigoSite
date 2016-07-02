@@ -43,6 +43,24 @@ emailRouter.post('/send/basic', function(req, res) {
   });
 });
 
+emailRouter.post('/send/donate', function(req, res) {
+  var data = req.body;
+  var emailInfo = {
+    from: process.env.EMAIL_SMPT_USER,
+    to: process.env.EMAIL_RECIPIENT,
+    subject: 'Donación de ' + data.Name,
+    text: data.Message + '\n\n Email: ' + data.Email
+  }
+  transporter.sendMail(emailInfo, function(error, info){
+    if(error) {
+      res.status(500);
+    } else {
+      console.log("Donation Message Sent- " + info.response);
+      res.json(req.body);
+    }
+  });
+});
+
 emailRouter.post('/send', function(req, res) {
   var data = req.body;
   var htmlTable = formatContactEmail(data);

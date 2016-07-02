@@ -86,5 +86,9 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
         templateUrl: 'app/partials/activities.html',
         controller: 'activityController'
       })
+      .when('/donar', {
+        templateUrl: 'app/partials/donate.html',
+        controller: 'donateController'
+      })
       .otherwise({ templateUrl: 'app/partials/404.html' });
 }]);
