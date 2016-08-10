@@ -78,6 +78,7 @@ module.exports = function(app, userAuth, adminAuth, cloudinary) {
         }
         blog.remove();
         res.send(200);
+        return;
       }
       res.send(401);
     });
