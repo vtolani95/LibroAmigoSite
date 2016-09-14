@@ -1,4 +1,4 @@
-app.controller('otherAccountController', function($scope, $http, $routeParams, account_services) {
+app.controller('otherAccountController', function($scope, $http, $routeParams, account_services, photo_upload_service) {
   $http.get('/checklogin').
     success(function(my_data, status, headers, config) {
       if(my_data.role != "Admin") {
