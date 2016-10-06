@@ -12,13 +12,22 @@
       <div class="col-md-10">
         <div id="message"></div>
         <div class="form" data-ng-controller="donateController as email">
-          <h4 class="contact-description">Todos los libros de Libro Amigo son donaciones realizadas por personas y editoriales, a través de nuestras campañas de donación y, principalmente, donaciones particulares</h4>
-          <h4 class="contact-description" style="padding-top:30px;">
-Si quieres realizar una donación de libros puedes acercarte a dejarlos en nuestros módulos biblioteca ubicados en el Hospital Félix Bulnes de Providencia y en el Hospital del Salvador, si lo deseas, adjunta una nota con tu nombre y correo electrónico para agradecerte.</h4>
+          <h4 class="contact-description"><strong>Importante: Al realizar una donación, tenga en consideración que los libros estarán en contacto con pacientes hospitalizados, por lo que deben estar en perfectas condiciones.</strong></h4>
+          <h4 class="contact-description" style="padding-top:30px;"><strong>Por favor, no vea la donación como una oportunidad de deshacerse de libros que no le sirven o que no quiere botar a la basura. Respete a las personas que recibirán esta ayuda.</strong></h4>
+          <h4 class="contact-description" style="padding-top:30px;"><strong>¡Muchas gracias!</strong></h4>
 <h4 class="contact-description" style="padding-top:30px;">
-El horario de atención está detallado en la sección <a href="/hospitales">Hospitales</a>, si vas en otro horario puedes dejar los libros en nuestros buzones señalando que es una donación.</h4>
-<h4 class="contact-description" style="padding-top:30px;">También puedes estar atento a las campañas de donación que realizamos, las cuales son publicadas en nuestras redes sociales.</h4>
-<h4 class="contact-description" style="padding-top:30px;">Recibimos todo tipo de libros originales, en buen estado, exceptuando libros técnicos y de otras bibliotecas.</h4>
+<strong>Qué libros recibimos:</strong><br></br>
+Libros y revistas de entretención en general, en español y para todas las edades. Con todas sus páginas y originales. De preferencia con letra grande y no excesivamente largos. <br></br>
+Libros para pintar y lápices de colores también son bienvenidos.</h4>
+<h4 class="contact-description" style="padding-top:30px;"><strong>Que libros no aceptamos:</strong><br></br>
+Libros y revistas rotos, antiguos, o en malas condiciones (páginas faltantes, con hongos, etc.)<br></br>
+Con páginas papel roneo<br></br>
+Con letra muy pequeña<br></br>
+Libros piratas o fotocopias<br></br>
+Libros técnicos ni libros escolares<br></br>
+Libros en otros idiomas diferentes al español<br></br>
+Textos de contenido violento ni pornográfico o que atenten contra la tolerancia y el respeto.</h4>
+
 <h4 class="contact-description" style="padding-top:30px;">Si tienes dudas, escríbenos un <a href="/voluntario">mensaje</a></h4>
           <form name="contactform" id="contactform">
             <p>Nombre Completo <span>*</span></p>
@@ -32,7 +41,7 @@ El horario de atención está detallado en la sección <a href="/hospitales">Hos
 
 
 
-            <input type="submit" id="submit" class="form-button submit" ng-click="email.sendMail()" value="Enviar Postulación" />
+            <input type="submit" id="submit" class="form-button submit" ng-click="email.sendMail()" value="Enviar" />
           </form>
         </div>
       </div> <!-- col-md-10-->
