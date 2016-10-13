@@ -3,7 +3,7 @@ html(ng-app='app')
   head
     base(href="/")
     meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
-    title Biblioteca Libro Amigo
+    title Libro Amigo
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     // Google Fonts
     link(href='https://fonts.googleapis.com/css?family=Roboto:400,900italic,700italic,900,700,500italic,500,400italic,300italic,300,100italic,100|Open+Sans:400,300,400italic,300italic,600,600italic,700italic,700,800|Source+Sans+Pro:400,200,200italic,300,300italic,400italic,600,600italic,700', rel='stylesheet', type='text/css')
@@ -104,6 +104,9 @@ html(ng-app='app')
             li
               a(href='https://twitter.com/libroamigo', title='')
                 i.icon-twitter
+            li
+              a(href='https://www.youtube.com/channel/UCglCGn-cc-peO1m45QnMXLQ', title='')
+                i.icon-youtube
       // top bar
       header.header2.sticky
         .container
@@ -159,9 +162,9 @@ html(ng-app='app')
                   | Súmate
                 ul.drop-right
                   li
-                    a(href='donar', title='') Donar Libros
+                    a(href='donar', title='') Dona libros
                   li
-                    a(href='voluntario', title='') Voluntario
+                    a(href='voluntario', title='') Sé voluntario
                 // Drop Down
           // Menu
       // header
@@ -191,12 +194,12 @@ html(ng-app='app')
           li
             a(href='fotos.html', title='') Fotos
           li
-            a(title='') Ayuda
+            a(title='') Súmate
             ul
               li
-                a(href='donar.html', title='') Donar libros
+                a(href='donar.html', title='') Dona libros
               li
-                a(href='voluntario.html', title='') Voluntario
+                a(href='voluntario.html', title='') Sé voluntario
       // Responsive header
       div(ng-view='')
     // theme-layout
@@ -219,5 +222,5 @@ html(ng-app='app')
           li
             a(href='/fotos', title='') FOTOS
           li
-            a(href='/voluntario', title='') AYUDA
+            a(href='/voluntario', title='') SÚMATE
     // Bottom Footer Strip
