@@ -6,7 +6,7 @@ app.controller('emailController', function($http, $scope) {
   ];
 
   $scope.participationModel = [
-    {id: 1, text: 'Gestión del módulo'},
+    {id: 1, text: 'Atención del módulo'},
     {id: 2, text: 'Carrito Lector'},
     {id: 3, text: 'Otro (bibliotecología, gestión de campañas, etc.)'}
   ];

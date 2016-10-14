@@ -36,9 +36,6 @@
             <p>¿Qué esperas del voluntariado en Libro Amigo? <span>*</span></p>
             <textarea name="esperanza" rows="5" class="form-control input-field" required ng-model="email.hope"></textarea>
 
-            <p>En caso de "Otro" en sig. pregunta, especificar</p>
-            <textarea name="otro" rows="3" class="form-control input-field" ng-model="email.other"></textarea>
-
             <div class="checkbox-contact">
               <p>¿En cual de nuestros hospitales te gustaría participar? <br>*Fíjate en los horarios disponibles.<span>*</span></p>
               <label ng-repeat="option in hospitalModel">
@@ -52,6 +49,9 @@
                 <input type="checkbox" data-checklist-model="email.participationModel" data-checklist-value="option"> {{option.text}}
               </label>
             </div><!--checkbox-contact-->
+
+            <p>En caso de "Otro" en sig. pregunta, especificar</p>
+            <textarea name="otro" rows="1" class="form-control input-field" ng-model="email.other"></textarea>
 
               <p>¿Días y horarios en que podrías participar?<span>*</span></p>
               <textarea name="horario" rows="3" class="form-control input-field" ng-model="email.schedule"></textarea>
