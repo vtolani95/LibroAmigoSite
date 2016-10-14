@@ -706,8 +706,7 @@ header {
     float:left;
     width:100%;
 	padding:15px 20px;
-	background-image:url('../images/map-bg.png');
-	background-color:#777676;
+	background-color: #efebe6;
 	background-repeat:no-repeat;
 	background-position:50% 50%;
 
@@ -2898,6 +2897,11 @@ footer .container {
 
 /*** SEARCH RESULT FOUND /////////////
 //////////////////////////////////////////////////// ***/
+.top-space {
+    float:left;
+    height:85px;
+    width:100%;
+}
 .top-image {
     float:left;
     height:285px;

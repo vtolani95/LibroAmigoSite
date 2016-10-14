@@ -1,6 +1,6 @@
-<div class="top-image">
-  <!--<img src="app/images/pagina-secundaria.jpg" alt="" />-->
-</div><!-- Page Top Image -->
+<div class="top-space">
+  
+</div><!-- So that the page title wont overlap with logo -->
 <section class="inner-page">
   <div class="container">
     <div class="page-title">
@@ -40,6 +40,13 @@
             <textarea name="otro" rows="3" class="form-control input-field" ng-model="email.other"></textarea>
 
             <div class="checkbox-contact">
+              <p>¿En cual de nuestros hospitales te gustaría participar? <br>*Fíjate en los horarios disponibles.<span>*</span></p>
+              <label ng-repeat="option in hospitalModel">
+                <input type="checkbox" data-checklist-model="email.hospitalModel" data-checklist-value="option"> {{option.text}}
+              </label>
+            </div><!--checkbox-contact--> 
+
+            <div class="checkbox-contact">
               <p>¿Cómo te gustaría participar?<span>*</span></p>
               <label ng-repeat="option in participationModel">
                 <input type="checkbox" data-checklist-model="email.participationModel" data-checklist-value="option"> {{option.text}}
@@ -53,13 +60,6 @@
               <p>Duración de voluntariado (con opción de extender)<span>*</span></p>
               <label ng-repeat="option in durationModel">
                 <input type="radio" ng-model="email.durationModel" value={{option.text}}> {{option.text}}
-              </label>
-            </div><!--checkbox-contact-->
-
-            <div class="checkbox-contact">
-              <p>¿En cual de nuestros hospitales te gustaría participar?<span>*</span></p>
-              <label ng-repeat="option in hospitalModel">
-                <input type="checkbox" data-checklist-model="email.hospitalModel" data-checklist-value="option"> {{option.text}}
               </label>
             </div><!--checkbox-contact-->
 

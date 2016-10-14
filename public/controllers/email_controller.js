@@ -1,14 +1,9 @@
 app.controller('emailController', function($http, $scope) {
-  $scope.hospitalModel = []
-  $http.get('/api/public/hospitals').
-    success(function(data, status, headers, config) {
-      for(var i = 0; i < data.length; i+=1) {
-        $scope.hospitalModel.push({id:i+1, text: data[i].name});
-      }
-    }).
-    error(function(data, status, headers, config) {
-      alert('no pudimos cargar la información de los hospitales');
-    });
+  $scope.hospitalModel = [
+    {id: 1, text: 'Hospital Félix Bulnes (Lunes a viernes de 17:30 a 19:30hrs. Sábado y domingo de 17 a 19hrs.)'},
+    {id: 2, text: 'Hospital San Juan de Dios (Lunes a jueves hasta las 17pm y viernes hasta las 16pm.)'},
+    {id: 3, text: 'Hospital del Salvador (Lunes a viernes hasta las 17pm.)'}
+  ];
 
   $scope.participationModel = [
     {id: 1, text: 'Gestión del módulo'},
