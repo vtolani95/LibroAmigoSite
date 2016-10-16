@@ -5,7 +5,7 @@ module.exports = function(app, userAuth, adminAuth, passport, cloudinary) {
 
   // API Privado- solo para los que tienen una cuenta con Libro Amigo
   app.get('/api/voluntarios', userAuth, function(req, res, next) {
-    User.find({_id: {$ne : req.user._id}}, 'name email role photo position',
+    User.find({_id: {$ne : req.user._id}}, 'name email role photo position', {sort: '_id'},
       function(err, users){
         if(err) {
           res.send(err);
@@ -85,7 +85,7 @@ module.exports = function(app, userAuth, adminAuth, passport, cloudinary) {
 
   //API Publico- para paginas publicas
   app.get('/api/public/voluntarios', function(req, res, next) {
-    User.find({}, 'name photo position', {sort: 'role'},
+    User.find({}, 'name photo position', {sort: 'role', sort: '_id'},
       function(err, users){
         if(err) {
           res.send(err);
