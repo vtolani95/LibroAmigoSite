@@ -44,13 +44,11 @@
             </div><!--checkbox-contact--> 
 
             <div class="checkbox-contact">
-              <p>¿Cómo te gustaría participar?<span>*</span></p>
+              <p>¿Cómo te gustaría participar? En caso de contestar "Otro": especifica<span>*</span></p>
               <label ng-repeat="option in participationModel">
                 <input type="checkbox" data-checklist-model="email.participationModel" data-checklist-value="option"> {{option.text}}
               </label>
             </div><!--checkbox-contact-->
-
-            <p>En caso de "Otro" en sig. pregunta, especificar</p>
             <textarea name="otro" rows="1" class="form-control input-field" ng-model="email.other"></textarea>
 
               <p>¿Días y horarios en que podrías participar?<span>*</span></p>
