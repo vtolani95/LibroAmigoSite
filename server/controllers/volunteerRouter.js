@@ -85,11 +85,12 @@ module.exports = function(app, userAuth, adminAuth, passport, cloudinary) {
 
   //API Publico- para paginas publicas
   app.get('/api/public/voluntarios', function(req, res, next) {
-    User.find({}, 'name photo position', {sort: 'role', sort: '_id'},
+    User.find({}, 'name photo position', {sort: 'role'},
       function(err, users){
         if(err) {
           res.send(err);
         }
+        debugger;
         res.json(users);
       });
   });
