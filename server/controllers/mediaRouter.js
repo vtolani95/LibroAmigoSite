@@ -36,20 +36,20 @@ module.exports = function(app) {
     })
   });
 
-  app.get('/api/youtube', function(req, res, next) {
-    request('https://www.googleapis.com/youtube/v3/search?part=snippet&order=date&maxResults=2&channelId=UCglCGn-cc-peO1m45QnMXLQ&key=' + process.env.YOUTUBE_API_KEY, function (error, response, body) {
-      if (!error && response.statusCode == 200) {
-        var videos = JSON.parse(body);
-        var data = [];
-        for (var i = 1; i < videos.items.length; i++) {
-          data.push(videos.items[i].id.videoId);
-        }
-        res.json(data);
-      } else {
-        res.send(500);
-      }
+  // app.get('/api/youtube', function(req, res, next) {
+  //   request('https://www.googleapis.com/youtube/v3/search?part=snippet&order=date&maxResults=2&channelId=UCglCGn-cc-peO1m45QnMXLQ&key=' + process.env.YOUTUBE_API_KEY, function (error, response, body) {
+  //     if (!error && response.statusCode == 200) {
+  //       var videos = JSON.parse(body);
+  //       var data = [];
+  //       for (var i = 1; i < videos.items.length; i++) {
+  //         data.push(videos.items[i].id.videoId);
+  //       }
+  //       res.json(data);
+  //     } else {
+  //       res.send(500);
+  //     }
 
-    })
-  });
+  //   })
+  // });
 
 };
