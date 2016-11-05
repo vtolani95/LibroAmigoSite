@@ -55,28 +55,24 @@ app.controller('indexController', function($scope, $http) {
     return html;
   }
 
-  var populateActivity = function(activity) {
-    $('#activity-text').text(trimTextLong(activity.text));
-    var img = '<img alt="" src="'
-    if (activity.photos.length > 0) {
-      img += activity.photos[0].url;
-    } else {
-      img += '/app/images/libro_logo.png';
-    }
-    img += '"/>';
-    $('#activity-image').append(img);
+  var formatYoutube = function(videos) {
+    var html = '';
+    for (var i = 0; i < videos.length; i++) {
+      html += '<iframe width="400px" height= "250px" src="https://www.youtube.com/embed/' + videos[i] + '" frameborder="0" allowfullscreen></iframe>';
+    };
+    return html;
   }
 
   var formatFB = function(posts) {
     var html = '';
-    for(var post = 0; post < posts.length; post+=1) {
+    for (var post = 0; post < posts.length; post+=1) {
       html += '<div class="row"><div class="col-md-1"></div><div class="col-md-10"><div class="fb-post" data-href="' + posts[post].permalink_url + '"></div></div><div class="col-md-1"></div></div>';
     }
     return html;
   }
 
   var formatTwitter = function(posts) {
-    for(var post = 0; post < posts.length; post+=1) {
+    for (var post = 0; post < posts.length; post+=1) {
       var html = '<div class="row"><div class="col-md-1"></div><div id="tweet-' + post.toString() + '" class="col-md-10"></div><div class="col-md-1"></div></div>';
       $('#news3').append(html);
       twttr.widgets.createTweet(posts[post].id_str, document.getElementById('tweet-' + post.toString()));
@@ -164,15 +160,16 @@ app.controller('indexController', function($scope, $http) {
         $('#blog-slide').append(html);
       })
       .error(function(data, status, headers, config) {
-        alert('No pudimos cargar las hospitales');
+        alert('No pudimos cargar las entradas de blog');
       });
 
-    $http.get('/api/public/actividades?mostRecent=true')
+    $http.get('/api/youtube')
       .success(function(data, status, headers, config) {
-        populateActivity(data);
+        var html = formatYoutube(data);
+        $('#news1 > div > div').append(html);
       })
       .error(function(data, status, headers, config) {
-        alert('No pudimos cargar las hospitales');
+        alert('No pudimos cargar los videos de youtube');
       });
 
     $http.get('/api/twitter')
@@ -180,7 +177,7 @@ app.controller('indexController', function($scope, $http) {
         formatTwitter(data);
       })
       .error(function(data, status, headers, config) {
-
+        alert('No pudimos cargar las entradas de twitter.');
       });
 
     $http.get('/api/fb')
@@ -190,7 +187,7 @@ app.controller('indexController', function($scope, $http) {
         FB.XFBML.parse();
       })
       .error(function(data, status, headers, config) {
-
+        alert('No pudimos cargar las entradas de facebook');
       });
 
   });
